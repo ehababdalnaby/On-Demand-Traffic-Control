@@ -12,13 +12,13 @@
 *1.this function takes register (reg) and bit number (bitNum).
 *2.it make the required bit in the register High(1).
 */
-#define setBit(reg,bitNum)	reg|	=	(1<<bitNum)
+#define setBit(reg,bitNum)	reg |= (1<<bitNum)
 /*
 *clrBit function
 *1.this function takes register (reg) and bit number (bitNum).
 *2.it make the required bit in the register Low(0).
 */
-#define clrBit(reg,bitNum)	reg&	=	(~(1<<bitNum))
+#define clrBit(reg,bitNum)	reg &= (~(1<<bitNum))
 /*
 *togBit function
 *1.this function takes register (reg) and bit number (bitNum).
@@ -26,7 +26,7 @@
 *3.if the required bit is Low(0) it makes it High(1).
 *4.if the required bit is High(1) it makes it Low(0).
 */
-#define togBit(reg,bitNum)	reg^	=	(1<<bitNum)
+#define toggleBit(reg,bitNum)	reg ^= (1<<bitNum)
 /*
 *getBit function
 *1.this function takes register (reg) and bit number (bitNum).

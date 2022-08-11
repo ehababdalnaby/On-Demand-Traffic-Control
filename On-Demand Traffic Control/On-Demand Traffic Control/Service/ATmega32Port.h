@@ -9,30 +9,24 @@
 
 typedef enum
 {
-	PA0,
-	PA1,
-	PA2,
-	PA3,
-	PA4,
-	PA5,
-	PA6,
-	PA7,
-	PB0,
-	PB1,
-	PB2,
-	PB3,
-	PB4,
-	PB5,
-	PB6,
-	PB7
-}EN_pinNum;
+	/*PORTA pins*/
+	PA0,PA1,PA2,PA3,PA4,PA5,PA6,PA7,
+	/*PORTB pins*/
+	PB0,PB1,PB2,PB3,PB4,PB5,PB6,PB7,
+	/*PORTC pins*/
+	PC0,PC1,PC2,PC3,PC4,PC5,PC6,PC7,
+	/*PORTD pins*/
+	PD0,PD1,PD2,PD3,PD4,PD5,PD6,PD7
+}EN_pinNum_t;
 
 #define PORTA_OFFSET	0
 #define PORTB_OFFSET	8
+#define PORTC_OFFSET	16
+#define PORTD_OFFSET	24
 
-typedef enum{Low,High}EN_pinState;
-typedef enum{Input,Output}EN_pinMode;
-	
+typedef enum{Low,High}EN_pinState_t;
+typedef enum{Input,Output}EN_pinDirection_t;
+typedef enum{OK,WRONG_PIN_NUM,WRONG_PIN_DIR,WRONG_PIN_STATE}EN_pinErro_t;	
 
 
 

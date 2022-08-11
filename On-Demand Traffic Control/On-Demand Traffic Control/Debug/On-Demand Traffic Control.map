@@ -16,6 +16,27 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 MCAL/Dio driver/DIO.o
+ .data          0x00000000        0x0 MCAL/Dio driver/DIO.o
+ .bss           0x00000000        0x0 MCAL/Dio driver/DIO.o
+ .text.DIO_pinInit
+                0x00000000      0x132 MCAL/Dio driver/DIO.o
+ .text.DIO_pinWrite
+                0x00000000      0x12e MCAL/Dio driver/DIO.o
+ .text.DIO_pinRead
+                0x00000000       0x86 MCAL/Dio driver/DIO.o
+ .text.DIO_pinToggle
+                0x00000000       0x86 MCAL/Dio driver/DIO.o
+ .debug_info    0x00000000      0x2e9 MCAL/Dio driver/DIO.o
+ .debug_abbrev  0x00000000       0xbb MCAL/Dio driver/DIO.o
+ .debug_loc     0x00000000      0x5f2 MCAL/Dio driver/DIO.o
+ .debug_aranges
+                0x00000000       0x38 MCAL/Dio driver/DIO.o
+ .debug_ranges  0x00000000       0x28 MCAL/Dio driver/DIO.o
+ .debug_line    0x00000000      0x31f MCAL/Dio driver/DIO.o
+ .debug_str     0x00000000      0x26f MCAL/Dio driver/DIO.o
+ .comment       0x00000000       0x31 MCAL/Dio driver/DIO.o
+ .debug_frame   0x00000000       0x54 MCAL/Dio driver/DIO.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -50,6 +71,7 @@ Linker script and memory map
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
 LOAD App/app.o
 LOAD main.o
+LOAD MCAL/Dio driver/DIO.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP

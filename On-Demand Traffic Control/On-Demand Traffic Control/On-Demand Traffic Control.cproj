@@ -129,6 +129,18 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\Dio driver\DIO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Dio driver\DIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Service\ATmega32Port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Service\BitMath.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Service\dataTypes.h">
       <SubType>compile</SubType>
     </Compile>

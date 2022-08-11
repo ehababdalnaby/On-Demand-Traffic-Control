@@ -45,7 +45,8 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../App/app.c \
-../main.c
+../main.c \
+../MCAL/Dio\ driver/DIO.c
 
 
 PREPROCESSING_SRCS += 
@@ -56,19 +57,23 @@ ASM_SRCS +=
 
 OBJS +=  \
 App/app.o \
-main.o
+main.o \
+MCAL/Dio\ driver/DIO.o
 
 OBJS_AS_ARGS +=  \
 App/app.o \
-main.o
+main.o \
+"MCAL/Dio driver/DIO.o"
 
 C_DEPS +=  \
 App/app.d \
-main.d
+main.d \
+MCAL/Dio\ driver/DIO.d
 
 C_DEPS_AS_ARGS +=  \
 App/app.d \
-main.d
+main.d \
+"MCAL/Dio driver/DIO.d"
 
 OUTPUT_FILE_PATH +=On-Demand\ Traffic\ Control.elf
 
@@ -92,6 +97,13 @@ App/app.o: ../App/app.c
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/Dio\ driver/DIO.o: ../MCAL/Dio\ driver/DIO.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
