@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.12)  12 AUG 2022 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.12)  12 AUG 2022 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,9 +892,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 173.
 
-[1] [2] [3] [4
-
-]
+[1] [2] [3] [4]
 Package hyperref Info: Option `pageanchor' set `true' on input line 176.
 
 Chapter 1.
@@ -915,6 +913,7 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
 
+
 ] [2
 
 ]
@@ -923,7 +922,7 @@ Chapter 2.
 
 ]
 Chapter 3.
-(group___service.tex
+(group___e_c_u_a_l.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 3.
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
@@ -935,33 +934,51 @@ File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 6.
 )
-(group__registers.tex) (group__port___a.tex
+(group___button__driver.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 7.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 7.
- [5]
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 33.
-
-Underfull \hbox (badness 10000) detected at line 33
-[][][]
- []
-
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 45.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 45
+(Font)              scaled to size 7.19995pt on input line 20.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 20
 .
+
 (C:\Users\ehab_\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-[6] [7] [8]) [9] [10
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 20.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 20.
 
-]
+[5]) (group___l_e_d.tex [6] [7] [8]) (group___m_c_a_l.tex) (group___d_i_o.tex
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+
+ []
+
+[11]) (group___m_c_u__port.tex [12] [13] [14]) (group__bit__math.tex
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+[15] [16] [17]) (group__data__types.tex [18]) (group___service.tex [19]
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+) (group__registers.tex) (group___i_o__registers.tex [20]
+Underfull \hbox (badness 10000) detected at line 17
+[][][]
+ []
+
+) (group__port__a.tex [21]) (group__port__b.tex [22]) (group__port__c.tex
+[23] [24]) (group__port__d.tex [25]) [26]
 Chapter 4.
-(app_8c.tex) (app_8h.tex) (app_8h_source.tex
+(app_8c.tex) (app_8c_source.tex
 Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
 []\T1/pcr/m/n/7 /**************************************************************
 *******************************************************************************
@@ -975,16 +992,43 @@ Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
 *******/[]  
  []
 
-) (app_8d.tex) (_button_8d.tex) (main_8d.tex) (_d_i_o_8d.tex) (_button_8c.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
+) (app_8h.tex) (app_8h_source.tex
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+) (app_8d.tex) (app_8d_source.tex) (_button_8d.tex) (_button_8d_source.tex
+[27
+
+]) (_l_e_d_8d.tex) (_l_e_d_8d_source.tex) (main_8d.tex) (main_8d_source.tex
+[28]) (_d_i_o_8d.tex) (_d_i_o_8d_source.tex) (_button_8c.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[11]
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 17.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 17.
+) (_button_8c_source.tex
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 6--6
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+[29]
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 10--10
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
 ) (_button_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
@@ -1004,9 +1048,67 @@ Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
 *******/[]  
  []
 
-[12]) (main_8c.tex
+
+Overfull \hbox (44.55553pt too wide) in paragraph at lines 19--19
+[]\T1/pcr/m/n/7 /**************************************************************
+*************************************************/[]  
+ []
+
+) (_l_e_d_8c.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
+ []
+
+[30]) (_l_e_d_8c_source.tex
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+) (_l_e_d_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+[31]) (_l_e_d_8h_source.tex
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+) (main_8c.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+) (main_8c_source.tex [32]
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 4--4
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 8--8
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
  []
 
 ) (_d_i_o_8c.tex
@@ -1014,9 +1116,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+) (_d_i_o_8c_source.tex
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
 
+
+Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*******/[]  
+ []
+
+[33] [34]
+Overfull \hbox (216.7554pt too wide) in paragraph at lines 93--93
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+***********/[]  
+ []
+
+[35]
+Overfull \hbox (216.7554pt too wide) in paragraph at lines 169--169
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+***********/[]  
+ []
+
+
+Overfull \hbox (216.7554pt too wide) in paragraph at lines 201--201
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+***********/[]  
+ []
+
+
+Overfull \hbox (216.7554pt too wide) in paragraph at lines 233--233
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+***********/[]  
  []
 
 ) (_d_i_o_8h.tex
@@ -1024,7 +1163,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
  []
 
-[16]
+[36]
 Underfull \hbox (badness 10000) detected at line 21
 [][][]
  []
@@ -1044,11 +1183,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
-
- []
-
 ) (_d_i_o_8h_source.tex
 Overfull \hbox (187.35542pt too wide) in paragraph at lines 5--5
 []\T1/pcr/m/n/7 /**************************************************************
@@ -1056,7 +1190,7 @@ Overfull \hbox (187.35542pt too wide) in paragraph at lines 5--5
 ****/[]  
  []
 
-) (_a_tmega32_port_8h.tex [19] [20] [21]) (_a_tmega32_port_8h_source.tex
+) (_a_tmega32_port_8h.tex [37]) (_a_tmega32_port_8h_source.tex
 Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
 []\T1/pcr/m/n/7 /**************************************************************
 *******************************************************************************
@@ -1070,7 +1204,14 @@ Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
 *******/[]  
  []
 
-[22]) (_bit_math_8h.tex [23]) (_bit_math_8h_source.tex
+[38]) (_bit_math_8h.tex) (_bit_math_8h_source.tex
+Overfull \hbox (191.55542pt too wide) in paragraph at lines 5--5
+[]\T1/pcr/m/n/7 /**************************************************************
+*******************************************************************************
+*****/[]  
+ []
+
+) (data_types_8h.tex) (data_types_8h_source.tex [39]
 Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
 []\T1/pcr/m/n/7 /**************************************************************
 *******************************************************************************
@@ -1084,50 +1225,37 @@ Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
 *******/[]  
  []
 
-) (data_types_8h.tex [24] [25]) (data_types_8h_source.tex
+) (_register_file_8h.tex) (_register_file_8h_source.tex
 Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
 []\T1/pcr/m/n/7 /**************************************************************
 *******************************************************************************
 *******/[]  
  []
 
-
+[40]
 Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
 []\T1/pcr/m/n/7 /**************************************************************
 *******************************************************************************
 *******/[]  
  []
 
-) (_register_file_8h.tex [26]) (_register_file_8h_source.tex
-Overfull \hbox (199.95541pt too wide) in paragraph at lines 5--5
-[]\T1/pcr/m/n/7 /**************************************************************
-*******************************************************************************
-*******/[]  
- []
+) [41] [42
+
+] (refman.ind [43
 
 
-Overfull \hbox (199.95541pt too wide) in paragraph at lines 9--9
-[]\T1/pcr/m/n/7 /**************************************************************
-*******************************************************************************
-*******/[]  
- []
-
-[27]) [28] (refman.ind [29
-
-
-
-] [30] [31]) (refman.aux)
+] [44] [45]) (refman.aux)
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: ED89E4604F4C0FEAA8AB67590ADC62F6;16610.
+(rerunfilecheck)             Checksum: 0E96F1462D20C74716BA1B9D9271C1FE;23247.
  ) 
 Here is how much of TeX's memory you used:
- 18448 strings out of 478338
- 312199 string characters out of 2836700
- 648036 words of memory out of 3000000
- 36217 multiletter control sequences out of 15000+600000
+ 19335 strings out of 478338
+ 334705 string characters out of 2836700
+ 651574 words of memory out of 3000000
+ 36368 multiletter control sequences out of 15000+600000
  526871 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,16n,117p,1108b,742s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,16n,117p,1115b,850s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/ehab_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/ehab_/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi1
 0.pfb><C:/Users/ehab_/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
@@ -1142,9 +1270,9 @@ al/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/ehab_/AppData/
 Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Users/ehab_/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/ehab_/A
 ppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (37 pages, 372545 bytes).
+Output written on refman.pdf (51 pages, 636814 bytes).
 PDF statistics:
- 1375 PDF objects out of 1440 (max. 8388607)
- 265 named destinations out of 1000 (max. 500000)
- 721 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2927 PDF objects out of 2984 (max. 8388607)
+ 937 named destinations out of 1000 (max. 500000)
+ 1041 words of extra memory for PDF output out of 10000 (max. 10000000)
 

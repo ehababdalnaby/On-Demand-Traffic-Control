@@ -4,14 +4,16 @@
 /*															File name: main.c																		*/
 /****************************************************************************************************************************************************/
 
-#include "./MCAL/Dio driver/DIO.h"
+#include "./ECUAL/LED driver/LED.h"
+#include <util/delay.h>
 
 int main(void)
 {
-	DIO_pinInit(PA0,Output);
+	ledInit(PA0);
 	while (1)
 	{
-		DIO_pinWrite(PA0,Low);
+		ledToggle(PA0);
+		_delay_ms(200);
 	}
 	return 0;
 }

@@ -1,324 +1,337 @@
 \begin{theindex}
 
-  \item {App/app.c}, \hyperpage{11}
-  \item {App/app.h}, \hyperpage{11}
-  \item {ATmega32Port.h}
-    \subitem {EN\_pinDirection\_t}, \hyperpage{20}
-    \subitem {EN\_pinErro\_t}, \hyperpage{21}
-    \subitem {EN\_pinNum\_t}, \hyperpage{21}
-    \subitem {EN\_pinState\_t}, \hyperpage{22}
-    \subitem {High}, \hyperpage{22}
-    \subitem {Input}, \hyperpage{21}
-    \subitem {Low}, \hyperpage{22}
-    \subitem {OK}, \hyperpage{21}
-    \subitem {Output}, \hyperpage{21}
-    \subitem {PA0}, \hyperpage{21}
-    \subitem {PA1}, \hyperpage{21}
-    \subitem {PA2}, \hyperpage{21}
-    \subitem {PA3}, \hyperpage{21}
-    \subitem {PA4}, \hyperpage{21}
-    \subitem {PA5}, \hyperpage{21}
-    \subitem {PA6}, \hyperpage{21}
-    \subitem {PA7}, \hyperpage{21}
-    \subitem {PB0}, \hyperpage{21}
-    \subitem {PB1}, \hyperpage{21}
-    \subitem {PB2}, \hyperpage{21}
-    \subitem {PB3}, \hyperpage{21}
-    \subitem {PB4}, \hyperpage{21}
-    \subitem {PB5}, \hyperpage{21}
-    \subitem {PB6}, \hyperpage{21}
-    \subitem {PB7}, \hyperpage{21}
-    \subitem {PC0}, \hyperpage{21}
-    \subitem {PC1}, \hyperpage{21}
-    \subitem {PC2}, \hyperpage{21}
-    \subitem {PC3}, \hyperpage{22}
-    \subitem {PC4}, \hyperpage{22}
-    \subitem {PC5}, \hyperpage{22}
-    \subitem {PC6}, \hyperpage{22}
-    \subitem {PC7}, \hyperpage{22}
-    \subitem {PD0}, \hyperpage{22}
-    \subitem {PD1}, \hyperpage{22}
-    \subitem {PD2}, \hyperpage{22}
-    \subitem {PD3}, \hyperpage{22}
-    \subitem {PD4}, \hyperpage{22}
-    \subitem {PD5}, \hyperpage{22}
-    \subitem {PD6}, \hyperpage{22}
-    \subitem {PD7}, \hyperpage{22}
-    \subitem {PORTA\_OFFSET}, \hyperpage{20}
-    \subitem {PORTB\_OFFSET}, \hyperpage{20}
-    \subitem {PORTC\_OFFSET}, \hyperpage{20}
-    \subitem {PORTD\_OFFSET}, \hyperpage{20}
-    \subitem {WRONG\_PIN\_DIR}, \hyperpage{21}
-    \subitem {WRONG\_PIN\_NUM}, \hyperpage{21}
-    \subitem {WRONG\_PIN\_STATE}, \hyperpage{21}
+  \item {App/app.c}, \hyperpage{27}
+  \item {App/app.h}, \hyperpage{27}
 
   \indexspace
 
-  \item {BitMath.h}
-    \subitem {clrBit}, \hyperpage{23}
-    \subitem {getBit}, \hyperpage{23}
-    \subitem {setBit}, \hyperpage{24}
-    \subitem {toggleBit}, \hyperpage{24}
-  \item {Button.c}
-    \subitem {buttonInit}, \hyperpage{12}
-  \item {Button.h}
-    \subitem {buttonInit}, \hyperpage{12}
+  \item {Bit math}, \hyperpage{15}
+    \subitem {clrBit}, \hyperpage{16}
+    \subitem {getBit}, \hyperpage{16}
+    \subitem {setBit}, \hyperpage{17}
+    \subitem {toggleBit}, \hyperpage{17}
+  \item {Button driver}, \hyperpage{5}
+    \subitem {buttonInit}, \hyperpage{5}
+    \subitem {buttonRead}, \hyperpage{6}
   \item {buttonInit}
-    \subitem {Button.c}, \hyperpage{12}
-    \subitem {Button.h}, \hyperpage{12}
+    \subitem {Button driver}, \hyperpage{5}
+  \item {buttonRead}
+    \subitem {Button driver}, \hyperpage{6}
 
   \indexspace
 
   \item {clrBit}
-    \subitem {BitMath.h}, \hyperpage{23}
+    \subitem {Bit math}, \hyperpage{16}
 
   \indexspace
 
-  \item {dataTypes.h}
-    \subitem {float128\_t}, \hyperpage{25}
-    \subitem {float32\_t}, \hyperpage{25}
-    \subitem {float64\_t}, \hyperpage{25}
-    \subitem {sint16\_t}, \hyperpage{25}
-    \subitem {sint32\_t}, \hyperpage{25}
-    \subitem {sint8\_t}, \hyperpage{25}
-    \subitem {uint16\_t}, \hyperpage{26}
-    \subitem {uint32\_t}, \hyperpage{26}
-    \subitem {uint8\_t}, \hyperpage{26}
   \item {DDRA}
-    \subitem {Port A registers}, \hyperpage{6}
+    \subitem {Port A registers}, \hyperpage{21}
   \item {DDRB}
-    \subitem {Port A registers}, \hyperpage{6}
+    \subitem {Port B registers}, \hyperpage{23}
   \item {DDRC}
-    \subitem {Port A registers}, \hyperpage{7}
+    \subitem {Port C registers}, \hyperpage{24}
   \item {DDRD}
-    \subitem {Port A registers}, \hyperpage{7}
-  \item {Debug/App/app.d}, \hyperpage{11}
-  \item {Debug/ECUAL/Button driver/Button.d}, \hyperpage{11}
-  \item {Debug/main.d}, \hyperpage{11}
-  \item {Debug/MCAL/Dio driver/DIO.d}, \hyperpage{11}
-  \item {DIO.c}
-    \subitem {DIO\_pinInit}, \hyperpage{14}
-    \subitem {DIO\_pinRead}, \hyperpage{14}
-    \subitem {DIO\_pinToggle}, \hyperpage{15}
-    \subitem {DIO\_pinWrite}, \hyperpage{15}
-  \item {DIO.h}
-    \subitem {DIO\_pinInit}, \hyperpage{17}
-    \subitem {DIO\_pinRead}, \hyperpage{17}
-    \subitem {DIO\_pinToggle}, \hyperpage{18}
-    \subitem {DIO\_pinWrite}, \hyperpage{18}
+    \subitem {Port D registers}, \hyperpage{25}
+  \item {Debug/App/app.d}, \hyperpage{28}
+  \item {Debug/ECUAL/Button driver/Button.d}, \hyperpage{28}
+  \item {Debug/ECUAL/LED driver/LED.d}, \hyperpage{28}
+  \item {Debug/main.d}, \hyperpage{29}
+  \item {Debug/MCAL/Dio driver/DIO.d}, \hyperpage{29}
+  \item {Definition of data types}, \hyperpage{18}
+    \subitem {float128\_t}, \hyperpage{18}
+    \subitem {float32\_t}, \hyperpage{18}
+    \subitem {float64\_t}, \hyperpage{18}
+    \subitem {sint16\_t}, \hyperpage{19}
+    \subitem {sint32\_t}, \hyperpage{19}
+    \subitem {sint8\_t}, \hyperpage{19}
+    \subitem {uint16\_t}, \hyperpage{19}
+    \subitem {uint32\_t}, \hyperpage{19}
+    \subitem {uint8\_t}, \hyperpage{20}
+  \item {DIO driver}, \hyperpage{9}
+    \subitem {DIO\_pinInit}, \hyperpage{10}
+    \subitem {DIO\_pinRead}, \hyperpage{10}
+    \subitem {DIO\_pinToggle}, \hyperpage{11}
+    \subitem {DIO\_pinWrite}, \hyperpage{11}
   \item {DIO\_pinInit}
-    \subitem {DIO.c}, \hyperpage{14}
-    \subitem {DIO.h}, \hyperpage{17}
+    \subitem {DIO driver}, \hyperpage{10}
   \item {DIO\_pinRead}
-    \subitem {DIO.c}, \hyperpage{14}
-    \subitem {DIO.h}, \hyperpage{17}
+    \subitem {DIO driver}, \hyperpage{10}
   \item {DIO\_pinToggle}
-    \subitem {DIO.c}, \hyperpage{15}
-    \subitem {DIO.h}, \hyperpage{18}
+    \subitem {DIO driver}, \hyperpage{11}
   \item {DIO\_pinWrite}
-    \subitem {DIO.c}, \hyperpage{15}
-    \subitem {DIO.h}, \hyperpage{18}
+    \subitem {DIO driver}, \hyperpage{11}
 
   \indexspace
 
-  \item {ECUAL/Button driver/Button.c}, \hyperpage{11}
-  \item {ECUAL/Button driver/Button.h}, \hyperpage{12, 13}
+  \item {ECUAL layer}, \hyperpage{5}
+  \item {ECUAL/Button driver/Button.c}, \hyperpage{29, 30}
+  \item {ECUAL/Button driver/Button.h}, \hyperpage{30}
+  \item {ECUAL/LED driver/LED.c}, \hyperpage{31}
+  \item {ECUAL/LED driver/LED.h}, \hyperpage{31, 32}
   \item {EN\_pinDirection\_t}
-    \subitem {ATmega32Port.h}, \hyperpage{20}
+    \subitem {MCU ports}, \hyperpage{13}
   \item {EN\_pinErro\_t}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {EN\_pinNum\_t}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {EN\_pinState\_t}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
 
   \indexspace
 
   \item {float128\_t}
-    \subitem {dataTypes.h}, \hyperpage{25}
+    \subitem {Definition of data types}, \hyperpage{18}
   \item {float32\_t}
-    \subitem {dataTypes.h}, \hyperpage{25}
+    \subitem {Definition of data types}, \hyperpage{18}
   \item {float64\_t}
-    \subitem {dataTypes.h}, \hyperpage{25}
+    \subitem {Definition of data types}, \hyperpage{18}
 
   \indexspace
 
   \item {getBit}
-    \subitem {BitMath.h}, \hyperpage{23}
+    \subitem {Bit math}, \hyperpage{16}
 
   \indexspace
 
   \item {High}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
 
   \indexspace
 
+  \item {I/O registers}, \hyperpage{21}
   \item {Input}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
 
   \indexspace
 
+  \item {LED driver}, \hyperpage{6}
+    \subitem {ledInit}, \hyperpage{7}
+    \subitem {ledOff}, \hyperpage{7}
+    \subitem {ledOn}, \hyperpage{8}
+    \subitem {ledToggle}, \hyperpage{8}
+  \item {ledInit}
+    \subitem {LED driver}, \hyperpage{7}
+  \item {ledOff}
+    \subitem {LED driver}, \hyperpage{7}
+  \item {ledOn}
+    \subitem {LED driver}, \hyperpage{8}
+  \item {ledToggle}
+    \subitem {LED driver}, \hyperpage{8}
   \item {Low}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
 
   \indexspace
 
   \item {main}
-    \subitem {main.c}, \hyperpage{13}
-  \item {main.c}, \hyperpage{13}
-    \subitem {main}, \hyperpage{13}
-  \item {MCAL/Dio driver/DIO.c}, \hyperpage{13}
-  \item {MCAL/Dio driver/DIO.h}, \hyperpage{16}, \hyperpage{19}
-  \item {MCU Registers}, \hyperpage{5}
+    \subitem {main.c}, \hyperpage{32}
+  \item {main.c}, \hyperpage{32}
+    \subitem {main}, \hyperpage{32}
+  \item {MCAL layer}, \hyperpage{9}
+  \item {MCAL/Dio driver/DIO.c}, \hyperpage{33, 34}
+  \item {MCAL/Dio driver/DIO.h}, \hyperpage{36, 37}
+  \item {MCU ports}, \hyperpage{12}
+    \subitem {EN\_pinDirection\_t}, \hyperpage{13}
+    \subitem {EN\_pinErro\_t}, \hyperpage{14}
+    \subitem {EN\_pinNum\_t}, \hyperpage{14}
+    \subitem {EN\_pinState\_t}, \hyperpage{15}
+    \subitem {High}, \hyperpage{15}
+    \subitem {Input}, \hyperpage{14}
+    \subitem {Low}, \hyperpage{15}
+    \subitem {OK}, \hyperpage{14}
+    \subitem {Output}, \hyperpage{14}
+    \subitem {PA0}, \hyperpage{14}
+    \subitem {PA1}, \hyperpage{14}
+    \subitem {PA2}, \hyperpage{14}
+    \subitem {PA3}, \hyperpage{14}
+    \subitem {PA4}, \hyperpage{14}
+    \subitem {PA5}, \hyperpage{14}
+    \subitem {PA6}, \hyperpage{14}
+    \subitem {PA7}, \hyperpage{14}
+    \subitem {PB0}, \hyperpage{14}
+    \subitem {PB1}, \hyperpage{14}
+    \subitem {PB2}, \hyperpage{14}
+    \subitem {PB3}, \hyperpage{14}
+    \subitem {PB4}, \hyperpage{14}
+    \subitem {PB5}, \hyperpage{14}
+    \subitem {PB6}, \hyperpage{14}
+    \subitem {PB7}, \hyperpage{14}
+    \subitem {PC0}, \hyperpage{15}
+    \subitem {PC1}, \hyperpage{15}
+    \subitem {PC2}, \hyperpage{15}
+    \subitem {PC3}, \hyperpage{15}
+    \subitem {PC4}, \hyperpage{15}
+    \subitem {PC5}, \hyperpage{15}
+    \subitem {PC6}, \hyperpage{15}
+    \subitem {PC7}, \hyperpage{15}
+    \subitem {PD0}, \hyperpage{15}
+    \subitem {PD1}, \hyperpage{15}
+    \subitem {PD2}, \hyperpage{15}
+    \subitem {PD3}, \hyperpage{15}
+    \subitem {PD4}, \hyperpage{15}
+    \subitem {PD5}, \hyperpage{15}
+    \subitem {PD6}, \hyperpage{15}
+    \subitem {PD7}, \hyperpage{15}
+    \subitem {PORTA\_OFFSET}, \hyperpage{13}
+    \subitem {PORTB\_OFFSET}, \hyperpage{13}
+    \subitem {PORTC\_OFFSET}, \hyperpage{13}
+    \subitem {PORTD\_OFFSET}, \hyperpage{13}
+    \subitem {WRONG\_PIN\_DIR}, \hyperpage{14}
+    \subitem {WRONG\_PIN\_NUM}, \hyperpage{14}
+    \subitem {WRONG\_PIN\_STATE}, \hyperpage{14}
+  \item {MCU Registers}, \hyperpage{20}
 
   \indexspace
 
   \item {OK}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {Output}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
 
   \indexspace
 
   \item {PA0}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA1}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA2}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA3}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA4}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA5}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA6}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PA7}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB0}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB1}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB2}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB3}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB4}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB5}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB6}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PB7}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {PC0}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC1}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC2}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC3}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC4}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC5}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC6}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PC7}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD0}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD1}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD2}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD3}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD4}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD5}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD6}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PD7}
-    \subitem {ATmega32Port.h}, \hyperpage{22}
+    \subitem {MCU ports}, \hyperpage{15}
   \item {PINA}
-    \subitem {Port A registers}, \hyperpage{7}
+    \subitem {Port A registers}, \hyperpage{22}
   \item {PINB}
-    \subitem {Port A registers}, \hyperpage{7}
+    \subitem {Port B registers}, \hyperpage{23}
   \item {PINC}
-    \subitem {Port A registers}, \hyperpage{8}
+    \subitem {Port C registers}, \hyperpage{24}
   \item {PIND}
-    \subitem {Port A registers}, \hyperpage{8}
-  \item {Port A registers}, \hyperpage{5}
-    \subitem {DDRA}, \hyperpage{6}
-    \subitem {DDRB}, \hyperpage{6}
-    \subitem {DDRC}, \hyperpage{7}
-    \subitem {DDRD}, \hyperpage{7}
-    \subitem {PINA}, \hyperpage{7}
-    \subitem {PINB}, \hyperpage{7}
-    \subitem {PINC}, \hyperpage{8}
-    \subitem {PIND}, \hyperpage{8}
-    \subitem {PORTA}, \hyperpage{8}
-    \subitem {PORTB}, \hyperpage{8}
-    \subitem {PORTC}, \hyperpage{9}
-    \subitem {PORTD}, \hyperpage{9}
+    \subitem {Port D registers}, \hyperpage{26}
+  \item {Port A registers}, \hyperpage{21}
+    \subitem {DDRA}, \hyperpage{21}
+    \subitem {PINA}, \hyperpage{22}
+    \subitem {PORTA}, \hyperpage{22}
+  \item {Port B registers}, \hyperpage{23}
+    \subitem {DDRB}, \hyperpage{23}
+    \subitem {PINB}, \hyperpage{23}
+    \subitem {PORTB}, \hyperpage{23}
+  \item {Port C registers}, \hyperpage{24}
+    \subitem {DDRC}, \hyperpage{24}
+    \subitem {PINC}, \hyperpage{24}
+    \subitem {PORTC}, \hyperpage{25}
+  \item {Port D registers}, \hyperpage{25}
+    \subitem {DDRD}, \hyperpage{25}
+    \subitem {PIND}, \hyperpage{26}
+    \subitem {PORTD}, \hyperpage{26}
   \item {PORTA}
-    \subitem {Port A registers}, \hyperpage{8}
+    \subitem {Port A registers}, \hyperpage{22}
   \item {PORTA\_OFFSET}
-    \subitem {ATmega32Port.h}, \hyperpage{20}
+    \subitem {MCU ports}, \hyperpage{13}
   \item {PORTB}
-    \subitem {Port A registers}, \hyperpage{8}
+    \subitem {Port B registers}, \hyperpage{23}
   \item {PORTB\_OFFSET}
-    \subitem {ATmega32Port.h}, \hyperpage{20}
+    \subitem {MCU ports}, \hyperpage{13}
   \item {PORTC}
-    \subitem {Port A registers}, \hyperpage{9}
+    \subitem {Port C registers}, \hyperpage{25}
   \item {PORTC\_OFFSET}
-    \subitem {ATmega32Port.h}, \hyperpage{20}
+    \subitem {MCU ports}, \hyperpage{13}
   \item {PORTD}
-    \subitem {Port A registers}, \hyperpage{9}
+    \subitem {Port D registers}, \hyperpage{26}
   \item {PORTD\_OFFSET}
-    \subitem {ATmega32Port.h}, \hyperpage{20}
+    \subitem {MCU ports}, \hyperpage{13}
 
   \indexspace
 
-  \item {Service layer}, \hyperpage{5}
-  \item {Service/ATmega32Port.h}, \hyperpage{19}, \hyperpage{22}
-  \item {Service/BitMath.h}, \hyperpage{23, 24}
-  \item {Service/dataTypes.h}, \hyperpage{25, 26}
-  \item {Service/RegisterFile.h}, \hyperpage{27}
+  \item {Service layer}, \hyperpage{20}
+  \item {Service/ATmega32Port.h}, \hyperpage{37, 38}
+  \item {Service/BitMath.h}, \hyperpage{39}
+  \item {Service/dataTypes.h}, \hyperpage{39, 40}
+  \item {Service/RegisterFile.h}, \hyperpage{40, 41}
   \item {setBit}
-    \subitem {BitMath.h}, \hyperpage{24}
+    \subitem {Bit math}, \hyperpage{17}
   \item {sint16\_t}
-    \subitem {dataTypes.h}, \hyperpage{25}
+    \subitem {Definition of data types}, \hyperpage{19}
   \item {sint32\_t}
-    \subitem {dataTypes.h}, \hyperpage{25}
+    \subitem {Definition of data types}, \hyperpage{19}
   \item {sint8\_t}
-    \subitem {dataTypes.h}, \hyperpage{25}
+    \subitem {Definition of data types}, \hyperpage{19}
 
   \indexspace
 
   \item {toggleBit}
-    \subitem {BitMath.h}, \hyperpage{24}
+    \subitem {Bit math}, \hyperpage{17}
 
   \indexspace
 
   \item {uint16\_t}
-    \subitem {dataTypes.h}, \hyperpage{26}
+    \subitem {Definition of data types}, \hyperpage{19}
   \item {uint32\_t}
-    \subitem {dataTypes.h}, \hyperpage{26}
+    \subitem {Definition of data types}, \hyperpage{19}
   \item {uint8\_t}
-    \subitem {dataTypes.h}, \hyperpage{26}
+    \subitem {Definition of data types}, \hyperpage{20}
 
   \indexspace
 
   \item {WRONG\_PIN\_DIR}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {WRONG\_PIN\_NUM}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
   \item {WRONG\_PIN\_STATE}
-    \subitem {ATmega32Port.h}, \hyperpage{21}
+    \subitem {MCU ports}, \hyperpage{14}
 
 \end{theindex}

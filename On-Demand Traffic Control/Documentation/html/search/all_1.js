@@ -7,5 +7,5 @@ var searchData=
   ['button_2ed_4',['Button.d',['../_button_8d.html',1,'']]],
   ['button_2eh_5',['Button.h',['../_button_8h.html',1,'']]],
   ['buttoninit_6',['buttonInit',['../group___button__driver.html#ga82cb613f80a20f05f9d096ac2886a96a',1,'buttonInit(EN_pinNum_t buttonPin):&#160;Button.c'],['../group___button__driver.html#ga82cb613f80a20f05f9d096ac2886a96a',1,'buttonInit(EN_pinNum_t buttonPin):&#160;Button.c']]],
-  ['buttonread_7',['buttonRead',['../group___button__driver.html#gad7735668cfe3874834b8b542947cf516',1,'Button.h']]]
+  ['buttonread_7',['buttonRead',['../group___button__driver.html#gad7735668cfe3874834b8b542947cf516',1,'buttonRead(EN_pinNum_t buttonPin, EN_pinState_t *pinState):&#160;Button.c'],['../group___button__driver.html#gad7735668cfe3874834b8b542947cf516',1,'buttonRead(EN_pinNum_t buttonPin, EN_pinState_t *pinState):&#160;Button.c']]]
 ];

@@ -7,8 +7,9 @@
 #ifndef BUTTON_H_
 #define BUTTON_H_
 
-#include "../../MCAL/Dio driver/DIO.h"
 #include "../../Service/ATmega32Port.h"
+#include "../../MCAL/Dio driver/DIO.h"
+
 
 /**
 *\defgroup ECUAL ECUAL layer
@@ -30,7 +31,7 @@
 	*@param[out] none no output arguments
 
 	*\retval WRONG_PIN_NUM if the pinNum is wrong.
-	*\retval OK if the pinNum and the pinDirection are correct.
+	*\retval OK if the pinNum is correct.
 */
 EN_pinErro_t buttonInit(EN_pinNum_t buttonPin);
 /***************************************************************************************************************/

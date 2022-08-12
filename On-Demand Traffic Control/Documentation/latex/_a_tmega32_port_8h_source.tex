@@ -2,77 +2,77 @@
 \label{_a_tmega32_port_8h_source}\index{Service/ATmega32Port.h@{Service/ATmega32Port.h}}
 \mbox{\hyperlink{_a_tmega32_port_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{comment}{/****************************************************************************************************************************************************/}}
-\DoxyCodeLine{2 \textcolor{comment}{/*                                                          Author   : Ehab Omara                                                                   */}}
-\DoxyCodeLine{3 \textcolor{comment}{/*                                                          Date     : 8/10/2022 3:49:55 PM                                                         */}}
-\DoxyCodeLine{4 \textcolor{comment}{/*                                                          File name: ATmega32Port.h                                                               */}}
-\DoxyCodeLine{5 \textcolor{comment}{/****************************************************************************************************************************************************/}}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef ATMEGA32PORT\_H\_}}
-\DoxyCodeLine{8 \textcolor{preprocessor}{\#define ATMEGA32PORT\_H\_}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10 }
-\DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
-\DoxyCodeLine{23 \{}
-\DoxyCodeLine{24     \textcolor{comment}{/*PORTA pins*/}}
-\DoxyCodeLine{25     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a09c5d44fd6e7ee5daddd08009b04ac38}{PA0}},}
-\DoxyCodeLine{26     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a201be1986c3153a2eb2de811e1700f0e}{PA1}},}
-\DoxyCodeLine{27     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ada41486a507439d5f7944cb482608272}{PA2}},}
-\DoxyCodeLine{28     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a9d22824e6f426a415722fef30c17bb23}{PA3}},}
-\DoxyCodeLine{29     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a836506b72e125f74f67e68b4797113e3}{PA4}},}
-\DoxyCodeLine{30     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617abbc68c892c3b62e32a645e24b2c3f431}{PA5}},}
-\DoxyCodeLine{31     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae3a4724611297f7aaf05b3df96500e50}{PA6}},}
-\DoxyCodeLine{32     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a854a1d26d1740bfa815bf76f027e1c90}{PA7}},}
-\DoxyCodeLine{33     \textcolor{comment}{/*PORTB pins*/}}
-\DoxyCodeLine{34     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617addf87f545e0fe02b1d66e61cda646572}{PB0}},}
-\DoxyCodeLine{35     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a137b9b5f8c427f5d138faaa7ba3d8528}{PB1}},}
-\DoxyCodeLine{36     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae0a3351879d6280e2ccc570b1ff50773}{PB2}},}
-\DoxyCodeLine{37     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a35b5c025de3b0d725eef8468eb468fc5}{PB3}},}
-\DoxyCodeLine{38     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a9bdcd1e11a76de8b559e4fe7a7c88ffe}{PB4}},}
-\DoxyCodeLine{39     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a2f98730e36b3418068afb18d6b8b049d}{PB5}},}
-\DoxyCodeLine{40     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a719b788556c95b8f637797cd1779eb94}{PB6}},}
-\DoxyCodeLine{41     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a81ef9abf013c4af2ef0c863e2ebb8fba}{PB7}},}
-\DoxyCodeLine{42     \textcolor{comment}{/*PORTC pins*/}}
-\DoxyCodeLine{43     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a0b1e23da65bbef294a96f6e241fe3847}{PC0}},}
-\DoxyCodeLine{44     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a666a45aaab1dece0a062debad9ce22d9}{PC1}},}
-\DoxyCodeLine{45     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a6c7ab61d54ae3d66dd7685f398b3ea74}{PC2}},}
-\DoxyCodeLine{46     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a50342dfa1631d15b5511276629cea8f4}{PC3}},}
-\DoxyCodeLine{47     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4fa6d9da8c57f1bc272b0295748a727b}{PC4}},}
-\DoxyCodeLine{48     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4493d2f747a631748a798d226b4c95b1}{PC5}},}
-\DoxyCodeLine{49     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a90af524f20137759a0bb0e126aefdb3e}{PC6}},}
-\DoxyCodeLine{50     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617afb268f9eb312a356caadc0f752b9210e}{PC7}},}
-\DoxyCodeLine{51     \textcolor{comment}{/*PORTD pins*/}}
-\DoxyCodeLine{52     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617af8af1f184f360c581ec821621299e7ce}{PD0}},}
-\DoxyCodeLine{53     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a754088268ad811f0ed29d1c28d45c778}{PD1}},}
-\DoxyCodeLine{54     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae9fbf755a9cf8a27ac44df4e8a2cacfa}{PD2}},}
-\DoxyCodeLine{55     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a268895c87430e17f537e7164bf7977df}{PD3}},}
-\DoxyCodeLine{56     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a08e158331391dc2e3a8a919f5a8254a1}{PD4}},}
-\DoxyCodeLine{57     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a225c80066ae5c68e811c745fea54387f}{PD5}},}
-\DoxyCodeLine{58     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617aa3436c50879b046d3e608c6934ff8aa5}{PD6}},}
-\DoxyCodeLine{59     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4280067ef77e780f290acd044a9bada4}{PD7}} }
-\DoxyCodeLine{60 \}\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\_pinNum\_t}};}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62 \textcolor{preprocessor}{\#define PORTA\_OFFSET    0  }}
-\DoxyCodeLine{63 \textcolor{preprocessor}{\#define PORTB\_OFFSET    8  }}
-\DoxyCodeLine{64 \textcolor{preprocessor}{\#define PORTC\_OFFSET    16 }}
-\DoxyCodeLine{65 \textcolor{preprocessor}{\#define PORTD\_OFFSET    24 }}
-\DoxyCodeLine{67 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
-\DoxyCodeLine{68 \{}
-\DoxyCodeLine{69     \mbox{\hyperlink{group___m_c_u__port_gga408b1d0fd39c90c802f7bc02520fd609a7a352a3dd2accc1dd65a4538c3754ee8}{Low}},}
-\DoxyCodeLine{70     \mbox{\hyperlink{group___m_c_u__port_gga408b1d0fd39c90c802f7bc02520fd609a24c57acd029e3f96fede49402ea01e6f}{High}}}
-\DoxyCodeLine{71 \}\mbox{\hyperlink{group___m_c_u__port_ga408b1d0fd39c90c802f7bc02520fd609}{EN\_pinState\_t}};}
-\DoxyCodeLine{72 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
-\DoxyCodeLine{73 \{}
-\DoxyCodeLine{74     \mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8abd62348391d75c7fc8c130ea346cba29}{Input}}, }
-\DoxyCodeLine{75     \mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8ae18e94624772459b0083ef7cc362fc96}{Output}} }
-\DoxyCodeLine{76 \}\mbox{\hyperlink{group___m_c_u__port_gacf2b446189b353f66263a1cfc82f45b8}{EN\_pinDirection\_t}};}
-\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
-\DoxyCodeLine{78 \{}
-\DoxyCodeLine{79     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}},              }
-\DoxyCodeLine{80     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da9aa066b39bb34e50f9c20168b20f3fbf}{WRONG\_PIN\_NUM}}, }
-\DoxyCodeLine{81     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30dab71eeaf6b206c7c7d0c6036c19234cdc}{WRONG\_PIN\_DIR}}, }
-\DoxyCodeLine{82     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da2be3eba60611e93b056cccc702959c11}{WRONG\_PIN\_STATE}}}
-\DoxyCodeLine{83 \}\mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\_pinErro\_t}};}
-\DoxyCodeLine{87 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ATMEGA32PORT\_H\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00001}00001 \textcolor{comment}{/****************************************************************************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00002}00002 \textcolor{comment}{/*                                                          Author   : Ehab Omara                                                                   */}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00003}00003 \textcolor{comment}{/*                                                          Date     : 8/10/2022 3:49:55 PM                                                         */}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00004}00004 \textcolor{comment}{/*                                                          File name: ATmega32Port.h                                                               */}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00005}00005 \textcolor{comment}{/****************************************************************************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00007}00007 \textcolor{preprocessor}{\#ifndef ATMEGA32PORT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00008}00008 \textcolor{preprocessor}{\#define ATMEGA32PORT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00022}\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{00022}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00024}00024     \textcolor{comment}{/*PORTA pins*/}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00025}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a09c5d44fd6e7ee5daddd08009b04ac38}{00025}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a09c5d44fd6e7ee5daddd08009b04ac38}{PA0}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00026}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a201be1986c3153a2eb2de811e1700f0e}{00026}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a201be1986c3153a2eb2de811e1700f0e}{PA1}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00027}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ada41486a507439d5f7944cb482608272}{00027}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ada41486a507439d5f7944cb482608272}{PA2}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00028}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a9d22824e6f426a415722fef30c17bb23}{00028}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a9d22824e6f426a415722fef30c17bb23}{PA3}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00029}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a836506b72e125f74f67e68b4797113e3}{00029}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a836506b72e125f74f67e68b4797113e3}{PA4}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00030}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617abbc68c892c3b62e32a645e24b2c3f431}{00030}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617abbc68c892c3b62e32a645e24b2c3f431}{PA5}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00031}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae3a4724611297f7aaf05b3df96500e50}{00031}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae3a4724611297f7aaf05b3df96500e50}{PA6}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00032}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a854a1d26d1740bfa815bf76f027e1c90}{00032}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a854a1d26d1740bfa815bf76f027e1c90}{PA7}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00033}00033     \textcolor{comment}{/*PORTB pins*/}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00034}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617addf87f545e0fe02b1d66e61cda646572}{00034}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617addf87f545e0fe02b1d66e61cda646572}{PB0}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00035}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a137b9b5f8c427f5d138faaa7ba3d8528}{00035}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a137b9b5f8c427f5d138faaa7ba3d8528}{PB1}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00036}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae0a3351879d6280e2ccc570b1ff50773}{00036}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae0a3351879d6280e2ccc570b1ff50773}{PB2}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00037}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a35b5c025de3b0d725eef8468eb468fc5}{00037}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a35b5c025de3b0d725eef8468eb468fc5}{PB3}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00038}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a9bdcd1e11a76de8b559e4fe7a7c88ffe}{00038}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a9bdcd1e11a76de8b559e4fe7a7c88ffe}{PB4}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00039}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a2f98730e36b3418068afb18d6b8b049d}{00039}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a2f98730e36b3418068afb18d6b8b049d}{PB5}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00040}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a719b788556c95b8f637797cd1779eb94}{00040}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a719b788556c95b8f637797cd1779eb94}{PB6}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00041}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a81ef9abf013c4af2ef0c863e2ebb8fba}{00041}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a81ef9abf013c4af2ef0c863e2ebb8fba}{PB7}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00042}00042     \textcolor{comment}{/*PORTC pins*/}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00043}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a0b1e23da65bbef294a96f6e241fe3847}{00043}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a0b1e23da65bbef294a96f6e241fe3847}{PC0}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00044}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a666a45aaab1dece0a062debad9ce22d9}{00044}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a666a45aaab1dece0a062debad9ce22d9}{PC1}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00045}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a6c7ab61d54ae3d66dd7685f398b3ea74}{00045}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a6c7ab61d54ae3d66dd7685f398b3ea74}{PC2}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00046}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a50342dfa1631d15b5511276629cea8f4}{00046}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a50342dfa1631d15b5511276629cea8f4}{PC3}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00047}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4fa6d9da8c57f1bc272b0295748a727b}{00047}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4fa6d9da8c57f1bc272b0295748a727b}{PC4}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00048}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4493d2f747a631748a798d226b4c95b1}{00048}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4493d2f747a631748a798d226b4c95b1}{PC5}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00049}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a90af524f20137759a0bb0e126aefdb3e}{00049}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a90af524f20137759a0bb0e126aefdb3e}{PC6}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00050}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617afb268f9eb312a356caadc0f752b9210e}{00050}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617afb268f9eb312a356caadc0f752b9210e}{PC7}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00051}00051     \textcolor{comment}{/*PORTD pins*/}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00052}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617af8af1f184f360c581ec821621299e7ce}{00052}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617af8af1f184f360c581ec821621299e7ce}{PD0}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00053}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a754088268ad811f0ed29d1c28d45c778}{00053}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a754088268ad811f0ed29d1c28d45c778}{PD1}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00054}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae9fbf755a9cf8a27ac44df4e8a2cacfa}{00054}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae9fbf755a9cf8a27ac44df4e8a2cacfa}{PD2}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00055}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a268895c87430e17f537e7164bf7977df}{00055}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a268895c87430e17f537e7164bf7977df}{PD3}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00056}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a08e158331391dc2e3a8a919f5a8254a1}{00056}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a08e158331391dc2e3a8a919f5a8254a1}{PD4}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00057}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a225c80066ae5c68e811c745fea54387f}{00057}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a225c80066ae5c68e811c745fea54387f}{PD5}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00058}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617aa3436c50879b046d3e608c6934ff8aa5}{00058}}     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617aa3436c50879b046d3e608c6934ff8aa5}{PD6}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00059}00059     \mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4280067ef77e780f290acd044a9bada4}{PD7}} }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00060}\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a4280067ef77e780f290acd044a9bada4}{00060}} \}\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\_pinNum\_t}};}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00062}\mbox{\hyperlink{group___m_c_u__port_ga0248668121dd380d3c31863b085c19ad}{00062}} \textcolor{preprocessor}{\#define PORTA\_OFFSET    0  }}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00063}\mbox{\hyperlink{group___m_c_u__port_gaeacd75a51e086c50be1d05b49ac87fd1}{00063}} \textcolor{preprocessor}{\#define PORTB\_OFFSET    8  }}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00064}\mbox{\hyperlink{group___m_c_u__port_ga616d724a8f651a7b5109c628d14298c9}{00064}} \textcolor{preprocessor}{\#define PORTC\_OFFSET    16 }}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00065}\mbox{\hyperlink{group___m_c_u__port_ga3f94220369581f21bc702653d1da7cb3}{00065}} \textcolor{preprocessor}{\#define PORTD\_OFFSET    24 }}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00067}\mbox{\hyperlink{group___m_c_u__port_ga408b1d0fd39c90c802f7bc02520fd609}{00067}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00069}\mbox{\hyperlink{group___m_c_u__port_gga408b1d0fd39c90c802f7bc02520fd609a7a352a3dd2accc1dd65a4538c3754ee8}{00069}}     \mbox{\hyperlink{group___m_c_u__port_gga408b1d0fd39c90c802f7bc02520fd609a7a352a3dd2accc1dd65a4538c3754ee8}{Low}},}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00070}00070     \mbox{\hyperlink{group___m_c_u__port_gga408b1d0fd39c90c802f7bc02520fd609a24c57acd029e3f96fede49402ea01e6f}{High}}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00071}\mbox{\hyperlink{group___m_c_u__port_gga408b1d0fd39c90c802f7bc02520fd609a24c57acd029e3f96fede49402ea01e6f}{00071}} \}\mbox{\hyperlink{group___m_c_u__port_ga408b1d0fd39c90c802f7bc02520fd609}{EN\_pinState\_t}};}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00072}\mbox{\hyperlink{group___m_c_u__port_gacf2b446189b353f66263a1cfc82f45b8}{00072}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00073}00073 \{}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00074}\mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8abd62348391d75c7fc8c130ea346cba29}{00074}}     \mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8abd62348391d75c7fc8c130ea346cba29}{Input}}, }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00075}00075     \mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8ae18e94624772459b0083ef7cc362fc96}{Output}} }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00076}\mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8ae18e94624772459b0083ef7cc362fc96}{00076}} \}\mbox{\hyperlink{group___m_c_u__port_gacf2b446189b353f66263a1cfc82f45b8}{EN\_pinDirection\_t}};}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00077}\mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{00077}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00078}00078 \{}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00079}\mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da2bc49ec37d6a5715dd23e85f1ff5bb59}{00079}}     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}},              }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00080}\mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da9aa066b39bb34e50f9c20168b20f3fbf}{00080}}     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da9aa066b39bb34e50f9c20168b20f3fbf}{WRONG\_PIN\_NUM}}, }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00081}\mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30dab71eeaf6b206c7c7d0c6036c19234cdc}{00081}}     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30dab71eeaf6b206c7c7d0c6036c19234cdc}{WRONG\_PIN\_DIR}}, }
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00082}00082     \mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da2be3eba60611e93b056cccc702959c11}{WRONG\_PIN\_STATE}}}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00083}\mbox{\hyperlink{group___m_c_u__port_ggaa69f82456b0dae23d13eb3fec723b30da2be3eba60611e93b056cccc702959c11}{00083}} \}\mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\_pinErro\_t}};}
+\DoxyCodeLine{\Hypertarget{_a_tmega32_port_8h_source_l00087}00087 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* ATMEGA32PORT\_H\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

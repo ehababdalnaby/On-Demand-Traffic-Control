@@ -3,29 +3,29 @@ On-Demand Traffic Control.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000002e2  00000000  00000000  00000054  2**1
+  0 .text         00000250  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000336  2**0
+  1 .data         00000000  00800060  00800060  000002a4  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000336  2**0
+  2 .comment      00000030  00000000  00000000  000002a4  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000368  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002d4  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000058  00000000  00000000  000003a4  2**0
+  4 .debug_aranges 00000090  00000000  00000000  00000310  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000009a4  00000000  00000000  000003fc  2**0
+  5 .debug_info   00000cd0  00000000  00000000  000003a0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000600  00000000  00000000  00000da0  2**0
+  6 .debug_abbrev 00000718  00000000  00000000  00001070  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000004d5  00000000  00000000  000013a0  2**0
+  7 .debug_line   000006a3  00000000  00000000  00001788  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000078  00000000  00000000  00001878  2**2
+  8 .debug_frame  000000cc  00000000  00000000  00001e2c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000403  00000000  00000000  000018f0  2**0
+  9 .debug_str    00000491  00000000  00000000  00001ef8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000005f2  00000000  00000000  00001cf3  2**0
+ 10 .debug_loc    00000676  00000000  00000000  00002389  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000038  00000000  00000000  000022e5  2**0
+ 11 .debug_ranges 00000060  00000000  00000000  000029ff  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -60,656 +60,357 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
-  64:	0c 94 6f 01 	jmp	0x2de	; 0x2de <_exit>
+  60:	0e 94 3d 00 	call	0x7a	; 0x7a <main>
+  64:	0c 94 26 01 	jmp	0x24c	; 0x24c <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-0000006c <main>:
+0000006c <ledInit>:
+}
+/*********************************************************************************/
+EN_pinErro_t ledOff(EN_pinNum_t ledPin)
+{
+	return DIO_pinWrite(ledPin,Low);
+}
+  6c:	61 e0       	ldi	r22, 0x01	; 1
+  6e:	0e 94 4a 00 	call	0x94	; 0x94 <DIO_pinInit>
+  72:	08 95       	ret
 
-#include "./MCAL/Dio driver/DIO.h"
+00000074 <ledToggle>:
+/*********************************************************************************/
+EN_pinNum_t ledToggle(EN_pinNum_t ledPin)
+{
+	return DIO_pinToggle(ledPin);
+  74:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <DIO_pinToggle>
+  78:	08 95       	ret
+
+0000007a <main>:
+#include "./ECUAL/LED driver/LED.h"
+#include <util/delay.h>
 
 int main(void)
 {
-	DIO_pinInit(PA0,Output);
-  6c:	61 e0       	ldi	r22, 0x01	; 1
-  6e:	80 e0       	ldi	r24, 0x00	; 0
-  70:	0e 94 3f 00 	call	0x7e	; 0x7e <DIO_pinInit>
+	ledInit(PA0);
+  7a:	80 e0       	ldi	r24, 0x00	; 0
+  7c:	0e 94 36 00 	call	0x6c	; 0x6c <ledInit>
 	while (1)
 	{
-		DIO_pinWrite(PA0,Low);
-  74:	60 e0       	ldi	r22, 0x00	; 0
-  76:	80 e0       	ldi	r24, 0x00	; 0
-  78:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <DIO_pinWrite>
-  7c:	fb cf       	rjmp	.-10     	; 0x74 <main+0x8>
+		ledToggle(PA0);
+  80:	80 e0       	ldi	r24, 0x00	; 0
+  82:	0e 94 3a 00 	call	0x74	; 0x74 <ledToggle>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
 
-0000007e <DIO_pinInit>:
+	__builtin_avr_delay_cycles(__ticks_dc);
+  86:	8f e4       	ldi	r24, 0x4F	; 79
+  88:	93 ec       	ldi	r25, 0xC3	; 195
+  8a:	01 97       	sbiw	r24, 0x01	; 1
+  8c:	f1 f7       	brne	.-4      	; 0x8a <main+0x10>
+  8e:	00 c0       	rjmp	.+0      	; 0x90 <main+0x16>
+  90:	00 00       	nop
+  92:	f6 cf       	rjmp	.-20     	; 0x80 <main+0x6>
 
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
+00000094 <DIO_pinInit>:
+	else
+	{
+		error = WRONG_PIN_NUM;
+	}
+	return error;
+}
+  94:	88 30       	cpi	r24, 0x08	; 8
+  96:	08 f5       	brcc	.+66     	; 0xda <DIO_pinInit+0x46>
+  98:	61 30       	cpi	r22, 0x01	; 1
+  9a:	71 f4       	brne	.+28     	; 0xb8 <DIO_pinInit+0x24>
+  9c:	4a b3       	in	r20, 0x1a	; 26
+  9e:	21 e0       	ldi	r18, 0x01	; 1
+  a0:	30 e0       	ldi	r19, 0x00	; 0
+  a2:	b9 01       	movw	r22, r18
+  a4:	02 c0       	rjmp	.+4      	; 0xaa <DIO_pinInit+0x16>
+  a6:	66 0f       	add	r22, r22
+  a8:	77 1f       	adc	r23, r23
+  aa:	8a 95       	dec	r24
+  ac:	e2 f7       	brpl	.-8      	; 0xa6 <DIO_pinInit+0x12>
+  ae:	cb 01       	movw	r24, r22
+  b0:	84 2b       	or	r24, r20
+  b2:	8a bb       	out	0x1a, r24	; 26
+  b4:	80 e0       	ldi	r24, 0x00	; 0
+  b6:	08 95       	ret
+  b8:	61 11       	cpse	r22, r1
+  ba:	7b c0       	rjmp	.+246    	; 0x1b2 <DIO_pinInit+0x11e>
+  bc:	4a b3       	in	r20, 0x1a	; 26
+  be:	21 e0       	ldi	r18, 0x01	; 1
+  c0:	30 e0       	ldi	r19, 0x00	; 0
+  c2:	b9 01       	movw	r22, r18
+  c4:	02 c0       	rjmp	.+4      	; 0xca <DIO_pinInit+0x36>
+  c6:	66 0f       	add	r22, r22
+  c8:	77 1f       	adc	r23, r23
+  ca:	8a 95       	dec	r24
+  cc:	e2 f7       	brpl	.-8      	; 0xc6 <DIO_pinInit+0x32>
+  ce:	cb 01       	movw	r24, r22
+  d0:	80 95       	com	r24
+  d2:	84 23       	and	r24, r20
+  d4:	8a bb       	out	0x1a, r24	; 26
+  d6:	80 e0       	ldi	r24, 0x00	; 0
+  d8:	08 95       	ret
+  da:	80 31       	cpi	r24, 0x10	; 16
+  dc:	10 f5       	brcc	.+68     	; 0x122 <DIO_pinInit+0x8e>
+  de:	88 50       	subi	r24, 0x08	; 8
+  e0:	61 30       	cpi	r22, 0x01	; 1
+  e2:	71 f4       	brne	.+28     	; 0x100 <DIO_pinInit+0x6c>
+  e4:	47 b3       	in	r20, 0x17	; 23
+  e6:	21 e0       	ldi	r18, 0x01	; 1
+  e8:	30 e0       	ldi	r19, 0x00	; 0
+  ea:	b9 01       	movw	r22, r18
+  ec:	02 c0       	rjmp	.+4      	; 0xf2 <DIO_pinInit+0x5e>
+  ee:	66 0f       	add	r22, r22
+  f0:	77 1f       	adc	r23, r23
+  f2:	8a 95       	dec	r24
+  f4:	e2 f7       	brpl	.-8      	; 0xee <DIO_pinInit+0x5a>
+  f6:	cb 01       	movw	r24, r22
+  f8:	84 2b       	or	r24, r20
+  fa:	87 bb       	out	0x17, r24	; 23
+  fc:	80 e0       	ldi	r24, 0x00	; 0
+  fe:	08 95       	ret
+ 100:	61 11       	cpse	r22, r1
+ 102:	59 c0       	rjmp	.+178    	; 0x1b6 <DIO_pinInit+0x122>
+ 104:	47 b3       	in	r20, 0x17	; 23
+ 106:	21 e0       	ldi	r18, 0x01	; 1
+ 108:	30 e0       	ldi	r19, 0x00	; 0
+ 10a:	b9 01       	movw	r22, r18
+ 10c:	02 c0       	rjmp	.+4      	; 0x112 <DIO_pinInit+0x7e>
+ 10e:	66 0f       	add	r22, r22
+ 110:	77 1f       	adc	r23, r23
+ 112:	8a 95       	dec	r24
+ 114:	e2 f7       	brpl	.-8      	; 0x10e <DIO_pinInit+0x7a>
+ 116:	cb 01       	movw	r24, r22
+ 118:	80 95       	com	r24
+ 11a:	84 23       	and	r24, r20
+ 11c:	87 bb       	out	0x17, r24	; 23
+ 11e:	80 e0       	ldi	r24, 0x00	; 0
+ 120:	08 95       	ret
+ 122:	88 31       	cpi	r24, 0x18	; 24
+ 124:	10 f5       	brcc	.+68     	; 0x16a <DIO_pinInit+0xd6>
+ 126:	80 51       	subi	r24, 0x10	; 16
+ 128:	61 30       	cpi	r22, 0x01	; 1
+ 12a:	71 f4       	brne	.+28     	; 0x148 <DIO_pinInit+0xb4>
+ 12c:	44 b3       	in	r20, 0x14	; 20
+ 12e:	21 e0       	ldi	r18, 0x01	; 1
+ 130:	30 e0       	ldi	r19, 0x00	; 0
+ 132:	b9 01       	movw	r22, r18
+ 134:	02 c0       	rjmp	.+4      	; 0x13a <DIO_pinInit+0xa6>
+ 136:	66 0f       	add	r22, r22
+ 138:	77 1f       	adc	r23, r23
+ 13a:	8a 95       	dec	r24
+ 13c:	e2 f7       	brpl	.-8      	; 0x136 <DIO_pinInit+0xa2>
+ 13e:	cb 01       	movw	r24, r22
+ 140:	84 2b       	or	r24, r20
+ 142:	84 bb       	out	0x14, r24	; 20
+ 144:	80 e0       	ldi	r24, 0x00	; 0
+ 146:	08 95       	ret
+ 148:	61 11       	cpse	r22, r1
+ 14a:	37 c0       	rjmp	.+110    	; 0x1ba <DIO_pinInit+0x126>
+ 14c:	44 b3       	in	r20, 0x14	; 20
+ 14e:	21 e0       	ldi	r18, 0x01	; 1
+ 150:	30 e0       	ldi	r19, 0x00	; 0
+ 152:	b9 01       	movw	r22, r18
+ 154:	02 c0       	rjmp	.+4      	; 0x15a <DIO_pinInit+0xc6>
+ 156:	66 0f       	add	r22, r22
+ 158:	77 1f       	adc	r23, r23
+ 15a:	8a 95       	dec	r24
+ 15c:	e2 f7       	brpl	.-8      	; 0x156 <DIO_pinInit+0xc2>
+ 15e:	cb 01       	movw	r24, r22
+ 160:	80 95       	com	r24
+ 162:	84 23       	and	r24, r20
+ 164:	84 bb       	out	0x14, r24	; 20
+ 166:	80 e0       	ldi	r24, 0x00	; 0
+ 168:	08 95       	ret
+ 16a:	80 32       	cpi	r24, 0x20	; 32
+ 16c:	40 f5       	brcc	.+80     	; 0x1be <DIO_pinInit+0x12a>
+ 16e:	88 51       	subi	r24, 0x18	; 24
+ 170:	61 30       	cpi	r22, 0x01	; 1
+ 172:	71 f4       	brne	.+28     	; 0x190 <DIO_pinInit+0xfc>
+ 174:	41 b3       	in	r20, 0x11	; 17
+ 176:	21 e0       	ldi	r18, 0x01	; 1
+ 178:	30 e0       	ldi	r19, 0x00	; 0
+ 17a:	b9 01       	movw	r22, r18
+ 17c:	02 c0       	rjmp	.+4      	; 0x182 <DIO_pinInit+0xee>
+ 17e:	66 0f       	add	r22, r22
+ 180:	77 1f       	adc	r23, r23
+ 182:	8a 95       	dec	r24
+ 184:	e2 f7       	brpl	.-8      	; 0x17e <DIO_pinInit+0xea>
+ 186:	cb 01       	movw	r24, r22
+ 188:	84 2b       	or	r24, r20
+ 18a:	81 bb       	out	0x11, r24	; 17
+ 18c:	80 e0       	ldi	r24, 0x00	; 0
+ 18e:	08 95       	ret
+ 190:	61 11       	cpse	r22, r1
+ 192:	17 c0       	rjmp	.+46     	; 0x1c2 <DIO_pinInit+0x12e>
+ 194:	41 b3       	in	r20, 0x11	; 17
+ 196:	21 e0       	ldi	r18, 0x01	; 1
+ 198:	30 e0       	ldi	r19, 0x00	; 0
+ 19a:	b9 01       	movw	r22, r18
+ 19c:	02 c0       	rjmp	.+4      	; 0x1a2 <DIO_pinInit+0x10e>
+ 19e:	66 0f       	add	r22, r22
+ 1a0:	77 1f       	adc	r23, r23
+ 1a2:	8a 95       	dec	r24
+ 1a4:	e2 f7       	brpl	.-8      	; 0x19e <DIO_pinInit+0x10a>
+ 1a6:	cb 01       	movw	r24, r22
+ 1a8:	80 95       	com	r24
+ 1aa:	84 23       	and	r24, r20
+ 1ac:	81 bb       	out	0x11, r24	; 17
+ 1ae:	80 e0       	ldi	r24, 0x00	; 0
+ 1b0:	08 95       	ret
+ 1b2:	82 e0       	ldi	r24, 0x02	; 2
+ 1b4:	08 95       	ret
+ 1b6:	82 e0       	ldi	r24, 0x02	; 2
+ 1b8:	08 95       	ret
+ 1ba:	82 e0       	ldi	r24, 0x02	; 2
+ 1bc:	08 95       	ret
+ 1be:	81 e0       	ldi	r24, 0x01	; 1
+ 1c0:	08 95       	ret
+ 1c2:	82 e0       	ldi	r24, 0x02	; 2
+ 1c4:	08 95       	ret
+
+000001c6 <DIO_pinToggle>:
+/********************************************************************************************************************************************************/
+EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
 	//check if the pin is located in port A
 	if (pinNum <= PA7)
-  7e:	88 30       	cpi	r24, 0x08	; 8
-  80:	08 f5       	brcc	.+66     	; 0xc4 <DIO_pinInit+0x46>
+ 1c6:	88 30       	cpi	r24, 0x08	; 8
+ 1c8:	70 f4       	brcc	.+28     	; 0x1e6 <DIO_pinToggle+0x20>
 	{
-		if (pinDirection == Output)
-  82:	61 30       	cpi	r22, 0x01	; 1
-  84:	71 f4       	brne	.+28     	; 0xa2 <DIO_pinInit+0x24>
-		{
-			setBit(DDRA,pinNum);
-  86:	4a b3       	in	r20, 0x1a	; 26
-  88:	21 e0       	ldi	r18, 0x01	; 1
-  8a:	30 e0       	ldi	r19, 0x00	; 0
-  8c:	b9 01       	movw	r22, r18
-  8e:	02 c0       	rjmp	.+4      	; 0x94 <DIO_pinInit+0x16>
-  90:	66 0f       	add	r22, r22
-  92:	77 1f       	adc	r23, r23
-  94:	8a 95       	dec	r24
-  96:	e2 f7       	brpl	.-8      	; 0x90 <DIO_pinInit+0x12>
-  98:	cb 01       	movw	r24, r22
-  9a:	84 2b       	or	r24, r20
-  9c:	8a bb       	out	0x1a, r24	; 26
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
+		toggleBit(PORTA,pinNum);
+ 1ca:	4b b3       	in	r20, 0x1b	; 27
+ 1cc:	21 e0       	ldi	r18, 0x01	; 1
+ 1ce:	30 e0       	ldi	r19, 0x00	; 0
+ 1d0:	b9 01       	movw	r22, r18
+ 1d2:	02 c0       	rjmp	.+4      	; 0x1d8 <DIO_pinToggle+0x12>
+ 1d4:	66 0f       	add	r22, r22
+ 1d6:	77 1f       	adc	r23, r23
+ 1d8:	8a 95       	dec	r24
+ 1da:	e2 f7       	brpl	.-8      	; 0x1d4 <DIO_pinToggle+0xe>
+ 1dc:	cb 01       	movw	r24, r22
+ 1de:	84 27       	eor	r24, r20
+ 1e0:	8b bb       	out	0x1b, r24	; 27
+	return error;
+}
+/********************************************************************************************************************************************************/
+EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
-  9e:	80 e0       	ldi	r24, 0x00	; 0
-  a0:	08 95       	ret
+ 1e2:	80 e0       	ldi	r24, 0x00	; 0
+ 1e4:	08 95       	ret
+	if (pinNum <= PA7)
 	{
-		if (pinDirection == Output)
-		{
-			setBit(DDRA,pinNum);
-		}
-		else if (pinDirection == Input)
-  a2:	61 11       	cpse	r22, r1
-  a4:	7b c0       	rjmp	.+246    	; 0x19c <DIO_pinInit+0x11e>
-		{
-			clrBit(DDRA,pinNum);
-  a6:	4a b3       	in	r20, 0x1a	; 26
-  a8:	21 e0       	ldi	r18, 0x01	; 1
-  aa:	30 e0       	ldi	r19, 0x00	; 0
-  ac:	b9 01       	movw	r22, r18
-  ae:	02 c0       	rjmp	.+4      	; 0xb4 <DIO_pinInit+0x36>
-  b0:	66 0f       	add	r22, r22
-  b2:	77 1f       	adc	r23, r23
-  b4:	8a 95       	dec	r24
-  b6:	e2 f7       	brpl	.-8      	; 0xb0 <DIO_pinInit+0x32>
-  b8:	cb 01       	movw	r24, r22
-  ba:	80 95       	com	r24
-  bc:	84 23       	and	r24, r20
-  be:	8a bb       	out	0x1a, r24	; 26
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
-{
-	EN_pinErro_t error = OK;
-  c0:	80 e0       	ldi	r24, 0x00	; 0
-  c2:	08 95       	ret
-		{
-			error = WRONG_PIN_DIR;
-		}
+		toggleBit(PORTA,pinNum);
 	}
 	//check if the pin is located in port B
 	else if (pinNum <= PB7)
-  c4:	80 31       	cpi	r24, 0x10	; 16
-  c6:	10 f5       	brcc	.+68     	; 0x10c <DIO_pinInit+0x8e>
+ 1e6:	80 31       	cpi	r24, 0x10	; 16
+ 1e8:	78 f4       	brcc	.+30     	; 0x208 <DIO_pinToggle+0x42>
 	{
 		pinNum-=PORTB_OFFSET;
-  c8:	88 50       	subi	r24, 0x08	; 8
-		if (pinDirection == Output)
-  ca:	61 30       	cpi	r22, 0x01	; 1
-  cc:	71 f4       	brne	.+28     	; 0xea <DIO_pinInit+0x6c>
-		{
-			setBit(DDRB,pinNum);
-  ce:	47 b3       	in	r20, 0x17	; 23
-  d0:	21 e0       	ldi	r18, 0x01	; 1
-  d2:	30 e0       	ldi	r19, 0x00	; 0
-  d4:	b9 01       	movw	r22, r18
-  d6:	02 c0       	rjmp	.+4      	; 0xdc <DIO_pinInit+0x5e>
-  d8:	66 0f       	add	r22, r22
-  da:	77 1f       	adc	r23, r23
-  dc:	8a 95       	dec	r24
-  de:	e2 f7       	brpl	.-8      	; 0xd8 <DIO_pinInit+0x5a>
-  e0:	cb 01       	movw	r24, r22
-  e2:	84 2b       	or	r24, r20
-  e4:	87 bb       	out	0x17, r24	; 23
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
+ 1ea:	88 50       	subi	r24, 0x08	; 8
+		toggleBit(PORTB,pinNum);
+ 1ec:	48 b3       	in	r20, 0x18	; 24
+ 1ee:	21 e0       	ldi	r18, 0x01	; 1
+ 1f0:	30 e0       	ldi	r19, 0x00	; 0
+ 1f2:	b9 01       	movw	r22, r18
+ 1f4:	02 c0       	rjmp	.+4      	; 0x1fa <DIO_pinToggle+0x34>
+ 1f6:	66 0f       	add	r22, r22
+ 1f8:	77 1f       	adc	r23, r23
+ 1fa:	8a 95       	dec	r24
+ 1fc:	e2 f7       	brpl	.-8      	; 0x1f6 <DIO_pinToggle+0x30>
+ 1fe:	cb 01       	movw	r24, r22
+ 200:	84 27       	eor	r24, r20
+ 202:	88 bb       	out	0x18, r24	; 24
+	return error;
+}
+/********************************************************************************************************************************************************/
+EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
-  e6:	80 e0       	ldi	r24, 0x00	; 0
-  e8:	08 95       	ret
+ 204:	80 e0       	ldi	r24, 0x00	; 0
+ 206:	08 95       	ret
+	{
 		pinNum-=PORTB_OFFSET;
-		if (pinDirection == Output)
-		{
-			setBit(DDRB,pinNum);
-		}
-		else if (pinDirection == Input)
-  ea:	61 11       	cpse	r22, r1
-  ec:	59 c0       	rjmp	.+178    	; 0x1a0 <DIO_pinInit+0x122>
-		{
-			clrBit(DDRB,pinNum);
-  ee:	47 b3       	in	r20, 0x17	; 23
-  f0:	21 e0       	ldi	r18, 0x01	; 1
-  f2:	30 e0       	ldi	r19, 0x00	; 0
-  f4:	b9 01       	movw	r22, r18
-  f6:	02 c0       	rjmp	.+4      	; 0xfc <DIO_pinInit+0x7e>
-  f8:	66 0f       	add	r22, r22
-  fa:	77 1f       	adc	r23, r23
-  fc:	8a 95       	dec	r24
-  fe:	e2 f7       	brpl	.-8      	; 0xf8 <DIO_pinInit+0x7a>
- 100:	cb 01       	movw	r24, r22
- 102:	80 95       	com	r24
- 104:	84 23       	and	r24, r20
- 106:	87 bb       	out	0x17, r24	; 23
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
-{
-	EN_pinErro_t error = OK;
- 108:	80 e0       	ldi	r24, 0x00	; 0
- 10a:	08 95       	ret
-		{
-			error = WRONG_PIN_DIR;
-		}
+		toggleBit(PORTB,pinNum);
 	}
 	//check if the pin is located in port C
 	else if (pinNum <= PC7)
- 10c:	88 31       	cpi	r24, 0x18	; 24
- 10e:	10 f5       	brcc	.+68     	; 0x154 <DIO_pinInit+0xd6>
+ 208:	88 31       	cpi	r24, 0x18	; 24
+ 20a:	70 f4       	brcc	.+28     	; 0x228 <DIO_pinToggle+0x62>
 	{
-		pinNum-=PORTC_OFFSET;
- 110:	80 51       	subi	r24, 0x10	; 16
-		if (pinDirection == Output)
- 112:	61 30       	cpi	r22, 0x01	; 1
- 114:	71 f4       	brne	.+28     	; 0x132 <DIO_pinInit+0xb4>
-		{
-			setBit(DDRC,pinNum);
- 116:	44 b3       	in	r20, 0x14	; 20
- 118:	21 e0       	ldi	r18, 0x01	; 1
- 11a:	30 e0       	ldi	r19, 0x00	; 0
- 11c:	b9 01       	movw	r22, r18
- 11e:	02 c0       	rjmp	.+4      	; 0x124 <DIO_pinInit+0xa6>
- 120:	66 0f       	add	r22, r22
- 122:	77 1f       	adc	r23, r23
- 124:	8a 95       	dec	r24
- 126:	e2 f7       	brpl	.-8      	; 0x120 <DIO_pinInit+0xa2>
- 128:	cb 01       	movw	r24, r22
- 12a:	84 2b       	or	r24, r20
- 12c:	84 bb       	out	0x14, r24	; 20
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
+		toggleBit(PORTC,pinNum);
+ 20c:	45 b3       	in	r20, 0x15	; 21
+ 20e:	21 e0       	ldi	r18, 0x01	; 1
+ 210:	30 e0       	ldi	r19, 0x00	; 0
+ 212:	b9 01       	movw	r22, r18
+ 214:	02 c0       	rjmp	.+4      	; 0x21a <DIO_pinToggle+0x54>
+ 216:	66 0f       	add	r22, r22
+ 218:	77 1f       	adc	r23, r23
+ 21a:	8a 95       	dec	r24
+ 21c:	e2 f7       	brpl	.-8      	; 0x216 <DIO_pinToggle+0x50>
+ 21e:	cb 01       	movw	r24, r22
+ 220:	84 27       	eor	r24, r20
+ 222:	85 bb       	out	0x15, r24	; 21
+	return error;
+}
+/********************************************************************************************************************************************************/
+EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
- 12e:	80 e0       	ldi	r24, 0x00	; 0
- 130:	08 95       	ret
-		pinNum-=PORTC_OFFSET;
-		if (pinDirection == Output)
-		{
-			setBit(DDRC,pinNum);
-		}
-		else if (pinDirection == Input)
- 132:	61 11       	cpse	r22, r1
- 134:	37 c0       	rjmp	.+110    	; 0x1a4 <DIO_pinInit+0x126>
-		{
-			clrBit(DDRC,pinNum);
- 136:	44 b3       	in	r20, 0x14	; 20
- 138:	21 e0       	ldi	r18, 0x01	; 1
- 13a:	30 e0       	ldi	r19, 0x00	; 0
- 13c:	b9 01       	movw	r22, r18
- 13e:	02 c0       	rjmp	.+4      	; 0x144 <DIO_pinInit+0xc6>
- 140:	66 0f       	add	r22, r22
- 142:	77 1f       	adc	r23, r23
- 144:	8a 95       	dec	r24
- 146:	e2 f7       	brpl	.-8      	; 0x140 <DIO_pinInit+0xc2>
- 148:	cb 01       	movw	r24, r22
- 14a:	80 95       	com	r24
- 14c:	84 23       	and	r24, r20
- 14e:	84 bb       	out	0x14, r24	; 20
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
-{
-	EN_pinErro_t error = OK;
- 150:	80 e0       	ldi	r24, 0x00	; 0
- 152:	08 95       	ret
-		{
-			error = WRONG_PIN_DIR;
-		}
+ 224:	80 e0       	ldi	r24, 0x00	; 0
+ 226:	08 95       	ret
+	else if (pinNum <= PC7)
+	{
+		toggleBit(PORTC,pinNum);
 	}
 	//check if the pin is located in port D
 	else if (pinNum <= PD7)
- 154:	80 32       	cpi	r24, 0x20	; 32
- 156:	40 f5       	brcc	.+80     	; 0x1a8 <DIO_pinInit+0x12a>
+ 228:	80 32       	cpi	r24, 0x20	; 32
+ 22a:	70 f4       	brcc	.+28     	; 0x248 <DIO_pinToggle+0x82>
 	{
-		pinNum-=PORTD_OFFSET;
- 158:	88 51       	subi	r24, 0x18	; 24
-		if (pinDirection == Output)
- 15a:	61 30       	cpi	r22, 0x01	; 1
- 15c:	71 f4       	brne	.+28     	; 0x17a <DIO_pinInit+0xfc>
-		{
-			setBit(DDRD,pinNum);
- 15e:	41 b3       	in	r20, 0x11	; 17
- 160:	21 e0       	ldi	r18, 0x01	; 1
- 162:	30 e0       	ldi	r19, 0x00	; 0
- 164:	b9 01       	movw	r22, r18
- 166:	02 c0       	rjmp	.+4      	; 0x16c <DIO_pinInit+0xee>
- 168:	66 0f       	add	r22, r22
- 16a:	77 1f       	adc	r23, r23
- 16c:	8a 95       	dec	r24
- 16e:	e2 f7       	brpl	.-8      	; 0x168 <DIO_pinInit+0xea>
- 170:	cb 01       	movw	r24, r22
- 172:	84 2b       	or	r24, r20
- 174:	81 bb       	out	0x11, r24	; 17
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
+		toggleBit(PORTD,pinNum);
+ 22c:	42 b3       	in	r20, 0x12	; 18
+ 22e:	21 e0       	ldi	r18, 0x01	; 1
+ 230:	30 e0       	ldi	r19, 0x00	; 0
+ 232:	b9 01       	movw	r22, r18
+ 234:	02 c0       	rjmp	.+4      	; 0x23a <DIO_pinToggle+0x74>
+ 236:	66 0f       	add	r22, r22
+ 238:	77 1f       	adc	r23, r23
+ 23a:	8a 95       	dec	r24
+ 23c:	e2 f7       	brpl	.-8      	; 0x236 <DIO_pinToggle+0x70>
+ 23e:	cb 01       	movw	r24, r22
+ 240:	84 27       	eor	r24, r20
+ 242:	82 bb       	out	0x12, r24	; 18
+	return error;
+}
+/********************************************************************************************************************************************************/
+EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
- 176:	80 e0       	ldi	r24, 0x00	; 0
- 178:	08 95       	ret
-		pinNum-=PORTD_OFFSET;
-		if (pinDirection == Output)
-		{
-			setBit(DDRD,pinNum);
-		}
-		else if (pinDirection == Input)
- 17a:	61 11       	cpse	r22, r1
- 17c:	17 c0       	rjmp	.+46     	; 0x1ac <DIO_pinInit+0x12e>
-		{
-			clrBit(DDRD,pinNum);
- 17e:	41 b3       	in	r20, 0x11	; 17
- 180:	21 e0       	ldi	r18, 0x01	; 1
- 182:	30 e0       	ldi	r19, 0x00	; 0
- 184:	b9 01       	movw	r22, r18
- 186:	02 c0       	rjmp	.+4      	; 0x18c <DIO_pinInit+0x10e>
- 188:	66 0f       	add	r22, r22
- 18a:	77 1f       	adc	r23, r23
- 18c:	8a 95       	dec	r24
- 18e:	e2 f7       	brpl	.-8      	; 0x188 <DIO_pinInit+0x10a>
- 190:	cb 01       	movw	r24, r22
- 192:	80 95       	com	r24
- 194:	84 23       	and	r24, r20
- 196:	81 bb       	out	0x11, r24	; 17
-
-
-
-EN_pinErro_t DIO_pinInit(EN_pinNum_t pinNum,EN_pinDirection_t pinDirection)
-{
-	EN_pinErro_t error = OK;
- 198:	80 e0       	ldi	r24, 0x00	; 0
- 19a:	08 95       	ret
-		{
-			clrBit(DDRA,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_DIR;
- 19c:	82 e0       	ldi	r24, 0x02	; 2
- 19e:	08 95       	ret
-		{
-			clrBit(DDRB,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_DIR;
- 1a0:	82 e0       	ldi	r24, 0x02	; 2
- 1a2:	08 95       	ret
-		{
-			clrBit(DDRC,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_DIR;
- 1a4:	82 e0       	ldi	r24, 0x02	; 2
- 1a6:	08 95       	ret
-		}
+ 244:	80 e0       	ldi	r24, 0x00	; 0
+ 246:	08 95       	ret
+		toggleBit(PORTD,pinNum);
 	}
 	//if the pinNum is wrong
 	else
 	{
 		error = WRONG_PIN_NUM;
- 1a8:	81 e0       	ldi	r24, 0x01	; 1
- 1aa:	08 95       	ret
-		{
-			clrBit(DDRD,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_DIR;
- 1ac:	82 e0       	ldi	r24, 0x02	; 2
-	else
-	{
-		error = WRONG_PIN_NUM;
+ 248:	81 e0       	ldi	r24, 0x01	; 1
 	}
 	return error;
 }
- 1ae:	08 95       	ret
+ 24a:	08 95       	ret
 
-000001b0 <DIO_pinWrite>:
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
-	//check if the pin is located in port A
-	if (pinNum <= PA7)
- 1b0:	88 30       	cpi	r24, 0x08	; 8
- 1b2:	08 f5       	brcc	.+66     	; 0x1f6 <DIO_pinWrite+0x46>
-	{
-		if (pinState == High)
- 1b4:	61 30       	cpi	r22, 0x01	; 1
- 1b6:	71 f4       	brne	.+28     	; 0x1d4 <DIO_pinWrite+0x24>
-		{
-			setBit(PORTA,pinNum);
- 1b8:	4b b3       	in	r20, 0x1b	; 27
- 1ba:	21 e0       	ldi	r18, 0x01	; 1
- 1bc:	30 e0       	ldi	r19, 0x00	; 0
- 1be:	b9 01       	movw	r22, r18
- 1c0:	02 c0       	rjmp	.+4      	; 0x1c6 <DIO_pinWrite+0x16>
- 1c2:	66 0f       	add	r22, r22
- 1c4:	77 1f       	adc	r23, r23
- 1c6:	8a 95       	dec	r24
- 1c8:	e2 f7       	brpl	.-8      	; 0x1c2 <DIO_pinWrite+0x12>
- 1ca:	cb 01       	movw	r24, r22
- 1cc:	84 2b       	or	r24, r20
- 1ce:	8b bb       	out	0x1b, r24	; 27
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 1d0:	80 e0       	ldi	r24, 0x00	; 0
- 1d2:	08 95       	ret
-	{
-		if (pinState == High)
-		{
-			setBit(PORTA,pinNum);
-		}
-		else if (pinState == Low)
- 1d4:	61 11       	cpse	r22, r1
- 1d6:	79 c0       	rjmp	.+242    	; 0x2ca <DIO_pinWrite+0x11a>
-		{
-			clrBit(PORTA,pinNum);
- 1d8:	4b b3       	in	r20, 0x1b	; 27
- 1da:	21 e0       	ldi	r18, 0x01	; 1
- 1dc:	30 e0       	ldi	r19, 0x00	; 0
- 1de:	b9 01       	movw	r22, r18
- 1e0:	02 c0       	rjmp	.+4      	; 0x1e6 <DIO_pinWrite+0x36>
- 1e2:	66 0f       	add	r22, r22
- 1e4:	77 1f       	adc	r23, r23
- 1e6:	8a 95       	dec	r24
- 1e8:	e2 f7       	brpl	.-8      	; 0x1e2 <DIO_pinWrite+0x32>
- 1ea:	cb 01       	movw	r24, r22
- 1ec:	80 95       	com	r24
- 1ee:	84 23       	and	r24, r20
- 1f0:	8b bb       	out	0x1b, r24	; 27
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 1f2:	80 e0       	ldi	r24, 0x00	; 0
- 1f4:	08 95       	ret
-		{
-			error = WRONG_PIN_STATE;
-		}
-	}
-	//check if the pin is located in port B
-	else if (pinNum <= PB7)
- 1f6:	80 31       	cpi	r24, 0x10	; 16
- 1f8:	10 f5       	brcc	.+68     	; 0x23e <DIO_pinWrite+0x8e>
-	{
-		pinNum-=PORTB_OFFSET;
- 1fa:	88 50       	subi	r24, 0x08	; 8
-		if (pinState == High)
- 1fc:	61 30       	cpi	r22, 0x01	; 1
- 1fe:	71 f4       	brne	.+28     	; 0x21c <DIO_pinWrite+0x6c>
-		{
-			setBit(PORTB,pinNum);
- 200:	48 b3       	in	r20, 0x18	; 24
- 202:	21 e0       	ldi	r18, 0x01	; 1
- 204:	30 e0       	ldi	r19, 0x00	; 0
- 206:	b9 01       	movw	r22, r18
- 208:	02 c0       	rjmp	.+4      	; 0x20e <DIO_pinWrite+0x5e>
- 20a:	66 0f       	add	r22, r22
- 20c:	77 1f       	adc	r23, r23
- 20e:	8a 95       	dec	r24
- 210:	e2 f7       	brpl	.-8      	; 0x20a <DIO_pinWrite+0x5a>
- 212:	cb 01       	movw	r24, r22
- 214:	84 2b       	or	r24, r20
- 216:	88 bb       	out	0x18, r24	; 24
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 218:	80 e0       	ldi	r24, 0x00	; 0
- 21a:	08 95       	ret
-		pinNum-=PORTB_OFFSET;
-		if (pinState == High)
-		{
-			setBit(PORTB,pinNum);
-		}
-		else if (pinState == Low)
- 21c:	61 11       	cpse	r22, r1
- 21e:	57 c0       	rjmp	.+174    	; 0x2ce <DIO_pinWrite+0x11e>
-		{
-			clrBit(PORTB,pinNum);
- 220:	48 b3       	in	r20, 0x18	; 24
- 222:	21 e0       	ldi	r18, 0x01	; 1
- 224:	30 e0       	ldi	r19, 0x00	; 0
- 226:	b9 01       	movw	r22, r18
- 228:	02 c0       	rjmp	.+4      	; 0x22e <DIO_pinWrite+0x7e>
- 22a:	66 0f       	add	r22, r22
- 22c:	77 1f       	adc	r23, r23
- 22e:	8a 95       	dec	r24
- 230:	e2 f7       	brpl	.-8      	; 0x22a <DIO_pinWrite+0x7a>
- 232:	cb 01       	movw	r24, r22
- 234:	80 95       	com	r24
- 236:	84 23       	and	r24, r20
- 238:	88 bb       	out	0x18, r24	; 24
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 23a:	80 e0       	ldi	r24, 0x00	; 0
- 23c:	08 95       	ret
-		{
-			error = WRONG_PIN_STATE;
-		}
-	}
-	//check if the pin is located in port C
-	else if (pinNum <= PC7)
- 23e:	88 31       	cpi	r24, 0x18	; 24
- 240:	08 f5       	brcc	.+66     	; 0x284 <DIO_pinWrite+0xd4>
-	{
-		if (pinState == High)
- 242:	61 30       	cpi	r22, 0x01	; 1
- 244:	71 f4       	brne	.+28     	; 0x262 <DIO_pinWrite+0xb2>
-		{
-			setBit(PORTC,pinNum);
- 246:	45 b3       	in	r20, 0x15	; 21
- 248:	21 e0       	ldi	r18, 0x01	; 1
- 24a:	30 e0       	ldi	r19, 0x00	; 0
- 24c:	b9 01       	movw	r22, r18
- 24e:	02 c0       	rjmp	.+4      	; 0x254 <DIO_pinWrite+0xa4>
- 250:	66 0f       	add	r22, r22
- 252:	77 1f       	adc	r23, r23
- 254:	8a 95       	dec	r24
- 256:	e2 f7       	brpl	.-8      	; 0x250 <DIO_pinWrite+0xa0>
- 258:	cb 01       	movw	r24, r22
- 25a:	84 2b       	or	r24, r20
- 25c:	85 bb       	out	0x15, r24	; 21
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 25e:	80 e0       	ldi	r24, 0x00	; 0
- 260:	08 95       	ret
-	{
-		if (pinState == High)
-		{
-			setBit(PORTC,pinNum);
-		}
-		else if (pinState == Low)
- 262:	61 11       	cpse	r22, r1
- 264:	36 c0       	rjmp	.+108    	; 0x2d2 <DIO_pinWrite+0x122>
-		{
-			clrBit(PORTC,pinNum);
- 266:	45 b3       	in	r20, 0x15	; 21
- 268:	21 e0       	ldi	r18, 0x01	; 1
- 26a:	30 e0       	ldi	r19, 0x00	; 0
- 26c:	b9 01       	movw	r22, r18
- 26e:	02 c0       	rjmp	.+4      	; 0x274 <DIO_pinWrite+0xc4>
- 270:	66 0f       	add	r22, r22
- 272:	77 1f       	adc	r23, r23
- 274:	8a 95       	dec	r24
- 276:	e2 f7       	brpl	.-8      	; 0x270 <DIO_pinWrite+0xc0>
- 278:	cb 01       	movw	r24, r22
- 27a:	80 95       	com	r24
- 27c:	84 23       	and	r24, r20
- 27e:	85 bb       	out	0x15, r24	; 21
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 280:	80 e0       	ldi	r24, 0x00	; 0
- 282:	08 95       	ret
-		{
-			error = WRONG_PIN_STATE;
-		}
-	}
-	//check if the pin is located in port D
-	else if (pinNum <= PD7)
- 284:	80 32       	cpi	r24, 0x20	; 32
- 286:	38 f5       	brcc	.+78     	; 0x2d6 <DIO_pinWrite+0x126>
-	{
-		if (pinState == High)
- 288:	61 30       	cpi	r22, 0x01	; 1
- 28a:	71 f4       	brne	.+28     	; 0x2a8 <DIO_pinWrite+0xf8>
-		{
-			setBit(PORTD,pinNum);
- 28c:	42 b3       	in	r20, 0x12	; 18
- 28e:	21 e0       	ldi	r18, 0x01	; 1
- 290:	30 e0       	ldi	r19, 0x00	; 0
- 292:	b9 01       	movw	r22, r18
- 294:	02 c0       	rjmp	.+4      	; 0x29a <DIO_pinWrite+0xea>
- 296:	66 0f       	add	r22, r22
- 298:	77 1f       	adc	r23, r23
- 29a:	8a 95       	dec	r24
- 29c:	e2 f7       	brpl	.-8      	; 0x296 <DIO_pinWrite+0xe6>
- 29e:	cb 01       	movw	r24, r22
- 2a0:	84 2b       	or	r24, r20
- 2a2:	82 bb       	out	0x12, r24	; 18
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 2a4:	80 e0       	ldi	r24, 0x00	; 0
- 2a6:	08 95       	ret
-	{
-		if (pinState == High)
-		{
-			setBit(PORTD,pinNum);
-		}
-		else if (pinState == Low)
- 2a8:	61 11       	cpse	r22, r1
- 2aa:	17 c0       	rjmp	.+46     	; 0x2da <DIO_pinWrite+0x12a>
-		{
-			clrBit(PORTD,pinNum);
- 2ac:	42 b3       	in	r20, 0x12	; 18
- 2ae:	21 e0       	ldi	r18, 0x01	; 1
- 2b0:	30 e0       	ldi	r19, 0x00	; 0
- 2b2:	b9 01       	movw	r22, r18
- 2b4:	02 c0       	rjmp	.+4      	; 0x2ba <DIO_pinWrite+0x10a>
- 2b6:	66 0f       	add	r22, r22
- 2b8:	77 1f       	adc	r23, r23
- 2ba:	8a 95       	dec	r24
- 2bc:	e2 f7       	brpl	.-8      	; 0x2b6 <DIO_pinWrite+0x106>
- 2be:	cb 01       	movw	r24, r22
- 2c0:	80 95       	com	r24
- 2c2:	84 23       	and	r24, r20
- 2c4:	82 bb       	out	0x12, r24	; 18
-	return error;
-}
-/********************************************************************************************************************************************************/
-EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
-{
-	EN_pinErro_t error = OK;
- 2c6:	80 e0       	ldi	r24, 0x00	; 0
- 2c8:	08 95       	ret
-		{
-			clrBit(PORTA,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_STATE;
- 2ca:	83 e0       	ldi	r24, 0x03	; 3
- 2cc:	08 95       	ret
-		{
-			clrBit(PORTB,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_STATE;
- 2ce:	83 e0       	ldi	r24, 0x03	; 3
- 2d0:	08 95       	ret
-		{
-			clrBit(PORTC,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_STATE;
- 2d2:	83 e0       	ldi	r24, 0x03	; 3
- 2d4:	08 95       	ret
-		}
-	}
-	//if the pinNum is wrong
-	else
-	{
-		error = WRONG_PIN_NUM;
- 2d6:	81 e0       	ldi	r24, 0x01	; 1
- 2d8:	08 95       	ret
-		{
-			clrBit(PORTD,pinNum);
-		}
-		else
-		{
-			error = WRONG_PIN_STATE;
- 2da:	83 e0       	ldi	r24, 0x03	; 3
-	else
-	{
-		error = WRONG_PIN_NUM;
-	}
-	return error;
-}
- 2dc:	08 95       	ret
+0000024c <_exit>:
+ 24c:	f8 94       	cli
 
-000002de <_exit>:
- 2de:	f8 94       	cli
-
-000002e0 <__stop_program>:
- 2e0:	ff cf       	rjmp	.-2      	; 0x2e0 <__stop_program>
+0000024e <__stop_program>:
+ 24e:	ff cf       	rjmp	.-2      	; 0x24e <__stop_program>

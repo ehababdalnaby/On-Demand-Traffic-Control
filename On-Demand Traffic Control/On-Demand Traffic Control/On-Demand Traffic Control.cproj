@@ -132,6 +132,12 @@
     <Compile Include="ECUAL\Button driver\Button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ECUAL\LED driver\LED.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\LED driver\LED.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
