@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__d_i_o_8h" xml:lang="en-US">
+<title>MCAL/Dio driver/DIO.h File Reference</title>
+<indexterm><primary>MCAL/Dio driver/DIO.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../../Service/ATmega32Port.h&quot;
+#include &quot;../../Service/BitMath.h&quot;
+#include &quot;../../Service/dataTypes.h&quot;
+#include &quot;../../Service/RegisterFile.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> <link linkend="__d_i_o_8h_1ad0f643c0f450b845ca5aa2237a9a5785">DIO_pinInit</link> (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum, <link linkend="__a_tmega32_port_8h_1acf2b446189b353f66263a1cfc82f45b8">EN_pinDirection_t</link> pinDirection)</para>
+</listitem>
+            <listitem><para><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> <link linkend="__d_i_o_8h_1acc2fd796ad5b259b0682e4f7706a0ab6">DIO_pinWrite</link> (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum, <link linkend="__a_tmega32_port_8h_1a408b1d0fd39c90c802f7bc02520fd609">EN_pinState_t</link> pinState)</para>
+</listitem>
+            <listitem><para><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> <link linkend="__d_i_o_8h_1a80e891281badbf682ddcbe082e5fbb4b">DIO_pinToggle</link> (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum)</para>
+</listitem>
+            <listitem><para><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> <link linkend="__d_i_o_8h_1aa48552d26567a5a8b001c07b2305b9bb">DIO_pinRead</link> (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum, <link linkend="__a_tmega32_port_8h_1a408b1d0fd39c90c802f7bc02520fd609">EN_pinState_t</link> *pinState)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__d_i_o_8h_1ad0f643c0f450b845ca5aa2237a9a5785"/><section>
+    <title>DIO_pinInit()</title>
+<indexterm><primary>DIO_pinInit</primary><secondary>DIO.h</secondary></indexterm>
+<indexterm><primary>DIO.h</primary><secondary>DIO_pinInit</secondary></indexterm>
+<para><computeroutput><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> DIO_pinInit (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum, <link linkend="__a_tmega32_port_8h_1acf2b446189b353f66263a1cfc82f45b8">EN_pinDirection_t</link> pinDirection)</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00012">12</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+</section>
+<anchor xml:id="__d_i_o_8h_1aa48552d26567a5a8b001c07b2305b9bb"/><section>
+    <title>DIO_pinRead()</title>
+<indexterm><primary>DIO_pinRead</primary><secondary>DIO.h</secondary></indexterm>
+<indexterm><primary>DIO.h</primary><secondary>DIO_pinRead</secondary></indexterm>
+<para><computeroutput><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> DIO_pinRead (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum, <link linkend="__a_tmega32_port_8h_1a408b1d0fd39c90c802f7bc02520fd609">EN_pinState_t</link> * pinState)</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00166">166</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+</section>
+<anchor xml:id="__d_i_o_8h_1a80e891281badbf682ddcbe082e5fbb4b"/><section>
+    <title>DIO_pinToggle()</title>
+<indexterm><primary>DIO_pinToggle</primary><secondary>DIO.h</secondary></indexterm>
+<indexterm><primary>DIO.h</primary><secondary>DIO_pinToggle</secondary></indexterm>
+<para><computeroutput><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> DIO_pinToggle (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum)</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00198">198</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+</section>
+<anchor xml:id="__d_i_o_8h_1acc2fd796ad5b259b0682e4f7706a0ab6"/><section>
+    <title>DIO_pinWrite()</title>
+<indexterm><primary>DIO_pinWrite</primary><secondary>DIO.h</secondary></indexterm>
+<indexterm><primary>DIO.h</primary><secondary>DIO_pinWrite</secondary></indexterm>
+<para><computeroutput><link linkend="__a_tmega32_port_8h_1aa69f82456b0dae23d13eb3fec723b30d">EN_pinErro_t</link> DIO_pinWrite (<link linkend="__a_tmega32_port_8h_1adeadeb010f04c1c69beb07ca27eb7617">EN_pinNum_t</link> pinNum, <link linkend="__a_tmega32_port_8h_1a408b1d0fd39c90c802f7bc02520fd609">EN_pinState_t</link> pinState)</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00090">90</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+</section>
+</section>
+</section>

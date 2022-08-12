@@ -1,0 +1,45 @@
+.TH "Service/BitMath.h" 3 "Fri Aug 12 2022" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Service/BitMath.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBsetBit\fP(reg,  bitNum)   reg |= (1<<bitNum)"
+.br
+.ti -1c
+.RI "#define \fBclrBit\fP(reg,  bitNum)   reg &= (~(1<<bitNum))"
+.br
+.ti -1c
+.RI "#define \fBtoggleBit\fP(reg,  bitNum)   reg ^= (1<<bitNum)"
+.br
+.ti -1c
+.RI "#define \fBgetBit\fP(reg,  bitNum)   ((reg>>bitNum)	&	0x01)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define clrBit(reg, bitNum)   reg &= (~(1<<bitNum))"
+
+.PP
+Definition at line \fB21\fP of file \fBBitMath\&.h\fP\&.
+.SS "#define getBit(reg, bitNum)   ((reg>>bitNum)	&	0x01)"
+
+.PP
+Definition at line \fB37\fP of file \fBBitMath\&.h\fP\&.
+.SS "#define setBit(reg, bitNum)   reg |= (1<<bitNum)"
+
+.PP
+Definition at line \fB15\fP of file \fBBitMath\&.h\fP\&.
+.SS "#define toggleBit(reg, bitNum)   reg ^= (1<<bitNum)"
+
+.PP
+Definition at line \fB29\fP of file \fBBitMath\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

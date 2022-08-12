@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__register_file_8h" xml:lang="en-US">
+<title>Service/RegisterFile.h File Reference</title>
+<indexterm><primary>Service/RegisterFile.h</primary></indexterm>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__register_file_8h_1a7c8a7f98a98d8cb125dd57a66720ab30">PORTA</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x3B))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1ada011c5bf95ab91774eee5c29b45fd06">DDRA</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x3A))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1aa5b59706bf235bbd1936ae801f125507">PINA</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x39))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a09a0c85cd3da09d9cdf63a5ac4c39f77">PORTB</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x38))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a924a54df722121bc98383bdec5ae1898">DDRB</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x37))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a49f0e8289e962c02128f24b94d7aea7c">PINB</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x36))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a68fea88642279a70246e026e7221b0a5">PORTC</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x35))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a13004c90aa4b54f1bc3fbd25ad3fd645">DDRC</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x34))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a0545e73dc7ae14b1f62293c1feba3983">PINC</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x33))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a3e6a2517db4f9cb7c9037adf0aefe79b">PORTD</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x32))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1ae24189eeb3ce4bccd97d46e88f494e0a">DDRD</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x31))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__register_file_8h_1a50997bc44119b844ceaab463c564bfb7">PIND</link>   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x30))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__register_file_8h_1ada011c5bf95ab91774eee5c29b45fd06"/><section>
+    <title>DDRA</title>
+<indexterm><primary>DDRA</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>DDRA</secondary></indexterm>
+<para><computeroutput>#define DDRA   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x3A))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00017">17</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a924a54df722121bc98383bdec5ae1898"/><section>
+    <title>DDRB</title>
+<indexterm><primary>DDRB</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>DDRB</secondary></indexterm>
+<para><computeroutput>#define DDRB   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x37))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00022">22</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a13004c90aa4b54f1bc3fbd25ad3fd645"/><section>
+    <title>DDRC</title>
+<indexterm><primary>DDRC</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>DDRC</secondary></indexterm>
+<para><computeroutput>#define DDRC   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x34))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00027">27</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1ae24189eeb3ce4bccd97d46e88f494e0a"/><section>
+    <title>DDRD</title>
+<indexterm><primary>DDRD</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>DDRD</secondary></indexterm>
+<para><computeroutput>#define DDRD   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x31))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00032">32</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1aa5b59706bf235bbd1936ae801f125507"/><section>
+    <title>PINA</title>
+<indexterm><primary>PINA</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PINA</secondary></indexterm>
+<para><computeroutput>#define PINA   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x39))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00018">18</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a49f0e8289e962c02128f24b94d7aea7c"/><section>
+    <title>PINB</title>
+<indexterm><primary>PINB</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PINB</secondary></indexterm>
+<para><computeroutput>#define PINB   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x36))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00023">23</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a0545e73dc7ae14b1f62293c1feba3983"/><section>
+    <title>PINC</title>
+<indexterm><primary>PINC</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PINC</secondary></indexterm>
+<para><computeroutput>#define PINC   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x33))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00028">28</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a50997bc44119b844ceaab463c564bfb7"/><section>
+    <title>PIND</title>
+<indexterm><primary>PIND</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PIND</secondary></indexterm>
+<para><computeroutput>#define PIND   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x30))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00033">33</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a7c8a7f98a98d8cb125dd57a66720ab30"/><section>
+    <title>PORTA</title>
+<indexterm><primary>PORTA</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PORTA</secondary></indexterm>
+<para><computeroutput>#define PORTA   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x3B))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00016">16</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a09a0c85cd3da09d9cdf63a5ac4c39f77"/><section>
+    <title>PORTB</title>
+<indexterm><primary>PORTB</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PORTB</secondary></indexterm>
+<para><computeroutput>#define PORTB   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x38))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00021">21</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a68fea88642279a70246e026e7221b0a5"/><section>
+    <title>PORTC</title>
+<indexterm><primary>PORTC</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PORTC</secondary></indexterm>
+<para><computeroutput>#define PORTC   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x35))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00026">26</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+<anchor xml:id="__register_file_8h_1a3e6a2517db4f9cb7c9037adf0aefe79b"/><section>
+    <title>PORTD</title>
+<indexterm><primary>PORTD</primary><secondary>RegisterFile.h</secondary></indexterm>
+<indexterm><primary>RegisterFile.h</primary><secondary>PORTD</secondary></indexterm>
+<para><computeroutput>#define PORTD   (*((volatile <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>*)0x32))</computeroutput></para><para>
+Definition at line <link linkend="__register_file_8h_source_1l00031">31</link> of file <link linkend="__register_file_8h_source">RegisterFile.h</link>.</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_data_types_8h" xml:lang="en-US">
+<title>Service/dataTypes.h File Reference</title>
+<indexterm><primary>Service/dataTypes.h</primary></indexterm>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef unsigned char <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link></para>
+</listitem>
+            <listitem><para>typedef signed char <link linkend="_data_types_8h_1a54cceacffb6d6dff03bf69f786d431a9">sint8_t</link></para>
+</listitem>
+            <listitem><para>typedef unsigned short int <link linkend="_data_types_8h_1adf4d876453337156dde61095e1f20223">uint16_t</link></para>
+</listitem>
+            <listitem><para>typedef signed short int <link linkend="_data_types_8h_1a80ada937686f2e05ea7b35ac9251cc94">sint16_t</link></para>
+</listitem>
+            <listitem><para>typedef unsigned long int <link linkend="_data_types_8h_1a33594304e786b158f3fb30289278f5af">uint32_t</link></para>
+</listitem>
+            <listitem><para>typedef signed long int <link linkend="_data_types_8h_1a1bc14dea5af31c4ad4f0abab9c79b939">sint32_t</link></para>
+</listitem>
+            <listitem><para>typedef float <link linkend="_data_types_8h_1a4611b605e45ab401f02cab15c5e38715">float32_t</link></para>
+</listitem>
+            <listitem><para>typedef double <link linkend="_data_types_8h_1ac55f3ae81b5bc9053760baacf57e47f4">float64_t</link></para>
+</listitem>
+            <listitem><para>typedef long double <link linkend="_data_types_8h_1afb87b8ea4afa4244a3b050f6b521478b">float128_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_data_types_8h_1afb87b8ea4afa4244a3b050f6b521478b"/><section>
+    <title>float128_t</title>
+<indexterm><primary>float128_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>float128_t</secondary></indexterm>
+<para><computeroutput>typedef long double <link linkend="_data_types_8h_1afb87b8ea4afa4244a3b050f6b521478b">float128_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00018">18</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1a4611b605e45ab401f02cab15c5e38715"/><section>
+    <title>float32_t</title>
+<indexterm><primary>float32_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>float32_t</secondary></indexterm>
+<para><computeroutput>typedef float <link linkend="_data_types_8h_1a4611b605e45ab401f02cab15c5e38715">float32_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00016">16</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1ac55f3ae81b5bc9053760baacf57e47f4"/><section>
+    <title>float64_t</title>
+<indexterm><primary>float64_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>float64_t</secondary></indexterm>
+<para><computeroutput>typedef double <link linkend="_data_types_8h_1ac55f3ae81b5bc9053760baacf57e47f4">float64_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00017">17</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1a80ada937686f2e05ea7b35ac9251cc94"/><section>
+    <title>sint16_t</title>
+<indexterm><primary>sint16_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>sint16_t</secondary></indexterm>
+<para><computeroutput>typedef signed short int <link linkend="_data_types_8h_1a80ada937686f2e05ea7b35ac9251cc94">sint16_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00013">13</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1a1bc14dea5af31c4ad4f0abab9c79b939"/><section>
+    <title>sint32_t</title>
+<indexterm><primary>sint32_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>sint32_t</secondary></indexterm>
+<para><computeroutput>typedef signed long int <link linkend="_data_types_8h_1a1bc14dea5af31c4ad4f0abab9c79b939">sint32_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00015">15</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1a54cceacffb6d6dff03bf69f786d431a9"/><section>
+    <title>sint8_t</title>
+<indexterm><primary>sint8_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>sint8_t</secondary></indexterm>
+<para><computeroutput>typedef signed char <link linkend="_data_types_8h_1a54cceacffb6d6dff03bf69f786d431a9">sint8_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00011">11</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1adf4d876453337156dde61095e1f20223"/><section>
+    <title>uint16_t</title>
+<indexterm><primary>uint16_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>uint16_t</secondary></indexterm>
+<para><computeroutput>typedef unsigned short int <link linkend="_data_types_8h_1adf4d876453337156dde61095e1f20223">uint16_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00012">12</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1a33594304e786b158f3fb30289278f5af"/><section>
+    <title>uint32_t</title>
+<indexterm><primary>uint32_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>uint32_t</secondary></indexterm>
+<para><computeroutput>typedef unsigned long int <link linkend="_data_types_8h_1a33594304e786b158f3fb30289278f5af">uint32_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00014">14</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+<anchor xml:id="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5"/><section>
+    <title>uint8_t</title>
+<indexterm><primary>uint8_t</primary><secondary>dataTypes.h</secondary></indexterm>
+<indexterm><primary>dataTypes.h</primary><secondary>uint8_t</secondary></indexterm>
+<para><computeroutput>typedef unsigned char <link linkend="_data_types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link></computeroutput></para><para>
+Definition at line <link linkend="_data_types_8h_source_1l00010">10</link> of file <link linkend="_data_types_8h_source">dataTypes.h</link>.</para>
+</section>
+</section>
+</section>

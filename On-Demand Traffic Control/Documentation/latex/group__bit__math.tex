@@ -1,0 +1,100 @@
+\hypertarget{group__bit__math}{}\doxysection{Bit math}
+\label{group__bit__math}\index{Bit math@{Bit math}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__bit__math_ga664dac99590ddf6e2d6277f65a4dae36}{set\+Bit}}(reg,  bit\+Num)~reg $\vert$= (1$<$$<$bit\+Num)
+\begin{DoxyCompactList}\small\item\em this Macro writes 1 to the bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__bit__math_ga74336b8d3aa581c739e71ee937402a03}{clr\+Bit}}(reg,  bit\+Num)~reg \&= ($\sim$(1$<$$<$bit\+Num))
+\begin{DoxyCompactList}\small\item\em this Macro clear the bit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__bit__math_ga9bc8c51fc436f8c1216990d51a477981}{toggle\+Bit}}(reg,  bit\+Num)~reg $^\wedge$= (1$<$$<$bit\+Num)
+\begin{DoxyCompactList}\small\item\em This Macro toggle the bit logic. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__bit__math_ga25d27c3461c15d2e2a3d700861e4d081}{get\+Bit}}(reg,  bit\+Num)~((reg$>$$>$bit\+Num) \& 0x01)
+\begin{DoxyCompactList}\small\item\em This Macro read this bit value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Author \+: Ehab Omara ~\newline
+ Date \+: 8/10/2022 12\+:46\+:40 PM ~\newline
+ File name\+: \mbox{\hyperlink{_bit_math_8h}{Bit\+Math.\+h}} ~\newline
+
+
+This contains all the bit math macros that manipulates the registers values. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__bit__math_ga74336b8d3aa581c739e71ee937402a03}\label{group__bit__math_ga74336b8d3aa581c739e71ee937402a03}} 
+\index{Bit math@{Bit math}!clrBit@{clrBit}}
+\index{clrBit@{clrBit}!Bit math@{Bit math}}
+\doxysubsubsection{\texorpdfstring{clrBit}{clrBit}}
+{\footnotesize\ttfamily \#define clr\+Bit(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit\+Num }\end{DoxyParamCaption})~reg \&= ($\sim$(1$<$$<$bit\+Num))}
+
+
+
+this Macro clear the bit. 
+
+\mbox{\hyperlink{group__bit__math_ga74336b8d3aa581c739e71ee937402a03}{clr\+Bit}} function \begin{DoxyItemize}
+\item this function takes register (reg) and bit number (bit\+Num). \item it make the required bit in the register Low(0).\end{DoxyItemize}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg} & this is register that needed to be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bit\+Num} & this is bit number that needed to be written to 0 in the register. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__bit__math_ga25d27c3461c15d2e2a3d700861e4d081}\label{group__bit__math_ga25d27c3461c15d2e2a3d700861e4d081}} 
+\index{Bit math@{Bit math}!getBit@{getBit}}
+\index{getBit@{getBit}!Bit math@{Bit math}}
+\doxysubsubsection{\texorpdfstring{getBit}{getBit}}
+{\footnotesize\ttfamily \#define get\+Bit(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit\+Num }\end{DoxyParamCaption})~((reg$>$$>$bit\+Num) \& 0x01)}
+
+
+
+This Macro read this bit value. 
+
+\mbox{\hyperlink{group__bit__math_ga25d27c3461c15d2e2a3d700861e4d081}{get\+Bit}} function \begin{DoxyItemize}
+\item this function takes register (reg) and bit number (bit\+Num). \item it returns the state of the required bit in the register. \item if the required bit is Low(0) it will return 0. \item if the required bit is High(1) it will return 1. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg} & This is register where it reads the value from it. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bit\+Num} & This is the bit number that needed to be read. \\
+\hline
+\end{DoxyParams}
+\end{DoxyItemize}
+\mbox{\Hypertarget{group__bit__math_ga664dac99590ddf6e2d6277f65a4dae36}\label{group__bit__math_ga664dac99590ddf6e2d6277f65a4dae36}} 
+\index{Bit math@{Bit math}!setBit@{setBit}}
+\index{setBit@{setBit}!Bit math@{Bit math}}
+\doxysubsubsection{\texorpdfstring{setBit}{setBit}}
+{\footnotesize\ttfamily \#define set\+Bit(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit\+Num }\end{DoxyParamCaption})~reg $\vert$= (1$<$$<$bit\+Num)}
+
+
+
+this Macro writes 1 to the bit. 
+
+\mbox{\hyperlink{group__bit__math_ga664dac99590ddf6e2d6277f65a4dae36}{set\+Bit}} function \begin{DoxyItemize}
+\item this function takes register (reg) and bit number (bit\+Num). \item it make the required bit in the register High(1). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg} & this is register that needed to be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bit\+Num} & this is bit number that needed to be written to 1 in the register. \\
+\hline
+\end{DoxyParams}
+\end{DoxyItemize}
+\mbox{\Hypertarget{group__bit__math_ga9bc8c51fc436f8c1216990d51a477981}\label{group__bit__math_ga9bc8c51fc436f8c1216990d51a477981}} 
+\index{Bit math@{Bit math}!toggleBit@{toggleBit}}
+\index{toggleBit@{toggleBit}!Bit math@{Bit math}}
+\doxysubsubsection{\texorpdfstring{toggleBit}{toggleBit}}
+{\footnotesize\ttfamily \#define toggle\+Bit(\begin{DoxyParamCaption}\item[{}]{reg,  }\item[{}]{bit\+Num }\end{DoxyParamCaption})~reg $^\wedge$= (1$<$$<$bit\+Num)}
+
+
+
+This Macro toggle the bit logic. 
+
+\#tog\+Bit function \begin{DoxyItemize}
+\item this function takes register (reg) and bit number (bit\+Num). \item it toggle the state of the required bit in the register. \item if the required bit is Low(0) it makes it High(1). \item if the required bit is High(1) it makes it Low(0).\end{DoxyItemize}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg} & this is register that needed to be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bit\+Num} & this is bit number that needed to be changed in the register. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,67 @@
+\hypertarget{group___button__driver}{}\doxysection{Button driver}
+\label{group___button__driver}\index{Button driver@{Button driver}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\+\_\+pin\+Erro\+\_\+t}} \mbox{\hyperlink{group___button__driver_ga82cb613f80a20f05f9d096ac2886a96a}{button\+Init}} (\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\+\_\+pin\+Num\+\_\+t}} button\+Pin)
+\begin{DoxyCompactList}\small\item\em initialize the button pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\+\_\+pin\+Erro\+\_\+t}} \mbox{\hyperlink{group___button__driver_gad7735668cfe3874834b8b542947cf516}{button\+Read}} (\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\+\_\+pin\+Num\+\_\+t}} button\+Pin, \mbox{\hyperlink{group___m_c_u__port_ga408b1d0fd39c90c802f7bc02520fd609}{EN\+\_\+pin\+State\+\_\+t}} $\ast$pin\+State)
+\begin{DoxyCompactList}\small\item\em reads the value of the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This driver contains all the function that controls the buttons connected to the MCU. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___button__driver_ga82cb613f80a20f05f9d096ac2886a96a}\label{group___button__driver_ga82cb613f80a20f05f9d096ac2886a96a}} 
+\index{Button driver@{Button driver}!buttonInit@{buttonInit}}
+\index{buttonInit@{buttonInit}!Button driver@{Button driver}}
+\doxysubsubsection{\texorpdfstring{buttonInit()}{buttonInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\+\_\+pin\+Erro\+\_\+t}} button\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\+\_\+pin\+Num\+\_\+t}}}]{button\+Pin }\end{DoxyParamCaption})}
+
+
+
+initialize the button pin. 
+
+\mbox{\hyperlink{group___button__driver_ga82cb613f80a20f05f9d096ac2886a96a}{button\+Init}} function\+: \begin{DoxyItemize}
+\item This function makes the button pin as Input. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em button\+Pin} & it is the pin which the button is connected to,it may be (PA0 to PD7). \\
+\hline
+\mbox{\texttt{ out}}  & {\em none} & no output arguments\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em WRONG\+\_\+\+PIN\+\_\+\+NUM} & if the pin\+Num is wrong. \\
+\hline
+{\em OK} & if the pin\+Num and the pin\+Direction are correct. \\
+\hline
+\end{DoxyRetVals}
+\end{DoxyItemize}
+\mbox{\Hypertarget{group___button__driver_gad7735668cfe3874834b8b542947cf516}\label{group___button__driver_gad7735668cfe3874834b8b542947cf516}} 
+\index{Button driver@{Button driver}!buttonRead@{buttonRead}}
+\index{buttonRead@{buttonRead}!Button driver@{Button driver}}
+\doxysubsubsection{\texorpdfstring{buttonRead()}{buttonRead()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\+\_\+pin\+Erro\+\_\+t}} button\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\+\_\+pin\+Num\+\_\+t}}}]{button\+Pin,  }\item[{\mbox{\hyperlink{group___m_c_u__port_ga408b1d0fd39c90c802f7bc02520fd609}{EN\+\_\+pin\+State\+\_\+t}} $\ast$}]{pin\+State }\end{DoxyParamCaption})}
+
+
+
+reads the value of the button. 
+
+\mbox{\hyperlink{group___button__driver_gad7735668cfe3874834b8b542947cf516}{button\+Read}} function\+: \begin{DoxyItemize}
+\item It reads the value of the connected pin to the button. \item It store the value in the pin\+State pointer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em button\+Pin} & it is the pin which the button is connected to,it may be (PA0 to PD7). \\
+\hline
+\mbox{\texttt{ out}}  & {\em pin\+State} & the function store the value of the button in that pointer.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em WRONG\+\_\+\+PIN\+\_\+\+NUM} & if the pin\+Num is wrong. \\
+\hline
+{\em OK} & if the pin\+Num is correct. \\
+\hline
+\end{DoxyRetVals}
+\end{DoxyItemize}

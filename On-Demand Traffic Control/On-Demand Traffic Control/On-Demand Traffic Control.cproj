@@ -126,6 +126,12 @@
     <Compile Include="App\app.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="ECUAL\Button driver\Button.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\Button driver\Button.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -149,6 +155,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ECUAL\Button driver" />
+    <Folder Include="ECUAL\LED driver" />
     <Folder Include="MCAL" />
     <Folder Include="App" />
     <Folder Include="ECUAL" />

@@ -1,0 +1,53 @@
+\hypertarget{group__port__b}{}\doxysection{Port B registers}
+\label{group__port__b}\index{Port B registers@{Port B registers}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__port__b_ga09a0c85cd3da09d9cdf63a5ac4c39f77}{PORTB}}~($\ast$((volatile \mbox{\hyperlink{group__data__types_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x38))
+\begin{DoxyCompactList}\small\item\em Output register for port B. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__port__b_ga924a54df722121bc98383bdec5ae1898}{DDRB}}~($\ast$((volatile \mbox{\hyperlink{group__data__types_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x37))
+\begin{DoxyCompactList}\small\item\em Direction register for port B. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__port__b_ga49f0e8289e962c02128f24b94d7aea7c}{PINB}}~($\ast$((volatile \mbox{\hyperlink{group__data__types_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x36))
+\begin{DoxyCompactList}\small\item\em Input register for port A. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__port__b_ga924a54df722121bc98383bdec5ae1898}\label{group__port__b_ga924a54df722121bc98383bdec5ae1898}} 
+\index{Port B registers@{Port B registers}!DDRB@{DDRB}}
+\index{DDRB@{DDRB}!Port B registers@{Port B registers}}
+\doxysubsubsection{\texorpdfstring{DDRB}{DDRB}}
+{\footnotesize\ttfamily \#define DDRB~($\ast$((volatile \mbox{\hyperlink{group__data__types_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x37))}
+
+
+
+Direction register for port B. 
+
+\begin{DoxyItemize}
+\item This register controls the direction of the pin. \item Setting the bit in this register will make the pin output. \item Clearing the bit in this register will make the pin input \end{DoxyItemize}
+\mbox{\Hypertarget{group__port__b_ga49f0e8289e962c02128f24b94d7aea7c}\label{group__port__b_ga49f0e8289e962c02128f24b94d7aea7c}} 
+\index{Port B registers@{Port B registers}!PINB@{PINB}}
+\index{PINB@{PINB}!Port B registers@{Port B registers}}
+\doxysubsubsection{\texorpdfstring{PINB}{PINB}}
+{\footnotesize\ttfamily \#define PINB~($\ast$((volatile \mbox{\hyperlink{group__data__types_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x36))}
+
+
+
+Input register for port A. 
+
+\begin{DoxyItemize}
+\item This register stores the input values of port B. \item If the value is 1 then the applied voltage on this pin is high. \item If the value is 0 then the applied voltage on this pin is low. \end{DoxyItemize}
+\mbox{\Hypertarget{group__port__b_ga09a0c85cd3da09d9cdf63a5ac4c39f77}\label{group__port__b_ga09a0c85cd3da09d9cdf63a5ac4c39f77}} 
+\index{Port B registers@{Port B registers}!PORTB@{PORTB}}
+\index{PORTB@{PORTB}!Port B registers@{Port B registers}}
+\doxysubsubsection{\texorpdfstring{PORTB}{PORTB}}
+{\footnotesize\ttfamily \#define PORTB~($\ast$((volatile \mbox{\hyperlink{group__data__types_gaba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x38))}
+
+
+
+Output register for port B. 
+
+\begin{DoxyItemize}
+\item This register controls the output of the pin. \item Setting the bit in this register will make the pin high. \item Clearing the bit in this register will make the pin low \item If the pin is configured as output through DDRx and we write high to PORTx register this will activate internal pull up resistor (x may be A,B,C or D). \end{DoxyItemize}

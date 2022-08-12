@@ -1,0 +1,37 @@
+\hypertarget{_register_file_8h_source}{}\doxysection{Register\+File.\+h}
+\label{_register_file_8h_source}\index{Service/RegisterFile.h@{Service/RegisterFile.h}}
+\mbox{\hyperlink{_register_file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/****************************************************************************************************************************************************/}}
+\DoxyCodeLine{2 \textcolor{comment}{/*                                                          Author   : Ehab Omara                                                                   */}}
+\DoxyCodeLine{3 \textcolor{comment}{/*                                                          Date     : 8/10/2022 12:06:56 PM                                                        */}}
+\DoxyCodeLine{4 \textcolor{comment}{/*                                                          File name: RegisterFile.h                                                               */}}
+\DoxyCodeLine{5 \textcolor{comment}{/****************************************************************************************************************************************************/}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef REGISTERFILE\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define REGISTERFILE\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*}}
+\DoxyCodeLine{11 \textcolor{comment}{* if the DDRx is set to be output and we write High to the PORTx }}
+\DoxyCodeLine{12 \textcolor{comment}{* this will activate the internal Pull up resistor.}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{45 \textcolor{comment}{/************************************************************* Port A registers ************************************************************/}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define PORTA   (*((volatile uint8\_t*)0x3B))  }\textcolor{comment}{//1-\/>high output              0-\/>low output  }}
+\DoxyCodeLine{67 \textcolor{comment}{}\#define DDRA    (*((volatile uint8\_t*)0x3A))  \textcolor{comment}{//1-\/>to make it output        0-\/>to make it input  }}
+\DoxyCodeLine{75 \textcolor{comment}{}\#define PINA    (*((volatile uint8\_t*)0x39))  \textcolor{comment}{//this register to read a value from a pin }}
+\DoxyCodeLine{79 \textcolor{comment}{}\textcolor{comment}{/************************************************************* Port B registers ************************************************************/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define PORTB   (*((volatile uint8\_t*)0x38))}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define DDRB    (*((volatile uint8\_t*)0x37))}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define PINB    (*((volatile uint8\_t*)0x36))}}
+\DoxyCodeLine{111 \textcolor{comment}{/************************************************************* Port C registers ************************************************************/}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define PORTC   (*((volatile uint8\_t*)0x35))}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define DDRC    (*((volatile uint8\_t*)0x34))}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define PINC    (*((volatile uint8\_t*)0x33))}}
+\DoxyCodeLine{142 \textcolor{comment}{/************************************************************* Port D registers ************************************************************/}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define PORTD   (*((volatile uint8\_t*)0x32))}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define DDRD    (*((volatile uint8\_t*)0x31))}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define PIND    (*((volatile uint8\_t*)0x30)) }}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* REGISTERFILE\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

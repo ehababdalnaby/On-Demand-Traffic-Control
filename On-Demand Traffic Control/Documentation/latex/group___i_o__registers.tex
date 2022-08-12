@@ -1,0 +1,21 @@
+\hypertarget{group___i_o__registers}{}\doxysection{I/O registers}
+\label{group___i_o__registers}\index{I/O registers@{I/O registers}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__port__a}{Port A registers}}
+\item 
+\mbox{\hyperlink{group__port__b}{Port B registers}}
+\item 
+\mbox{\hyperlink{group__port__c}{Port C registers}}
+\item 
+\mbox{\hyperlink{group__port__d}{Port D registers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This contains all I/O registers that controls the functionality of the MCU ports. \begin{DoxyNote}{Note}
+x may be (A,B,C, or D) and n from 0 to 7.
+\end{DoxyNote}
+\begin{DoxyItemize}
+\item Each port pin consists of three register bits\+: DDxn, PORTxn, and PINxn. The DDxn bits are accessed at the DDRx I/O address, the PORTxn bits at the PORTx I/O address, and the PINxn bits at the PINx I/O address. \item The DDxn bit in the DDRx Register selects the direction of this pin. If DDxn is written logic one, Pxn is configured as an output pin. If DDxn is written logic zero, Pxn is  configured as an input pin. \item If PORTxn is written logic one when the pin is configured as an input pin, the pull-\/up resistor is activated. To switch the pull-\/up resistor off, PORTxn has to be written logic zero or the pin has to be configured as an output pin. The port pins are tri-\/stated when a reset condition becomes active, even if no clocks are running. \textbackslash{}arg\+If PORTxn is written logic one when the pin is configured as an output pin, the port pin is driven high (one). If PORTxn is written logic zero when the pin is configured as an out put pin, the port pin is driven low (zero). \end{DoxyItemize}

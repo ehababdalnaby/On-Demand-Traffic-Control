@@ -1,0 +1,47 @@
+\hypertarget{group___port___a___register}{}\doxysection{Port\+\_\+\+A\+\_\+\+Register}
+\label{group___port___a___register}\index{Port\_A\_Register@{Port\_A\_Register}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___port___a___register_ga7c8a7f98a98d8cb125dd57a66720ab30}{PORTA}}~($\ast$((volatile \mbox{\hyperlink{data_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x3B))
+\begin{DoxyCompactList}\small\item\em Output register for port A. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___port___a___register_gada011c5bf95ab91774eee5c29b45fd06}{DDRA}}~($\ast$((volatile \mbox{\hyperlink{data_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x3A))
+\begin{DoxyCompactList}\small\item\em Direction register for port A. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___port___a___register_gaa5b59706bf235bbd1936ae801f125507}{PINA}}~($\ast$((volatile \mbox{\hyperlink{data_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x39))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These registers control the port A. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___port___a___register_gada011c5bf95ab91774eee5c29b45fd06}\label{group___port___a___register_gada011c5bf95ab91774eee5c29b45fd06}} 
+\index{Port\_A\_Register@{Port\_A\_Register}!DDRA@{DDRA}}
+\index{DDRA@{DDRA}!Port\_A\_Register@{Port\_A\_Register}}
+\doxysubsubsection{\texorpdfstring{DDRA}{DDRA}}
+{\footnotesize\ttfamily \#define DDRA~($\ast$((volatile \mbox{\hyperlink{data_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x3A))}
+
+
+
+Direction register for port A. 
+
+\begin{DoxyItemize}
+\item This register controls the direction of the pin. \item Setting the bit in this register will make the pin output. \item Clearing the bit in this register will make the pin input \end{DoxyItemize}
+\mbox{\Hypertarget{group___port___a___register_gaa5b59706bf235bbd1936ae801f125507}\label{group___port___a___register_gaa5b59706bf235bbd1936ae801f125507}} 
+\index{Port\_A\_Register@{Port\_A\_Register}!PINA@{PINA}}
+\index{PINA@{PINA}!Port\_A\_Register@{Port\_A\_Register}}
+\doxysubsubsection{\texorpdfstring{PINA}{PINA}}
+{\footnotesize\ttfamily \#define PINA~($\ast$((volatile \mbox{\hyperlink{data_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x39))}
+
+\mbox{\Hypertarget{group___port___a___register_ga7c8a7f98a98d8cb125dd57a66720ab30}\label{group___port___a___register_ga7c8a7f98a98d8cb125dd57a66720ab30}} 
+\index{Port\_A\_Register@{Port\_A\_Register}!PORTA@{PORTA}}
+\index{PORTA@{PORTA}!Port\_A\_Register@{Port\_A\_Register}}
+\doxysubsubsection{\texorpdfstring{PORTA}{PORTA}}
+{\footnotesize\ttfamily \#define PORTA~($\ast$((volatile \mbox{\hyperlink{data_types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)0x3B))}
+
+
+
+Output register for port A. 
+
+\begin{DoxyItemize}
+\item This register controls the output of the pin. \item Setting the bit in this register will make the pin high. \item Clearing the bit in this register will make the pin low \item If the pin is configured as output through DDRx and we write high to PORTx register this will activate internal pull up resistor (x may be A,B,C or D). \end{DoxyItemize}

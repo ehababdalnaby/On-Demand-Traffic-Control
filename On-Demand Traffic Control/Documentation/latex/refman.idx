@@ -1,0 +1,193 @@
+\indexentry{Service layer@{Service layer}|hyperpage}{5}
+\indexentry{MCU Registers@{MCU Registers}|hyperpage}{5}
+\indexentry{Port A registers@{Port A registers}|hyperpage}{5}
+\indexentry{Port A registers@{Port A registers}!DDRA@{DDRA}|hyperpage}{6}
+\indexentry{DDRA@{DDRA}!Port A registers@{Port A registers}|hyperpage}{6}
+\indexentry{Port A registers@{Port A registers}!DDRB@{DDRB}|hyperpage}{6}
+\indexentry{DDRB@{DDRB}!Port A registers@{Port A registers}|hyperpage}{6}
+\indexentry{Port A registers@{Port A registers}!DDRC@{DDRC}|hyperpage}{7}
+\indexentry{DDRC@{DDRC}!Port A registers@{Port A registers}|hyperpage}{7}
+\indexentry{Port A registers@{Port A registers}!DDRD@{DDRD}|hyperpage}{7}
+\indexentry{DDRD@{DDRD}!Port A registers@{Port A registers}|hyperpage}{7}
+\indexentry{Port A registers@{Port A registers}!PINA@{PINA}|hyperpage}{7}
+\indexentry{PINA@{PINA}!Port A registers@{Port A registers}|hyperpage}{7}
+\indexentry{Port A registers@{Port A registers}!PINB@{PINB}|hyperpage}{7}
+\indexentry{PINB@{PINB}!Port A registers@{Port A registers}|hyperpage}{7}
+\indexentry{Port A registers@{Port A registers}!PINC@{PINC}|hyperpage}{8}
+\indexentry{PINC@{PINC}!Port A registers@{Port A registers}|hyperpage}{8}
+\indexentry{Port A registers@{Port A registers}!PIND@{PIND}|hyperpage}{8}
+\indexentry{PIND@{PIND}!Port A registers@{Port A registers}|hyperpage}{8}
+\indexentry{Port A registers@{Port A registers}!PORTA@{PORTA}|hyperpage}{8}
+\indexentry{PORTA@{PORTA}!Port A registers@{Port A registers}|hyperpage}{8}
+\indexentry{Port A registers@{Port A registers}!PORTB@{PORTB}|hyperpage}{8}
+\indexentry{PORTB@{PORTB}!Port A registers@{Port A registers}|hyperpage}{8}
+\indexentry{Port A registers@{Port A registers}!PORTC@{PORTC}|hyperpage}{9}
+\indexentry{PORTC@{PORTC}!Port A registers@{Port A registers}|hyperpage}{9}
+\indexentry{Port A registers@{Port A registers}!PORTD@{PORTD}|hyperpage}{9}
+\indexentry{PORTD@{PORTD}!Port A registers@{Port A registers}|hyperpage}{9}
+\indexentry{App/app.c@{App/app.c}|hyperpage}{11}
+\indexentry{App/app.h@{App/app.h}|hyperpage}{11}
+\indexentry{App/app.h@{App/app.h}|hyperpage}{11}
+\indexentry{Debug/App/app.d@{Debug/App/app.d}|hyperpage}{11}
+\indexentry{Debug/ECUAL/Button driver/Button.d@{Debug/ECUAL/Button driver/Button.d}|hyperpage}{11}
+\indexentry{Debug/main.d@{Debug/main.d}|hyperpage}{11}
+\indexentry{Debug/MCAL/Dio driver/DIO.d@{Debug/MCAL/Dio driver/DIO.d}|hyperpage}{11}
+\indexentry{ECUAL/Button driver/Button.c@{ECUAL/Button driver/Button.c}|hyperpage}{11}
+\indexentry{Button.c@{Button.c}!buttonInit@{buttonInit}|hyperpage}{12}
+\indexentry{buttonInit@{buttonInit}!Button.c@{Button.c}|hyperpage}{12}
+\indexentry{ECUAL/Button driver/Button.h@{ECUAL/Button driver/Button.h}|hyperpage}{12}
+\indexentry{Button.h@{Button.h}!buttonInit@{buttonInit}|hyperpage}{12}
+\indexentry{buttonInit@{buttonInit}!Button.h@{Button.h}|hyperpage}{12}
+\indexentry{ECUAL/Button driver/Button.h@{ECUAL/Button driver/Button.h}|hyperpage}{13}
+\indexentry{main.c@{main.c}|hyperpage}{13}
+\indexentry{main.c@{main.c}!main@{main}|hyperpage}{13}
+\indexentry{main@{main}!main.c@{main.c}|hyperpage}{13}
+\indexentry{MCAL/Dio driver/DIO.c@{MCAL/Dio driver/DIO.c}|hyperpage}{13}
+\indexentry{DIO.c@{DIO.c}!DIO\_pinInit@{DIO\_pinInit}|hyperpage}{14}
+\indexentry{DIO\_pinInit@{DIO\_pinInit}!DIO.c@{DIO.c}|hyperpage}{14}
+\indexentry{DIO.c@{DIO.c}!DIO\_pinRead@{DIO\_pinRead}|hyperpage}{14}
+\indexentry{DIO\_pinRead@{DIO\_pinRead}!DIO.c@{DIO.c}|hyperpage}{14}
+\indexentry{DIO.c@{DIO.c}!DIO\_pinToggle@{DIO\_pinToggle}|hyperpage}{15}
+\indexentry{DIO\_pinToggle@{DIO\_pinToggle}!DIO.c@{DIO.c}|hyperpage}{15}
+\indexentry{DIO.c@{DIO.c}!DIO\_pinWrite@{DIO\_pinWrite}|hyperpage}{15}
+\indexentry{DIO\_pinWrite@{DIO\_pinWrite}!DIO.c@{DIO.c}|hyperpage}{15}
+\indexentry{MCAL/Dio driver/DIO.h@{MCAL/Dio driver/DIO.h}|hyperpage}{16}
+\indexentry{DIO.h@{DIO.h}!DIO\_pinInit@{DIO\_pinInit}|hyperpage}{17}
+\indexentry{DIO\_pinInit@{DIO\_pinInit}!DIO.h@{DIO.h}|hyperpage}{17}
+\indexentry{DIO.h@{DIO.h}!DIO\_pinRead@{DIO\_pinRead}|hyperpage}{17}
+\indexentry{DIO\_pinRead@{DIO\_pinRead}!DIO.h@{DIO.h}|hyperpage}{17}
+\indexentry{DIO.h@{DIO.h}!DIO\_pinToggle@{DIO\_pinToggle}|hyperpage}{18}
+\indexentry{DIO\_pinToggle@{DIO\_pinToggle}!DIO.h@{DIO.h}|hyperpage}{18}
+\indexentry{DIO.h@{DIO.h}!DIO\_pinWrite@{DIO\_pinWrite}|hyperpage}{18}
+\indexentry{DIO\_pinWrite@{DIO\_pinWrite}!DIO.h@{DIO.h}|hyperpage}{18}
+\indexentry{MCAL/Dio driver/DIO.h@{MCAL/Dio driver/DIO.h}|hyperpage}{19}
+\indexentry{Service/ATmega32Port.h@{Service/ATmega32Port.h}|hyperpage}{19}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PORTA\_OFFSET@{PORTA\_OFFSET}|hyperpage}{20}
+\indexentry{PORTA\_OFFSET@{PORTA\_OFFSET}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{20}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PORTB\_OFFSET@{PORTB\_OFFSET}|hyperpage}{20}
+\indexentry{PORTB\_OFFSET@{PORTB\_OFFSET}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{20}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PORTC\_OFFSET@{PORTC\_OFFSET}|hyperpage}{20}
+\indexentry{PORTC\_OFFSET@{PORTC\_OFFSET}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{20}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PORTD\_OFFSET@{PORTD\_OFFSET}|hyperpage}{20}
+\indexentry{PORTD\_OFFSET@{PORTD\_OFFSET}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{20}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!EN\_pinDirection\_t@{EN\_pinDirection\_t}|hyperpage}{20}
+\indexentry{EN\_pinDirection\_t@{EN\_pinDirection\_t}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{20}
+\indexentry{Input@{Input}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!Input@{Input}|hyperpage}{21}
+\indexentry{Output@{Output}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!Output@{Output}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!EN\_pinErro\_t@{EN\_pinErro\_t}|hyperpage}{21}
+\indexentry{EN\_pinErro\_t@{EN\_pinErro\_t}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{OK@{OK}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!OK@{OK}|hyperpage}{21}
+\indexentry{WRONG\_PIN\_NUM@{WRONG\_PIN\_NUM}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!WRONG\_PIN\_NUM@{WRONG\_PIN\_NUM}|hyperpage}{21}
+\indexentry{WRONG\_PIN\_DIR@{WRONG\_PIN\_DIR}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!WRONG\_PIN\_DIR@{WRONG\_PIN\_DIR}|hyperpage}{21}
+\indexentry{WRONG\_PIN\_STATE@{WRONG\_PIN\_STATE}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!WRONG\_PIN\_STATE@{WRONG\_PIN\_STATE}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!EN\_pinNum\_t@{EN\_pinNum\_t}|hyperpage}{21}
+\indexentry{EN\_pinNum\_t@{EN\_pinNum\_t}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{PA0@{PA0}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA0@{PA0}|hyperpage}{21}
+\indexentry{PA1@{PA1}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA1@{PA1}|hyperpage}{21}
+\indexentry{PA2@{PA2}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA2@{PA2}|hyperpage}{21}
+\indexentry{PA3@{PA3}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA3@{PA3}|hyperpage}{21}
+\indexentry{PA4@{PA4}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA4@{PA4}|hyperpage}{21}
+\indexentry{PA5@{PA5}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA5@{PA5}|hyperpage}{21}
+\indexentry{PA6@{PA6}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA6@{PA6}|hyperpage}{21}
+\indexentry{PA7@{PA7}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PA7@{PA7}|hyperpage}{21}
+\indexentry{PB0@{PB0}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB0@{PB0}|hyperpage}{21}
+\indexentry{PB1@{PB1}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB1@{PB1}|hyperpage}{21}
+\indexentry{PB2@{PB2}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB2@{PB2}|hyperpage}{21}
+\indexentry{PB3@{PB3}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB3@{PB3}|hyperpage}{21}
+\indexentry{PB4@{PB4}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB4@{PB4}|hyperpage}{21}
+\indexentry{PB5@{PB5}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB5@{PB5}|hyperpage}{21}
+\indexentry{PB6@{PB6}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB6@{PB6}|hyperpage}{21}
+\indexentry{PB7@{PB7}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PB7@{PB7}|hyperpage}{21}
+\indexentry{PC0@{PC0}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC0@{PC0}|hyperpage}{21}
+\indexentry{PC1@{PC1}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC1@{PC1}|hyperpage}{21}
+\indexentry{PC2@{PC2}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{21}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC2@{PC2}|hyperpage}{21}
+\indexentry{PC3@{PC3}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC3@{PC3}|hyperpage}{22}
+\indexentry{PC4@{PC4}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC4@{PC4}|hyperpage}{22}
+\indexentry{PC5@{PC5}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC5@{PC5}|hyperpage}{22}
+\indexentry{PC6@{PC6}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC6@{PC6}|hyperpage}{22}
+\indexentry{PC7@{PC7}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PC7@{PC7}|hyperpage}{22}
+\indexentry{PD0@{PD0}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD0@{PD0}|hyperpage}{22}
+\indexentry{PD1@{PD1}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD1@{PD1}|hyperpage}{22}
+\indexentry{PD2@{PD2}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD2@{PD2}|hyperpage}{22}
+\indexentry{PD3@{PD3}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD3@{PD3}|hyperpage}{22}
+\indexentry{PD4@{PD4}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD4@{PD4}|hyperpage}{22}
+\indexentry{PD5@{PD5}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD5@{PD5}|hyperpage}{22}
+\indexentry{PD6@{PD6}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD6@{PD6}|hyperpage}{22}
+\indexentry{PD7@{PD7}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!PD7@{PD7}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!EN\_pinState\_t@{EN\_pinState\_t}|hyperpage}{22}
+\indexentry{EN\_pinState\_t@{EN\_pinState\_t}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{Low@{Low}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!Low@{Low}|hyperpage}{22}
+\indexentry{High@{High}!ATmega32Port.h@{ATmega32Port.h}|hyperpage}{22}
+\indexentry{ATmega32Port.h@{ATmega32Port.h}!High@{High}|hyperpage}{22}
+\indexentry{Service/ATmega32Port.h@{Service/ATmega32Port.h}|hyperpage}{22}
+\indexentry{Service/BitMath.h@{Service/BitMath.h}|hyperpage}{23}
+\indexentry{BitMath.h@{BitMath.h}!clrBit@{clrBit}|hyperpage}{23}
+\indexentry{clrBit@{clrBit}!BitMath.h@{BitMath.h}|hyperpage}{23}
+\indexentry{BitMath.h@{BitMath.h}!getBit@{getBit}|hyperpage}{23}
+\indexentry{getBit@{getBit}!BitMath.h@{BitMath.h}|hyperpage}{23}
+\indexentry{BitMath.h@{BitMath.h}!setBit@{setBit}|hyperpage}{24}
+\indexentry{setBit@{setBit}!BitMath.h@{BitMath.h}|hyperpage}{24}
+\indexentry{BitMath.h@{BitMath.h}!toggleBit@{toggleBit}|hyperpage}{24}
+\indexentry{toggleBit@{toggleBit}!BitMath.h@{BitMath.h}|hyperpage}{24}
+\indexentry{Service/BitMath.h@{Service/BitMath.h}|hyperpage}{24}
+\indexentry{Service/dataTypes.h@{Service/dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!float128\_t@{float128\_t}|hyperpage}{25}
+\indexentry{float128\_t@{float128\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!float32\_t@{float32\_t}|hyperpage}{25}
+\indexentry{float32\_t@{float32\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!float64\_t@{float64\_t}|hyperpage}{25}
+\indexentry{float64\_t@{float64\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!sint16\_t@{sint16\_t}|hyperpage}{25}
+\indexentry{sint16\_t@{sint16\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!sint32\_t@{sint32\_t}|hyperpage}{25}
+\indexentry{sint32\_t@{sint32\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!sint8\_t@{sint8\_t}|hyperpage}{25}
+\indexentry{sint8\_t@{sint8\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{25}
+\indexentry{dataTypes.h@{dataTypes.h}!uint16\_t@{uint16\_t}|hyperpage}{26}
+\indexentry{uint16\_t@{uint16\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{26}
+\indexentry{dataTypes.h@{dataTypes.h}!uint32\_t@{uint32\_t}|hyperpage}{26}
+\indexentry{uint32\_t@{uint32\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{26}
+\indexentry{dataTypes.h@{dataTypes.h}!uint8\_t@{uint8\_t}|hyperpage}{26}
+\indexentry{uint8\_t@{uint8\_t}!dataTypes.h@{dataTypes.h}|hyperpage}{26}
+\indexentry{Service/dataTypes.h@{Service/dataTypes.h}|hyperpage}{26}
+\indexentry{Service/RegisterFile.h@{Service/RegisterFile.h}|hyperpage}{27}
+\indexentry{Service/RegisterFile.h@{Service/RegisterFile.h}|hyperpage}{27}

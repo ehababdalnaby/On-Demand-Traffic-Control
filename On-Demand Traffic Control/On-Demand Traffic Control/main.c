@@ -4,13 +4,15 @@
 /*															File name: main.c																		*/
 /****************************************************************************************************************************************************/
 
-
+#include "./MCAL/Dio driver/DIO.h"
 
 int main(void)
 {
+	DIO_pinInit(PA0,Output);
 	while (1)
 	{
-		
+		DIO_pinWrite(PA0,Low);
 	}
 	return 0;
 }
+

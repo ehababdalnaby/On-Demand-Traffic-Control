@@ -1,0 +1,171 @@
+.TH "Service/ATmega32Port.h" 3 "Fri Aug 12 2022" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Service/ATmega32Port.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPORTA_OFFSET\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPORTB_OFFSET\fP   8"
+.br
+.ti -1c
+.RI "#define \fBPORTC_OFFSET\fP   16"
+.br
+.ti -1c
+.RI "#define \fBPORTD_OFFSET\fP   24"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEN_pinNum_t\fP { \fBPA0\fP, \fBPA1\fP, \fBPA2\fP, \fBPA3\fP, \fBPA4\fP, \fBPA5\fP, \fBPA6\fP, \fBPA7\fP, \fBPB0\fP, \fBPB1\fP, \fBPB2\fP, \fBPB3\fP, \fBPB4\fP, \fBPB5\fP, \fBPB6\fP, \fBPB7\fP, \fBPC0\fP, \fBPC1\fP, \fBPC2\fP, \fBPC3\fP, \fBPC4\fP, \fBPC5\fP, \fBPC6\fP, \fBPC7\fP, \fBPD0\fP, \fBPD1\fP, \fBPD2\fP, \fBPD3\fP, \fBPD4\fP, \fBPD5\fP, \fBPD6\fP, \fBPD7\fP }"
+.br
+.ti -1c
+.RI "enum \fBEN_pinState_t\fP { \fBLow\fP, \fBHigh\fP }"
+.br
+.ti -1c
+.RI "enum \fBEN_pinDirection_t\fP { \fBInput\fP, \fBOutput\fP }"
+.br
+.ti -1c
+.RI "enum \fBEN_pinErro_t\fP { \fBOK\fP, \fBWRONG_PIN_NUM\fP, \fBWRONG_PIN_DIR\fP, \fBWRONG_PIN_STATE\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define PORTA_OFFSET   0"
+
+.PP
+Definition at line \fB22\fP of file \fBATmega32Port\&.h\fP\&.
+.SS "#define PORTB_OFFSET   8"
+
+.PP
+Definition at line \fB23\fP of file \fBATmega32Port\&.h\fP\&.
+.SS "#define PORTC_OFFSET   16"
+
+.PP
+Definition at line \fB24\fP of file \fBATmega32Port\&.h\fP\&.
+.SS "#define PORTD_OFFSET   24"
+
+.PP
+Definition at line \fB25\fP of file \fBATmega32Port\&.h\fP\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBEN_pinDirection_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIInput \fP\fP
+.TP
+\fB\fIOutput \fP\fP
+.PP
+Definition at line \fB28\fP of file \fBATmega32Port\&.h\fP\&.
+.SS "enum \fBEN_pinErro_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIOK \fP\fP
+.TP
+\fB\fIWRONG_PIN_NUM \fP\fP
+.TP
+\fB\fIWRONG_PIN_DIR \fP\fP
+.TP
+\fB\fIWRONG_PIN_STATE \fP\fP
+.PP
+Definition at line \fB29\fP of file \fBATmega32Port\&.h\fP\&.
+.SS "enum \fBEN_pinNum_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPA0 \fP\fP
+.TP
+\fB\fIPA1 \fP\fP
+.TP
+\fB\fIPA2 \fP\fP
+.TP
+\fB\fIPA3 \fP\fP
+.TP
+\fB\fIPA4 \fP\fP
+.TP
+\fB\fIPA5 \fP\fP
+.TP
+\fB\fIPA6 \fP\fP
+.TP
+\fB\fIPA7 \fP\fP
+.TP
+\fB\fIPB0 \fP\fP
+.TP
+\fB\fIPB1 \fP\fP
+.TP
+\fB\fIPB2 \fP\fP
+.TP
+\fB\fIPB3 \fP\fP
+.TP
+\fB\fIPB4 \fP\fP
+.TP
+\fB\fIPB5 \fP\fP
+.TP
+\fB\fIPB6 \fP\fP
+.TP
+\fB\fIPB7 \fP\fP
+.TP
+\fB\fIPC0 \fP\fP
+.TP
+\fB\fIPC1 \fP\fP
+.TP
+\fB\fIPC2 \fP\fP
+.TP
+\fB\fIPC3 \fP\fP
+.TP
+\fB\fIPC4 \fP\fP
+.TP
+\fB\fIPC5 \fP\fP
+.TP
+\fB\fIPC6 \fP\fP
+.TP
+\fB\fIPC7 \fP\fP
+.TP
+\fB\fIPD0 \fP\fP
+.TP
+\fB\fIPD1 \fP\fP
+.TP
+\fB\fIPD2 \fP\fP
+.TP
+\fB\fIPD3 \fP\fP
+.TP
+\fB\fIPD4 \fP\fP
+.TP
+\fB\fIPD5 \fP\fP
+.TP
+\fB\fIPD6 \fP\fP
+.TP
+\fB\fIPD7 \fP\fP
+.PP
+Definition at line \fB10\fP of file \fBATmega32Port\&.h\fP\&.
+.SS "enum \fBEN_pinState_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILow \fP\fP
+.TP
+\fB\fIHigh \fP\fP
+.PP
+Definition at line \fB27\fP of file \fBATmega32Port\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,15 @@
+\hypertarget{_bit_math_8h_source}{}\doxysection{Bit\+Math.\+h}
+\label{_bit_math_8h_source}\index{Service/BitMath.h@{Service/BitMath.h}}
+\mbox{\hyperlink{_bit_math_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/**************************************************************************************************************************************************/}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef BITMATH\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define BITMATH\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define setBit(reg,bitNum)  reg |= (1<<bitNum)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define clrBit(reg,bitNum)  reg \&= (\string~(1<<bitNum))}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define toggleBit(reg,bitNum)   reg \string^= (1<<bitNum)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define getBit(reg,bitNum)              ((reg>>bitNum)  \&   0x01)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* BITMATH\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

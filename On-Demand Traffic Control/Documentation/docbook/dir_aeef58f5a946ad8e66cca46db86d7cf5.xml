@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_aeef58f5a946ad8e66cca46db86d7cf5" xml:lang="en-US">
+<title>MCAL Directory Reference</title>
+<indexterm><primary>MCAL Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_bee0b53741bc04d4b8c9723229bff702">Dio driver</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>
