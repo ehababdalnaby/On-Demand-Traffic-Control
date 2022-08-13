@@ -147,6 +147,9 @@
     <Compile Include="MCAL\Dio driver\DIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\Interrupt\Interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Service\ATmega32Port.h">
       <SubType>compile</SubType>
     </Compile>
@@ -168,6 +171,7 @@
     <Folder Include="ECUAL" />
     <Folder Include="MCAL\Dio driver" />
     <Folder Include="MCAL\Ext interrupt driver" />
+    <Folder Include="MCAL\Interrupt" />
     <Folder Include="MCAL\Timer driver" />
     <Folder Include="Service" />
   </ItemGroup>

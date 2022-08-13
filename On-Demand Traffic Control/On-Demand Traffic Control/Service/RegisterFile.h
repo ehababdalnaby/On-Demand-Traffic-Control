@@ -168,8 +168,68 @@ driven high (one). If PORTxn is written logic zero when the pin is configured as
 *\arg If the value is 1 then the applied voltage on this pin is high.
 *\arg If the value is 0 then the applied voltage on this pin is low.
 */
-#define PIND	(*((volatile uint8_t*)0x30)) 
+#define PIND	(*((volatile uint8_t*)0x30))
 /**@}*/
+ /************************************************************* Interrupts registers ************************************************************/
+ /**
+ *\defgroup int_registers  Interrupt registers
+ *\ingroup registers
+ *@{
+ */
+ /**
+ *@brief General Interrupt Control Register.
+ *\image html GICR.png
+ *\image latex GICR.png
+ *\details
+*\arg	Bit 7 - INT1: External Interrupt Request 1 Enable
+*\arg	Bit 6 - INT0: External Interrupt Request 0 Enable
+*\arg	Bit 5 - INT2: External Interrupt Request 2 Enable
+ */
+#define GICR	(*((volatile uint8_t*)0x5B))
+
+/**
+ *@brief General Interrupt Flag Register.
+ *\image html GIFR.png
+  *\image latex GIFR.png
+ *\details
+*\arg	Bit 7 - INTF1: External Interrupt Flag 1
+*\arg	Bit 6 - INTF0: External Interrupt Flag 0 
+*\arg	Bit 5 - INTF2: External Interrupt Flag 2 
+ */
+#define GIFR	(*((volatile uint8_t*)0x5A))
+/**
+ *@brief MCU Control Register.
+ *\image html MCUCR.png
+  *\image latex MCUCR.png
+ *\details
+*\arg	Bit 3, 2 - ISC11, ISC10: Interrupt Sense Control 1 Bit 1 and Bit 0.
+*\arg Interrupt 0 and interrupt 1 Sense Control.
+ISCx1  |ISCx0  | Description											   |
+:----: |:----: | :--------------------------------------------------------:|
+0	   |0	   | The low level of INTx generates an interrupt request.	   |
+0	   |1	   | Any logical change on INTx generates an interrupt request.|
+1	   |0	   |  The falling edge of INTx generates an interrupt request. |
+1	   |1	   | The rising edge of INTx generates an interrupt request.   |
+*\note x may be 0 or 1.
+
+ */
+#define MCUCR	(*((volatile uint8_t*)0x55))
+
+/**
+ *@brief MCU Control and Status Register.
+ *\image html MCUCSR.png
+  *\image latex MCUCSR.png
+ *\details
+*\arg	Bit 6 - ISC2: Interrupt Sense Control 2
+*\arg 
+ISC2   | Description
+:----: | :-------------:
+0	   | The falling edge on INT2 activates the interrupt request.
+1	   | The rising edge on INT2 activates the interrupt request.
+ */
+#define MCUCSR	(*((volatile uint8_t*)0x54))
+/**@}*/
+
 
 
 #endif /* REGISTERFILE_H_ */

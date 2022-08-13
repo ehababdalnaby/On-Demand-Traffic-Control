@@ -6,7 +6,7 @@ var data_types_8h =
     [ "sint16_t", "group__data__types.html#ga80ada937686f2e05ea7b35ac9251cc94", null ],
     [ "sint32_t", "group__data__types.html#ga1bc14dea5af31c4ad4f0abab9c79b939", null ],
     [ "sint8_t", "group__data__types.html#ga54cceacffb6d6dff03bf69f786d431a9", null ],
-    [ "uint16_t", "group__data__types.html#gadf4d876453337156dde61095e1f20223", null ],
+    [ "uint16_tt", "group__data__types.html#ga9195bb28e07a534a3618c83c9448615b", null ],
     [ "uint32_t", "group__data__types.html#ga33594304e786b158f3fb30289278f5af", null ],
     [ "uint8_t", "group__data__types.html#gaba7bc1797add20fe3efdf37ced1182c5", null ]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['definition_20of_20data_20types_0',['Definition of data types',['../group__data__types.html',1,'']]],
-  ['dio_20driver_1',['DIO driver',['../group___d_i_o.html',1,'']]]
+  ['bit_20math_0',['Bit math',['../group__bit__math.html',1,'']]],
+  ['button_20driver_1',['Button driver',['../group___button__driver.html',1,'']]]
 ];

@@ -1,0 +1,336 @@
+\hypertarget{group__avr__interrupts}{}\doxysection{ATMEGA32 interrupts definitions}
+\label{group__avr__interrupts}\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+
+
+Interrupts request handlers.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gaad5ebd34cb344c26ac87594f79b06b73}{sei}}()~\+\_\+\+\_\+asm\+\_\+\+\_\+ \+\_\+\+\_\+volatile\+\_\+\+\_\+ (\char`\"{}sei\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga68c330e94fe121eba993e5a5973c3162}{cli}}()~\+\_\+\+\_\+asm\+\_\+\+\_\+ \+\_\+\+\_\+volatile\+\_\+\+\_\+ (\char`\"{}cli\char`\"{} \+::: \char`\"{}memory\char`\"{})
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga1607129b3853bd4e31dffd5ab3a7c058}{EXT\+\_\+\+INT0}}~\+\_\+\+\_\+vector\+\_\+1
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga747ac8a90f3494ef4c29dc6ef10ae1b0}{EXT\+\_\+\+INT1}}~\+\_\+\+\_\+vector\+\_\+2
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gafd82757ef10befab4762b35594d96df9}{EXT\+\_\+\+INT2}}~\+\_\+\+\_\+vector\+\_\+3
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga379fa8f5226ae225d9709531390d515c}{TIM2\+\_\+\+COMP}}~\+\_\+\+\_\+vector\+\_\+4
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga5770e2ad357217cabd4d38f81b5cbcc9}{TIM2\+\_\+\+OVF}}~\+\_\+\+\_\+vector\+\_\+5
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga8bf41d238af30a395847c88154799690}{TIM1\+\_\+\+CAPT}}~\+\_\+\+\_\+vector\+\_\+6
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga238903e21ed5412fb2b08f839b0748f3}{TIM1\+\_\+\+COMPA}}~\+\_\+\+\_\+vector\+\_\+7
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gabd08737625b68ad504e522bbdc857276}{TIM1\+\_\+\+COMPB}}~\+\_\+\+\_\+vector\+\_\+8
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga5720ebe501b884dff8a04a22745edead}{TIM1\+\_\+\+OVF}}~\+\_\+\+\_\+vector\+\_\+9
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gaff9397f76e118b98a6c62f748108e10e}{TIM0\+\_\+\+COMP}}~\+\_\+\+\_\+vector\+\_\+10
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gacc45342110cf03738821c693655bb7d7}{TIM0\+\_\+\+OVF}}~\+\_\+\+\_\+vector\+\_\+11
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga9568ac87a72a3f395ac2fd9356fbc6b2}{SPI\+\_\+\+STC}}~\+\_\+\+\_\+vector\+\_\+12
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga0125cfe5027aa244d2471194b7ae70c6}{USART\+\_\+\+RXC}}~\+\_\+\+\_\+vector\+\_\+13
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gae7a2f86b8b77be646c968723dd2e7704}{USART\+\_\+\+UDRE}}~\+\_\+\+\_\+vector\+\_\+14
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga93db53515ba3a93bf91adbc9894bdf6d}{USART\+\_\+\+TXC}}~\+\_\+\+\_\+vector\+\_\+15
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga54d148b91f3d356713f7e367a2243bea}{ADC}}~\+\_\+\+\_\+vector\+\_\+16
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gaff78d9623c340017ad6b9245ec4df519}{EE\+\_\+\+RDY}}~\+\_\+\+\_\+vector\+\_\+17
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gace3c7f760c30b2bd0563265864db1926}{ANA\+\_\+\+COMP}}~\+\_\+\+\_\+vector\+\_\+18
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_ga82dd285d848c7aa4c9ee6ae8910c5e89}{TWI}}~\+\_\+\+\_\+vector\+\_\+19
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gadbaed2ec40bae1c53d68ca03081bb701}{SPM\+\_\+\+RDY}}~\+\_\+\+\_\+vector\+\_\+20
+\item 
+\#define \mbox{\hyperlink{group__avr__interrupts_gaef9ee27676f002a54355685968b07da5}{ISR}}(INT\+\_\+\+VECT)
+\begin{DoxyCompactList}\small\item\em interrupt service routine Macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interrupts request handlers. 
+
+\doxysubsection*{This section contains\+:}
+
+\begin{DoxyItemize}
+\item Macros for Interrupts request handlers in ATmega32. \item Macros for enabling and disabling global interrupt. \item ISR Macro which defines interrupt service routine function. \end{DoxyItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__avr__interrupts_ga54d148b91f3d356713f7e367a2243bea}\label{group__avr__interrupts_ga54d148b91f3d356713f7e367a2243bea}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!ADC@{ADC}}
+\index{ADC@{ADC}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{ADC}{ADC}}
+{\footnotesize\ttfamily \#define ADC~\+\_\+\+\_\+vector\+\_\+16}
+
+This Macro defines ADC Conversion Complete Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00063}{63}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gace3c7f760c30b2bd0563265864db1926}\label{group__avr__interrupts_gace3c7f760c30b2bd0563265864db1926}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!ANA\_COMP@{ANA\_COMP}}
+\index{ANA\_COMP@{ANA\_COMP}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{ANA\_COMP}{ANA\_COMP}}
+{\footnotesize\ttfamily \#define ANA\+\_\+\+COMP~\+\_\+\+\_\+vector\+\_\+18}
+
+This Macro defines Analog Comparator Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00065}{65}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga68c330e94fe121eba993e5a5973c3162}\label{group__avr__interrupts_ga68c330e94fe121eba993e5a5973c3162}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!cli@{cli}}
+\index{cli@{cli}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{cli}{cli}}
+{\footnotesize\ttfamily \#define cli(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+asm\+\_\+\+\_\+ \+\_\+\+\_\+volatile\+\_\+\+\_\+ (\char`\"{}cli\char`\"{} \+::: \char`\"{}memory\char`\"{})}
+
+\begin{DoxyItemize}
+\item Disables all interrupts by clearing the global interrupt mask. \item This function actually compiles into a single line of assembly, so there is no function call overhead. ~\newline
+ \item However, the macro also implies a {\bfseries{{\itshape memory barrier}}} which can cause additional loss of optimization. \end{DoxyItemize}
+
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00046}{46}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gaff78d9623c340017ad6b9245ec4df519}\label{group__avr__interrupts_gaff78d9623c340017ad6b9245ec4df519}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!EE\_RDY@{EE\_RDY}}
+\index{EE\_RDY@{EE\_RDY}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{EE\_RDY}{EE\_RDY}}
+{\footnotesize\ttfamily \#define EE\+\_\+\+RDY~\+\_\+\+\_\+vector\+\_\+17}
+
+This Macro defines EEPROM Ready Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00064}{64}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga1607129b3853bd4e31dffd5ab3a7c058}\label{group__avr__interrupts_ga1607129b3853bd4e31dffd5ab3a7c058}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!EXT\_INT0@{EXT\_INT0}}
+\index{EXT\_INT0@{EXT\_INT0}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{EXT\_INT0}{EXT\_INT0}}
+{\footnotesize\ttfamily \#define EXT\+\_\+\+INT0~\+\_\+\+\_\+vector\+\_\+1}
+
+This Macro defines IRQ0 Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00048}{48}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga747ac8a90f3494ef4c29dc6ef10ae1b0}\label{group__avr__interrupts_ga747ac8a90f3494ef4c29dc6ef10ae1b0}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!EXT\_INT1@{EXT\_INT1}}
+\index{EXT\_INT1@{EXT\_INT1}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{EXT\_INT1}{EXT\_INT1}}
+{\footnotesize\ttfamily \#define EXT\+\_\+\+INT1~\+\_\+\+\_\+vector\+\_\+2}
+
+This Macro defines IRQ1 Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00049}{49}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gafd82757ef10befab4762b35594d96df9}\label{group__avr__interrupts_gafd82757ef10befab4762b35594d96df9}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!EXT\_INT2@{EXT\_INT2}}
+\index{EXT\_INT2@{EXT\_INT2}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{EXT\_INT2}{EXT\_INT2}}
+{\footnotesize\ttfamily \#define EXT\+\_\+\+INT2~\+\_\+\+\_\+vector\+\_\+3}
+
+This Macro defines IRQ2 Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00050}{50}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gaef9ee27676f002a54355685968b07da5}\label{group__avr__interrupts_gaef9ee27676f002a54355685968b07da5}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!ISR@{ISR}}
+\index{ISR@{ISR}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{ISR}{ISR}}
+{\footnotesize\ttfamily \#define ISR(\begin{DoxyParamCaption}\item[{}]{INT\+\_\+\+VECT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        \textcolor{keywordtype}{void} INT\_VECT(\textcolor{keywordtype}{void})\_\_attribute\_\_((signal,used));\(\backslash\)}
+\DoxyCodeLine{                        void INT\_VECT(\textcolor{keywordtype}{void})}
+
+\end{DoxyCode}
+
+
+interrupt service routine Macro. 
+
+\begin{DoxyItemize}
+\item Introduces an interrupt handler function (interrupt service routine) that runs with global interrupts initially disabled by default with no attributes specified.\end{DoxyItemize}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily vector} must be one of the interrupt vector names that are valid for the particular MCU type. 
+\end{DoxyPrecond}
+
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00078}{78}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gaad5ebd34cb344c26ac87594f79b06b73}\label{group__avr__interrupts_gaad5ebd34cb344c26ac87594f79b06b73}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!sei@{sei}}
+\index{sei@{sei}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{sei}{sei}}
+{\footnotesize\ttfamily \#define sei(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+asm\+\_\+\+\_\+ \+\_\+\+\_\+volatile\+\_\+\+\_\+ (\char`\"{}sei\char`\"{} \+::: \char`\"{}memory\char`\"{})}
+
+\begin{DoxyItemize}
+\item Disables all interrupts by clearing the global interrupt mask. \item This function actually compiles into a single line of assembly, so there is no function call overhead. \item However, the macro also implies a {\bfseries{{\itshape memory barrier}}} which can cause additional loss of optimization. \end{DoxyItemize}
+
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00035}{35}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga9568ac87a72a3f395ac2fd9356fbc6b2}\label{group__avr__interrupts_ga9568ac87a72a3f395ac2fd9356fbc6b2}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!SPI\_STC@{SPI\_STC}}
+\index{SPI\_STC@{SPI\_STC}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{SPI\_STC}{SPI\_STC}}
+{\footnotesize\ttfamily \#define SPI\+\_\+\+STC~\+\_\+\+\_\+vector\+\_\+12}
+
+This Macro defines SPI Transfer Complete Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00059}{59}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gadbaed2ec40bae1c53d68ca03081bb701}\label{group__avr__interrupts_gadbaed2ec40bae1c53d68ca03081bb701}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!SPM\_RDY@{SPM\_RDY}}
+\index{SPM\_RDY@{SPM\_RDY}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{SPM\_RDY}{SPM\_RDY}}
+{\footnotesize\ttfamily \#define SPM\+\_\+\+RDY~\+\_\+\+\_\+vector\+\_\+20}
+
+This Macro defines Store Program Memory Ready Handler 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00067}{67}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gaff9397f76e118b98a6c62f748108e10e}\label{group__avr__interrupts_gaff9397f76e118b98a6c62f748108e10e}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM0\_COMP@{TIM0\_COMP}}
+\index{TIM0\_COMP@{TIM0\_COMP}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM0\_COMP}{TIM0\_COMP}}
+{\footnotesize\ttfamily \#define TIM0\+\_\+\+COMP~\+\_\+\+\_\+vector\+\_\+10}
+
+This Macro defines Timer0 Compare Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00057}{57}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gacc45342110cf03738821c693655bb7d7}\label{group__avr__interrupts_gacc45342110cf03738821c693655bb7d7}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM0\_OVF@{TIM0\_OVF}}
+\index{TIM0\_OVF@{TIM0\_OVF}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM0\_OVF}{TIM0\_OVF}}
+{\footnotesize\ttfamily \#define TIM0\+\_\+\+OVF~\+\_\+\+\_\+vector\+\_\+11}
+
+This Macro defines Timer0 Overflow Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00058}{58}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga8bf41d238af30a395847c88154799690}\label{group__avr__interrupts_ga8bf41d238af30a395847c88154799690}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM1\_CAPT@{TIM1\_CAPT}}
+\index{TIM1\_CAPT@{TIM1\_CAPT}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM1\_CAPT}{TIM1\_CAPT}}
+{\footnotesize\ttfamily \#define TIM1\+\_\+\+CAPT~\+\_\+\+\_\+vector\+\_\+6}
+
+This Macro defines Timer1 Capture Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00053}{53}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga238903e21ed5412fb2b08f839b0748f3}\label{group__avr__interrupts_ga238903e21ed5412fb2b08f839b0748f3}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM1\_COMPA@{TIM1\_COMPA}}
+\index{TIM1\_COMPA@{TIM1\_COMPA}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM1\_COMPA}{TIM1\_COMPA}}
+{\footnotesize\ttfamily \#define TIM1\+\_\+\+COMPA~\+\_\+\+\_\+vector\+\_\+7}
+
+This Macro defines Timer1 CompareA Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00054}{54}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gabd08737625b68ad504e522bbdc857276}\label{group__avr__interrupts_gabd08737625b68ad504e522bbdc857276}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM1\_COMPB@{TIM1\_COMPB}}
+\index{TIM1\_COMPB@{TIM1\_COMPB}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM1\_COMPB}{TIM1\_COMPB}}
+{\footnotesize\ttfamily \#define TIM1\+\_\+\+COMPB~\+\_\+\+\_\+vector\+\_\+8}
+
+This Macro defines Timer1 CompareB Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00055}{55}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga5720ebe501b884dff8a04a22745edead}\label{group__avr__interrupts_ga5720ebe501b884dff8a04a22745edead}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM1\_OVF@{TIM1\_OVF}}
+\index{TIM1\_OVF@{TIM1\_OVF}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM1\_OVF}{TIM1\_OVF}}
+{\footnotesize\ttfamily \#define TIM1\+\_\+\+OVF~\+\_\+\+\_\+vector\+\_\+9}
+
+This Macro defines Timer1 Overflow Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00056}{56}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga379fa8f5226ae225d9709531390d515c}\label{group__avr__interrupts_ga379fa8f5226ae225d9709531390d515c}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM2\_COMP@{TIM2\_COMP}}
+\index{TIM2\_COMP@{TIM2\_COMP}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM2\_COMP}{TIM2\_COMP}}
+{\footnotesize\ttfamily \#define TIM2\+\_\+\+COMP~\+\_\+\+\_\+vector\+\_\+4}
+
+This Macro defines Timer2 Compare Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00051}{51}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga5770e2ad357217cabd4d38f81b5cbcc9}\label{group__avr__interrupts_ga5770e2ad357217cabd4d38f81b5cbcc9}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TIM2\_OVF@{TIM2\_OVF}}
+\index{TIM2\_OVF@{TIM2\_OVF}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TIM2\_OVF}{TIM2\_OVF}}
+{\footnotesize\ttfamily \#define TIM2\+\_\+\+OVF~\+\_\+\+\_\+vector\+\_\+5}
+
+This Macro defines Timer2 Overflow Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00052}{52}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga82dd285d848c7aa4c9ee6ae8910c5e89}\label{group__avr__interrupts_ga82dd285d848c7aa4c9ee6ae8910c5e89}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!TWI@{TWI}}
+\index{TWI@{TWI}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{TWI}{TWI}}
+{\footnotesize\ttfamily \#define TWI~\+\_\+\+\_\+vector\+\_\+19}
+
+This Macro defines Two-\/wire Serial Interface Handler 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00066}{66}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga0125cfe5027aa244d2471194b7ae70c6}\label{group__avr__interrupts_ga0125cfe5027aa244d2471194b7ae70c6}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!USART\_RXC@{USART\_RXC}}
+\index{USART\_RXC@{USART\_RXC}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{USART\_RXC}{USART\_RXC}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+RXC~\+\_\+\+\_\+vector\+\_\+13}
+
+This Macro defines USART RX Complete Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00060}{60}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_ga93db53515ba3a93bf91adbc9894bdf6d}\label{group__avr__interrupts_ga93db53515ba3a93bf91adbc9894bdf6d}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!USART\_TXC@{USART\_TXC}}
+\index{USART\_TXC@{USART\_TXC}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{USART\_TXC}{USART\_TXC}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+TXC~\+\_\+\+\_\+vector\+\_\+15}
+
+This Macro defines USART TX Complete Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00062}{62}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+
+\mbox{\Hypertarget{group__avr__interrupts_gae7a2f86b8b77be646c968723dd2e7704}\label{group__avr__interrupts_gae7a2f86b8b77be646c968723dd2e7704}} 
+\index{ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}!USART\_UDRE@{USART\_UDRE}}
+\index{USART\_UDRE@{USART\_UDRE}!ATMEGA32 interrupts definitions@{ATMEGA32 interrupts definitions}}
+\doxysubsubsection{\texorpdfstring{USART\_UDRE}{USART\_UDRE}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+UDRE~\+\_\+\+\_\+vector\+\_\+14}
+
+This Macro defines UDR Empty Handler ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{_interrupt_8h_source_l00061}{61}} of file \mbox{\hyperlink{_interrupt_8h_source}{Interrupt.\+h}}.
+

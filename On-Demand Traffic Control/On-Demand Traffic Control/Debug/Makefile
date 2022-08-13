@@ -40,6 +40,7 @@ SUBDIRS :=  \
 ../ECUAL \
 ../MCAL/Dio\ driver \
 ../MCAL/Ext\ interrupt\ driver \
+../MCAL/Interrupt \
 ../MCAL/Timer\ driver \
 ../Service
 

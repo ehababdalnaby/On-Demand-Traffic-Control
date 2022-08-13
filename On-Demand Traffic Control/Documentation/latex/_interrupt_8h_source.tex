@@ -1,0 +1,41 @@
+\hypertarget{_interrupt_8h_source}{}\doxysection{Interrupt.\+h}
+\label{_interrupt_8h_source}\index{MCAL/Interrupt/Interrupt.h@{MCAL/Interrupt/Interrupt.h}}
+\mbox{\hyperlink{_interrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00001}00001 \textcolor{comment}{/****************************************************************************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00002}00002 \textcolor{comment}{/*                                                          Author   : Ehab Omara                                                                   */}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00003}00003 \textcolor{comment}{/*                                                          Date     : 8/13/2022 1:08:16 AM                                                         */}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00004}00004 \textcolor{comment}{/*                                                          File name: Interrupt.h                                                                  */}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00005}00005 \textcolor{comment}{/****************************************************************************************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00007}00007 \textcolor{preprocessor}{\#ifndef INTERRUPT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00008}00008 \textcolor{preprocessor}{\#define INTERRUPT\_H\_}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00035}\mbox{\hyperlink{group__avr__interrupts_gaad5ebd34cb344c26ac87594f79b06b73}{00035}} \textcolor{preprocessor}{\# define sei()  \_\_asm\_\_ \_\_volatile\_\_ ("{}sei"{}} ::: "{}memory"{})}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00046}\mbox{\hyperlink{group__avr__interrupts_ga68c330e94fe121eba993e5a5973c3162}{00046}} \textcolor{preprocessor}{\# define cli()  \_\_asm\_\_ \_\_volatile\_\_ ("{}cli"{}} ::: "{}memory"{})}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00048}\mbox{\hyperlink{group__avr__interrupts_ga1607129b3853bd4e31dffd5ab3a7c058}{00048}} \textcolor{preprocessor}{\#define EXT\_INT0        \_\_vector\_1 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00049}\mbox{\hyperlink{group__avr__interrupts_ga747ac8a90f3494ef4c29dc6ef10ae1b0}{00049}} \textcolor{preprocessor}{\#define EXT\_INT1        \_\_vector\_2 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00050}\mbox{\hyperlink{group__avr__interrupts_gafd82757ef10befab4762b35594d96df9}{00050}} \textcolor{preprocessor}{\#define EXT\_INT2        \_\_vector\_3 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00051}\mbox{\hyperlink{group__avr__interrupts_ga379fa8f5226ae225d9709531390d515c}{00051}} \textcolor{preprocessor}{\#define TIM2\_COMP       \_\_vector\_4 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00052}\mbox{\hyperlink{group__avr__interrupts_ga5770e2ad357217cabd4d38f81b5cbcc9}{00052}} \textcolor{preprocessor}{\#define TIM2\_OVF        \_\_vector\_5 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00053}\mbox{\hyperlink{group__avr__interrupts_ga8bf41d238af30a395847c88154799690}{00053}} \textcolor{preprocessor}{\#define TIM1\_CAPT       \_\_vector\_6 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00054}\mbox{\hyperlink{group__avr__interrupts_ga238903e21ed5412fb2b08f839b0748f3}{00054}} \textcolor{preprocessor}{\#define TIM1\_COMPA      \_\_vector\_7 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00055}\mbox{\hyperlink{group__avr__interrupts_gabd08737625b68ad504e522bbdc857276}{00055}} \textcolor{preprocessor}{\#define TIM1\_COMPB      \_\_vector\_8 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00056}\mbox{\hyperlink{group__avr__interrupts_ga5720ebe501b884dff8a04a22745edead}{00056}} \textcolor{preprocessor}{\#define TIM1\_OVF        \_\_vector\_9 }}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00057}\mbox{\hyperlink{group__avr__interrupts_gaff9397f76e118b98a6c62f748108e10e}{00057}} \textcolor{preprocessor}{\#define TIM0\_COMP       \_\_vector\_10}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00058}\mbox{\hyperlink{group__avr__interrupts_gacc45342110cf03738821c693655bb7d7}{00058}} \textcolor{preprocessor}{\#define TIM0\_OVF        \_\_vector\_11}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00059}\mbox{\hyperlink{group__avr__interrupts_ga9568ac87a72a3f395ac2fd9356fbc6b2}{00059}} \textcolor{preprocessor}{\#define SPI\_STC         \_\_vector\_12}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00060}\mbox{\hyperlink{group__avr__interrupts_ga0125cfe5027aa244d2471194b7ae70c6}{00060}} \textcolor{preprocessor}{\#define USART\_RXC       \_\_vector\_13}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00061}\mbox{\hyperlink{group__avr__interrupts_gae7a2f86b8b77be646c968723dd2e7704}{00061}} \textcolor{preprocessor}{\#define USART\_UDRE      \_\_vector\_14}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00062}\mbox{\hyperlink{group__avr__interrupts_ga93db53515ba3a93bf91adbc9894bdf6d}{00062}} \textcolor{preprocessor}{\#define USART\_TXC       \_\_vector\_15}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00063}\mbox{\hyperlink{group__avr__interrupts_ga54d148b91f3d356713f7e367a2243bea}{00063}} \textcolor{preprocessor}{\#define ADC             \_\_vector\_16}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00064}\mbox{\hyperlink{group__avr__interrupts_gaff78d9623c340017ad6b9245ec4df519}{00064}} \textcolor{preprocessor}{\#define EE\_RDY          \_\_vector\_17}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00065}\mbox{\hyperlink{group__avr__interrupts_gace3c7f760c30b2bd0563265864db1926}{00065}} \textcolor{preprocessor}{\#define ANA\_COMP        \_\_vector\_18}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00066}\mbox{\hyperlink{group__avr__interrupts_ga82dd285d848c7aa4c9ee6ae8910c5e89}{00066}} \textcolor{preprocessor}{\#define TWI             \_\_vector\_19}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00067}\mbox{\hyperlink{group__avr__interrupts_gadbaed2ec40bae1c53d68ca03081bb701}{00067}} \textcolor{preprocessor}{\#define SPM\_RDY         \_\_vector\_20}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00078}\mbox{\hyperlink{group__avr__interrupts_gaef9ee27676f002a54355685968b07da5}{00078}} \textcolor{preprocessor}{\#define ISR(INT\_VECT)   void INT\_VECT(void)\_\_attribute\_\_((signal,used));\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00079}00079 \textcolor{preprocessor}{                        void INT\_VECT(void)}}
+\DoxyCodeLine{\Hypertarget{_interrupt_8h_source_l00082}00082 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* INTERRUPT\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
