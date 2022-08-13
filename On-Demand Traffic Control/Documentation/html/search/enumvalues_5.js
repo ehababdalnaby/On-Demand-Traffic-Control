@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['wrong_5fpin_5fdir_0',['WRONG_PIN_DIR',['../group___m_c_u__port.html#ggaa69f82456b0dae23d13eb3fec723b30dab71eeaf6b206c7c7d0c6036c19234cdc',1,'ATmega32Port.h']]],
-  ['wrong_5fpin_5fnum_1',['WRONG_PIN_NUM',['../group___m_c_u__port.html#ggaa69f82456b0dae23d13eb3fec723b30da9aa066b39bb34e50f9c20168b20f3fbf',1,'ATmega32Port.h']]],
-  ['wrong_5fpin_5fstate_2',['WRONG_PIN_STATE',['../group___m_c_u__port.html#ggaa69f82456b0dae23d13eb3fec723b30da2be3eba60611e93b056cccc702959c11',1,'ATmega32Port.h']]]
+  ['ok_0',['OK',['../group___m_c_u__port.html#ggaa69f82456b0dae23d13eb3fec723b30da2bc49ec37d6a5715dd23e85f1ff5bb59',1,'ATmega32Port.h']]],
+  ['output_1',['Output',['../group___m_c_u__port.html#ggacf2b446189b353f66263a1cfc82f45b8ae18e94624772459b0083ef7cc362fc96',1,'ATmega32Port.h']]]
 ];

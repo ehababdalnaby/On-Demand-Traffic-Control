@@ -14,7 +14,7 @@
 */
 typedef unsigned char 		 uint8_t;	/**<This is define a memory size of 1 byte*/
 typedef signed char 		 sint8_t;	/**<This is define a memory size of 1 byte signed*/
-typedef unsigned short int 	 uint16_tt;	/**<This is define a memory size of 2 byte*/
+typedef unsigned short int 	 uint16_t;	/**<This is define a memory size of 2 byte*/
 typedef signed short int 	 sint16_t;	/**<This is define a memory size of 2 byte signed*/
 typedef unsigned long int	 uint32_t;	/**<This is define a memory size of 4 byte*/
 typedef signed long int		 sint32_t;	/**<This is define a memory size of 4 byte signed*/

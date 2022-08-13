@@ -1,20 +1,112 @@
 \hypertarget{_ext_01interrupt_8h}{}\doxysection{MCAL/\+Ext interrupt driver/\+Ext interrupt.\+h File Reference}
 \label{_ext_01interrupt_8h}\index{MCAL/Ext interrupt driver/Ext interrupt.h@{MCAL/Ext interrupt driver/Ext interrupt.h}}
+{\ttfamily \#include \char`\"{}../../\+Service/\+ATmega32\+Port.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Service/\+Register\+File.\+h\char`\"{}}\newline
 \doxysubsection*{Macros}
+\begin{Indent}\textbf{ External interrupts pins}\par
+{\em \begin{DoxyItemize}
+\item These are the pins which connected to each interrupt. \item It should be configured as \mbox{\hyperlink{group___m_c_u__port_ggacf2b446189b353f66263a1cfc82f45b8abd62348391d75c7fc8c130ea346cba29}{Input}}. \end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_ga792cc0eff3466f3d8417eba63af9fc15}{INT0\+\_\+\+PIN}}~\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae9fbf755a9cf8a27ac44df4e8a2cacfa}{PD2}}
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_ga694e631e46ffc062993d01830be74cbb}{INT1\+\_\+\+PIN}}~\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617a268895c87430e17f537e7164bf7977df}{PD3}}
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_gae3b068b847930dee391ba5256f9c8f94}{INT2\+\_\+\+PIN}}~\mbox{\hyperlink{group___m_c_u__port_ggadeadeb010f04c1c69beb07ca27eb7617ae0a3351879d6280e2ccc570b1ff50773}{PB2}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ INT0 sense control}\par
+{\em \begin{DoxyItemize}
+\item These two bits \mbox{\hyperlink{group___e_x_t__interrupts_ga6c080a79672a9b6426584f08f08e4115}{ISC00}} and \mbox{\hyperlink{group___e_x_t__interrupts_ga6ee546ebb2448084c92137e9a6d3ad92}{ISC01}} which located in \mbox{\hyperlink{group__int__registers_ga1b5659537a1ba3f880a6e6cc6163d2cb}{MCUCR}} register control the \mbox{\hyperlink{group___e_x_t__interrupts_gga6f5578f86f992a77c35692646fa107eca15eea8e66ea11820ade640821d84382d}{INT0}} sense control. \item \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC01   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC00   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC01   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC00   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\PBS\centering 0   &\PBS\centering 0   &\PBS\centering The low level of INT0 generates an interrupt request.    \\\cline{1-3}
+\PBS\centering 0   &\PBS\centering 1   &\PBS\centering Any logical change on INT0 generates an interrupt request.    \\\cline{1-3}
+\PBS\centering 1   &\PBS\centering 0   &\PBS\centering The falling edge of INT0 generates an interrupt request.    \\\cline{1-3}
+\PBS\centering 1   &\PBS\centering 1   &\PBS\centering The rising edge of INT0 generates an interrupt request.   \\\cline{1-3}
+\end{longtabu}
+\end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_ga6c080a79672a9b6426584f08f08e4115}{ISC00}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_ga6ee546ebb2448084c92137e9a6d3ad92}{ISC01}}~1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ INT1 sense control}\par
+{\em \begin{DoxyItemize}
+\item These two bits \mbox{\hyperlink{group___e_x_t__interrupts_ga6446f3ff2592c34eab76e6eb549a856f}{ISC10}} and \mbox{\hyperlink{group___e_x_t__interrupts_gae6d2265aa4f914793d2dfa3095ba0993}{ISC11}} which located in \mbox{\hyperlink{group__int__registers_ga1b5659537a1ba3f880a6e6cc6163d2cb}{MCUCR}} register control the \mbox{\hyperlink{group___e_x_t__interrupts_gga6f5578f86f992a77c35692646fa107ecaf557cd0d786ab83c4771da6eea65727b}{INT1}} sense control. \item \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC11   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC10   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC11   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC10   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\PBS\centering 0   &\PBS\centering 0   &\PBS\centering The low level of INT1 generates an interrupt request.    \\\cline{1-3}
+\PBS\centering 0   &\PBS\centering 1   &\PBS\centering Any logical change on INT1 generates an interrupt request.    \\\cline{1-3}
+\PBS\centering 1   &\PBS\centering 0   &\PBS\centering The falling edge of INT1 generates an interrupt request.    \\\cline{1-3}
+\PBS\centering 1   &\PBS\centering 1   &\PBS\centering The rising edge of INT1 generates an interrupt request.   \\\cline{1-3}
+\end{longtabu}
+\end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_ga6446f3ff2592c34eab76e6eb549a856f}{ISC10}}~2
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_gae6d2265aa4f914793d2dfa3095ba0993}{ISC11}}~3
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ INT2 sense control}\par
+{\em \begin{DoxyItemize}
+\item This bit \mbox{\hyperlink{group___e_x_t__interrupts_ga55fb1f41ee9f0aeb248ae8682d29cfbb}{ISC2}} which located in \mbox{\hyperlink{group__int__registers_gab3032d9b747c08638c2a7ea0633c05e2}{MCUCSR}} register control the \mbox{\hyperlink{group___e_x_t__interrupts_gga6f5578f86f992a77c35692646fa107ecac982725fadf3a115b854a6ff2abaa137}{INT2}} sense control. \item \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC2   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ISC2   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+\PBS\centering 0   &\PBS\centering The falling edge on INT2 activates the interrupt request.    \\\cline{1-2}
+\PBS\centering 1   &\PBS\centering The rising edge on INT2 activates the interrupt request.   \\\cline{1-2}
+\end{longtabu}
+\end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_x_t__interrupts_ga55fb1f41ee9f0aeb248ae8682d29cfbb}{ISC2}}~6
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{_ext_01interrupt_8h_a0aac6c68a5a4eb4d5dbf7f94919de21c}{EXT}}~INTERRUPT\+\_\+\+H\+\_\+
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{_ext_01interrupt_8h_a0aac6c68a5a4eb4d5dbf7f94919de21c}\label{_ext_01interrupt_8h_a0aac6c68a5a4eb4d5dbf7f94919de21c}} 
-\index{Ext interrupt.h@{Ext interrupt.h}!EXT@{EXT}}
-\index{EXT@{EXT}!Ext interrupt.h@{Ext interrupt.h}}
-\doxysubsubsection{\texorpdfstring{EXT}{EXT}}
-{\footnotesize\ttfamily \#define EXT~INTERRUPT\+\_\+\+H\+\_\+}
-
-
-
-Definition at line \mbox{\hyperlink{_ext_01interrupt_8h_source_l00008}{8}} of file \mbox{\hyperlink{_ext_01interrupt_8h_source}{Ext interrupt.\+h}}.
-
+enum \mbox{\hyperlink{group___e_x_t__interrupts_ga6f5578f86f992a77c35692646fa107ec}{EN\+\_\+interrupt\+Num\+\_\+t}} \{ \mbox{\hyperlink{group___e_x_t__interrupts_gga6f5578f86f992a77c35692646fa107ecac982725fadf3a115b854a6ff2abaa137}{INT2}} = 5
+, \mbox{\hyperlink{group___e_x_t__interrupts_gga6f5578f86f992a77c35692646fa107eca15eea8e66ea11820ade640821d84382d}{INT0}}
+, \mbox{\hyperlink{group___e_x_t__interrupts_gga6f5578f86f992a77c35692646fa107ecaf557cd0d786ab83c4771da6eea65727b}{INT1}}
+ \}
+\begin{DoxyCompactList}\small\item\em External interrupt number. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___e_x_t__interrupts_gaec38d3d460aef86156513ecb22afe034}{EN\+\_\+interrupt\+Sense\+Control\+\_\+t}} \{ \mbox{\hyperlink{group___e_x_t__interrupts_ggaec38d3d460aef86156513ecb22afe034ab211cf14477a0a8c8a2d7a6c56d7a3ae}{LOW\+\_\+\+LEVEL}}
+, \mbox{\hyperlink{group___e_x_t__interrupts_ggaec38d3d460aef86156513ecb22afe034af8dbcbcfe74d128ad10d436316b26033}{ANY\+\_\+\+LOGICAL\+\_\+\+CHANGE}}
+, \mbox{\hyperlink{group___e_x_t__interrupts_ggaec38d3d460aef86156513ecb22afe034ab88c132109a78c131815f270b8bef045}{FALLING\+\_\+\+EDGE}}
+, \mbox{\hyperlink{group___e_x_t__interrupts_ggaec38d3d460aef86156513ecb22afe034a86445853271053ed37f404b9ca4fa434}{RISING\+\_\+\+EDGE}}
+ \}
+\begin{DoxyCompactList}\small\item\em External interrupt sense control. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___e_x_t__interrupts_ga493ef6cf93614545b91e84ca93be54e5}{EN\+\_\+interrupt\+Error\+\_\+t}} \{ \mbox{\hyperlink{group___e_x_t__interrupts_gga493ef6cf93614545b91e84ca93be54e5ac9e167360127314cb469d1f384adecd7}{INT\+\_\+\+OK}}
+, \mbox{\hyperlink{group___e_x_t__interrupts_gga493ef6cf93614545b91e84ca93be54e5a153f500f487c261f627f4b169de0991b}{WRONG\+\_\+\+INT\+\_\+\+NUM}}
+, \mbox{\hyperlink{group___e_x_t__interrupts_gga493ef6cf93614545b91e84ca93be54e5ae7d91a1db1254f0a90e768a8cb70c8db}{WRONG\+\_\+\+SENSE\+\_\+\+CONTROL}}
+ \}
+\begin{DoxyCompactList}\small\item\em External interrupt errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___e_x_t__interrupts_ga493ef6cf93614545b91e84ca93be54e5}{EN\+\_\+interrupt\+Error\+\_\+t}} \mbox{\hyperlink{group___e_x_t__interrupts_ga3bfc3fef7cc6c9f3b3f1f06e69f73d18}{Ext\+\_\+interrupt\+Init}} (\mbox{\hyperlink{group___e_x_t__interrupts_ga6f5578f86f992a77c35692646fa107ec}{EN\+\_\+interrupt\+Num\+\_\+t}} interrupt\+Num, \mbox{\hyperlink{group___e_x_t__interrupts_gaec38d3d460aef86156513ecb22afe034}{EN\+\_\+interrupt\+Sense\+Control\+\_\+t}} interrupt\+Sense\+Control)
+\begin{DoxyCompactList}\small\item\em External interrupt init. \end{DoxyCompactList}\end{DoxyCompactItemize}

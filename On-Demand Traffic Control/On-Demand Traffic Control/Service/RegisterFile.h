@@ -7,6 +7,7 @@
 #ifndef REGISTERFILE_H_
 #define REGISTERFILE_H_
 
+#include "dataTypes.h"
 /*
 * if the DDRx is set to be output and we write High to the PORTx 
 * this will activate the internal Pull up resistor.
