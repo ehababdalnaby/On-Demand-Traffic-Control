@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('_ext_01interrupt_8h.html',''); initRes
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_a_tmega32_port_8h_source.html">../../Service/ATmega32Port.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_register_file_8h_source.html">../../Service/RegisterFile.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_interrupt_8h_source.html">../Interrupt/Interrupt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_bit_math_8h_source.html">../../Service/BitMath.h</a>&quot;</code><br />
 </div>
 <p><a href="_ext_01interrupt_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -101,11 +103,11 @@ Macros</h2></td></tr>
 <li>It should be configured as <a class="el" href="group___m_c_u__port.html#ggacf2b446189b353f66263a1cfc82f45b8abd62348391d75c7fc8c130ea346cba29">Input</a>. </li>
 </ul>
 </div></td></tr>
-<tr class="memitem:ga792cc0eff3466f3d8417eba63af9fc15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t__interrupts.html#ga792cc0eff3466f3d8417eba63af9fc15">INT0_PIN</a>&#160;&#160;&#160;<a class="el" href="group___m_c_u__port.html#ggadeadeb010f04c1c69beb07ca27eb7617ae9fbf755a9cf8a27ac44df4e8a2cacfa">PD2</a></td></tr>
+<tr class="memitem:ga792cc0eff3466f3d8417eba63af9fc15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t__interrupts.html#ga792cc0eff3466f3d8417eba63af9fc15">INT0_PIN</a>&#160;&#160;&#160;(<a class="el" href="group___m_c_u__port.html#ggadeadeb010f04c1c69beb07ca27eb7617ae9fbf755a9cf8a27ac44df4e8a2cacfa">PD2</a> - <a class="el" href="group___m_c_u__port.html#ga3f94220369581f21bc702653d1da7cb3">PORTD_OFFSET</a>)</td></tr>
 <tr class="separator:ga792cc0eff3466f3d8417eba63af9fc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga694e631e46ffc062993d01830be74cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t__interrupts.html#ga694e631e46ffc062993d01830be74cbb">INT1_PIN</a>&#160;&#160;&#160;<a class="el" href="group___m_c_u__port.html#ggadeadeb010f04c1c69beb07ca27eb7617a268895c87430e17f537e7164bf7977df">PD3</a></td></tr>
+<tr class="memitem:ga694e631e46ffc062993d01830be74cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t__interrupts.html#ga694e631e46ffc062993d01830be74cbb">INT1_PIN</a>&#160;&#160;&#160;(<a class="el" href="group___m_c_u__port.html#ggadeadeb010f04c1c69beb07ca27eb7617a268895c87430e17f537e7164bf7977df">PD3</a> - <a class="el" href="group___m_c_u__port.html#ga3f94220369581f21bc702653d1da7cb3">PORTD_OFFSET</a>)</td></tr>
 <tr class="separator:ga694e631e46ffc062993d01830be74cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae3b068b847930dee391ba5256f9c8f94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t__interrupts.html#gae3b068b847930dee391ba5256f9c8f94">INT2_PIN</a>&#160;&#160;&#160;<a class="el" href="group___m_c_u__port.html#ggadeadeb010f04c1c69beb07ca27eb7617ae0a3351879d6280e2ccc570b1ff50773">PB2</a></td></tr>
+<tr class="memitem:gae3b068b847930dee391ba5256f9c8f94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___e_x_t__interrupts.html#gae3b068b847930dee391ba5256f9c8f94">INT2_PIN</a>&#160;&#160;&#160;(<a class="el" href="group___m_c_u__port.html#ggadeadeb010f04c1c69beb07ca27eb7617ae0a3351879d6280e2ccc570b1ff50773">PB2</a> - <a class="el" href="group___m_c_u__port.html#gaeacd75a51e086c50be1d05b49ac87fd1">PORTB_OFFSET</a>)</td></tr>
 <tr class="separator:gae3b068b847930dee391ba5256f9c8f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">INT0 sense control</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><ul>

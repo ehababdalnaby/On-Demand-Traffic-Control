@@ -24,15 +24,5 @@ var group___e_x_t__interrupts =
       [ "FALLING_EDGE", "group___e_x_t__interrupts.html#ggaec38d3d460aef86156513ecb22afe034ab88c132109a78c131815f270b8bef045", null ],
       [ "RISING_EDGE", "group___e_x_t__interrupts.html#ggaec38d3d460aef86156513ecb22afe034a86445853271053ed37f404b9ca4fa434", null ]
     ] ],
-    [ "ANY_LOGICAL_CHANGE", "group___e_x_t__interrupts.html#ggaec38d3d460aef86156513ecb22afe034af8dbcbcfe74d128ad10d436316b26033", null ],
-    [ "FALLING_EDGE", "group___e_x_t__interrupts.html#ggaec38d3d460aef86156513ecb22afe034ab88c132109a78c131815f270b8bef045", null ],
-    [ "INT0", "group___e_x_t__interrupts.html#gga6f5578f86f992a77c35692646fa107eca15eea8e66ea11820ade640821d84382d", null ],
-    [ "INT1", "group___e_x_t__interrupts.html#gga6f5578f86f992a77c35692646fa107ecaf557cd0d786ab83c4771da6eea65727b", null ],
-    [ "INT2", "group___e_x_t__interrupts.html#gga6f5578f86f992a77c35692646fa107ecac982725fadf3a115b854a6ff2abaa137", null ],
-    [ "INT_OK", "group___e_x_t__interrupts.html#gga493ef6cf93614545b91e84ca93be54e5ac9e167360127314cb469d1f384adecd7", null ],
-    [ "LOW_LEVEL", "group___e_x_t__interrupts.html#ggaec38d3d460aef86156513ecb22afe034ab211cf14477a0a8c8a2d7a6c56d7a3ae", null ],
-    [ "RISING_EDGE", "group___e_x_t__interrupts.html#ggaec38d3d460aef86156513ecb22afe034a86445853271053ed37f404b9ca4fa434", null ],
-    [ "WRONG_INT_NUM", "group___e_x_t__interrupts.html#gga493ef6cf93614545b91e84ca93be54e5a153f500f487c261f627f4b169de0991b", null ],
-    [ "WRONG_SENSE_CONTROL", "group___e_x_t__interrupts.html#gga493ef6cf93614545b91e84ca93be54e5ae7d91a1db1254f0a90e768a8cb70c8db", null ],
     [ "Ext_interruptInit", "group___e_x_t__interrupts.html#ga3bfc3fef7cc6c9f3b3f1f06e69f73d18", null ]
 ];

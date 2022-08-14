@@ -1,6 +1,7 @@
 \hypertarget{_d_i_o_8c}{}\doxysection{MCAL/\+Dio driver/\+DIO.c File Reference}
 \label{_d_i_o_8c}\index{MCAL/Dio driver/DIO.c@{MCAL/Dio driver/DIO.c}}
 {\ttfamily \#include \char`\"{}DIO.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Interrupt/\+Interrupt.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,4 +12,19 @@
 \mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\+\_\+pin\+Erro\+\_\+t}} \mbox{\hyperlink{group___d_i_o_gaa48552d26567a5a8b001c07b2305b9bb}{DIO\+\_\+pin\+Read}} (\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\+\_\+pin\+Num\+\_\+t}} pin\+Num, \mbox{\hyperlink{group___m_c_u__port_ga408b1d0fd39c90c802f7bc02520fd609}{EN\+\_\+pin\+State\+\_\+t}} $\ast$pin\+State)
 \begin{DoxyCompactList}\small\item\em This function reads the state of the pin. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group___m_c_u__port_gaa69f82456b0dae23d13eb3fec723b30d}{EN\+\_\+pin\+Erro\+\_\+t}} \mbox{\hyperlink{group___d_i_o_ga80e891281badbf682ddcbe082e5fbb4b}{DIO\+\_\+pin\+Toggle}} (\mbox{\hyperlink{group___m_c_u__port_gadeadeb010f04c1c69beb07ca27eb7617}{EN\+\_\+pin\+Num\+\_\+t}} pin\+Num)
-\begin{DoxyCompactList}\small\item\em This function toggles the state of the pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function toggles the state of the pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_d_i_o_8c_ada3e4270317c8cb84159cbeb3adbbb3f}{ISR}} (\mbox{\hyperlink{group__avr__interrupts_ga1607129b3853bd4e31dffd5ab3a7c058}{EXT\+\_\+\+INT0}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_d_i_o_8c_ada3e4270317c8cb84159cbeb3adbbb3f}\label{_d_i_o_8c_ada3e4270317c8cb84159cbeb3adbbb3f}} 
+\index{DIO.c@{DIO.c}!ISR@{ISR}}
+\index{ISR@{ISR}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily ISR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__avr__interrupts_ga1607129b3853bd4e31dffd5ab3a7c058}{EXT\+\_\+\+INT0}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_d_i_o_8c_source_l00230}{230}} of file \mbox{\hyperlink{_d_i_o_8c_source}{DIO.\+c}}.
+
