@@ -3,29 +3,29 @@ On-Demand Traffic Control.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000046e  00000000  00000000  00000054  2**1
+  0 .text         0000046c  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000004c2  2**0
+  1 .data         00000000  00800060  00800060  000004c0  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000004c2  2**0
+  2 .comment      00000030  00000000  00000000  000004c0  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004f4  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004f0  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 000000b8  00000000  00000000  00000530  2**0
+  4 .debug_aranges 000000b8  00000000  00000000  0000052c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000eed  00000000  00000000  000005e8  2**0
+  5 .debug_info   00000eef  00000000  00000000  000005e4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000074e  00000000  00000000  000014d5  2**0
+  6 .debug_abbrev 0000073f  00000000  00000000  000014d3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000007b9  00000000  00000000  00001c23  2**0
+  7 .debug_line   000007b9  00000000  00000000  00001c12  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000148  00000000  00000000  000023dc  2**2
+  8 .debug_frame  00000148  00000000  00000000  000023cc  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000056e  00000000  00000000  00002524  2**0
+  9 .debug_str    0000056e  00000000  00000000  00002514  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000830  00000000  00000000  00002a92  2**0
+ 10 .debug_loc    00000883  00000000  00000000  00002a82  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000078  00000000  00000000  000032c2  2**0
+ 11 .debug_ranges 00000078  00000000  00000000  00003305  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -61,7 +61,7 @@ Disassembly of section .text:
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
   60:	0e 94 3e 00 	call	0x7c	; 0x7c <main>
-  64:	0c 94 35 02 	jmp	0x46a	; 0x46a <_exit>
+  64:	0c 94 34 02 	jmp	0x468	; 0x468 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -100,8 +100,8 @@ int main(void)
 	ledInit(PB0);
   82:	88 e0       	ldi	r24, 0x08	; 8
   84:	0e 94 36 00 	call	0x6c	; 0x6c <ledInit>
-	Ext_interruptInit(INT0,FALLING_EDGE);
-  88:	62 e0       	ldi	r22, 0x02	; 2
+	Ext_interruptInit(INT0,ANY_LOGICAL_CHANGE);
+  88:	61 e0       	ldi	r22, 0x01	; 1
   8a:	86 e0       	ldi	r24, 0x06	; 6
   8c:	0e 94 e4 01 	call	0x3c8	; 0x3c8 <Ext_interruptInit>
 	while (1)
@@ -610,13 +610,13 @@ EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interrup
 	EN_interruptError_t interruptError = INT_OK;
 	if (interruptNum == INT0)
  3c8:	86 30       	cpi	r24, 0x06	; 6
- 3ca:	79 f4       	brne	.+30     	; 0x3ea <Ext_interruptInit+0x22>
+ 3ca:	81 f4       	brne	.+32     	; 0x3ec <Ext_interruptInit+0x24>
 	{
 		//check if the value of the interruptSenseControl is correct
 		if (interruptSenseControl >=  LOW_LEVEL &&interruptSenseControl <= RISING_EDGE)
  3cc:	64 30       	cpi	r22, 0x04	; 4
  3ce:	08 f0       	brcs	.+2      	; 0x3d2 <Ext_interruptInit+0xa>
- 3d0:	41 c0       	rjmp	.+130    	; 0x454 <__EEPROM_REGION_LENGTH__+0x54>
+ 3d0:	40 c0       	rjmp	.+128    	; 0x452 <__EEPROM_REGION_LENGTH__+0x52>
 		{
 			//enable INT0
 			setBit(GICR,INT0);
@@ -628,190 +628,189 @@ EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interrup
  3d8:	85 b7       	in	r24, 0x35	; 53
  3da:	85 bf       	out	0x35, r24	; 53
 			//setting interruptSenseControl new value
-			MCUCR|=ISC00<<interruptSenseControl;
+			MCUCR|=interruptSenseControl<<ISC00;
  3dc:	85 b7       	in	r24, 0x35	; 53
- 3de:	85 bf       	out	0x35, r24	; 53
+ 3de:	68 2b       	or	r22, r24
+ 3e0:	65 bf       	out	0x35, r22	; 53
 			//set INT0 pin as input
 			clrBit(DDRD,INT0_PIN);
- 3e0:	81 b3       	in	r24, 0x11	; 17
- 3e2:	8b 7f       	andi	r24, 0xFB	; 251
- 3e4:	81 bb       	out	0x11, r24	; 17
+ 3e2:	81 b3       	in	r24, 0x11	; 17
+ 3e4:	8b 7f       	andi	r24, 0xFB	; 251
+ 3e6:	81 bb       	out	0x11, r24	; 17
 
 
 #include "Ext interrupt.h"
 EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
 {
 	EN_interruptError_t interruptError = INT_OK;
- 3e6:	80 e0       	ldi	r24, 0x00	; 0
- 3e8:	3c c0       	rjmp	.+120    	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 3e8:	80 e0       	ldi	r24, 0x00	; 0
+ 3ea:	3a c0       	rjmp	.+116    	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 		else
 		{
 			interruptError = WRONG_SENSE_CONTROL;
 		}
 	}
 	else if (interruptNum == INT1)
- 3ea:	87 30       	cpi	r24, 0x07	; 7
- 3ec:	b9 f4       	brne	.+46     	; 0x41c <__EEPROM_REGION_LENGTH__+0x1c>
+ 3ec:	87 30       	cpi	r24, 0x07	; 7
+ 3ee:	a9 f4       	brne	.+42     	; 0x41a <__EEPROM_REGION_LENGTH__+0x1a>
 	{
 		
 		//check if the value of the interruptSenseControl is correct
 		if (interruptSenseControl >=  LOW_LEVEL &&interruptSenseControl <= RISING_EDGE)
- 3ee:	64 30       	cpi	r22, 0x04	; 4
- 3f0:	98 f5       	brcc	.+102    	; 0x458 <__EEPROM_REGION_LENGTH__+0x58>
+ 3f0:	64 30       	cpi	r22, 0x04	; 4
+ 3f2:	88 f5       	brcc	.+98     	; 0x456 <__EEPROM_REGION_LENGTH__+0x56>
 		{
 			//enable INT1
 			setBit(GICR,INT1);
- 3f2:	8b b7       	in	r24, 0x3b	; 59
- 3f4:	80 68       	ori	r24, 0x80	; 128
- 3f6:	8b bf       	out	0x3b, r24	; 59
+ 3f4:	8b b7       	in	r24, 0x3b	; 59
+ 3f6:	80 68       	ori	r24, 0x80	; 128
+ 3f8:	8b bf       	out	0x3b, r24	; 59
 			//clearing interruptSenseControl old value
-			MCUCR&=(~(ISC10<<0x03));
- 3f8:	85 b7       	in	r24, 0x35	; 53
- 3fa:	8f 7e       	andi	r24, 0xEF	; 239
- 3fc:	85 bf       	out	0x35, r24	; 53
+			MCUCR&=(~(0x03<<ISC10));
+ 3fa:	85 b7       	in	r24, 0x35	; 53
+ 3fc:	83 7f       	andi	r24, 0xF3	; 243
+ 3fe:	85 bf       	out	0x35, r24	; 53
 			//setting interruptSenseControl new value
-			MCUCR|=ISC10<<interruptSenseControl;
- 3fe:	25 b7       	in	r18, 0x35	; 53
- 400:	82 e0       	ldi	r24, 0x02	; 2
- 402:	90 e0       	ldi	r25, 0x00	; 0
- 404:	02 c0       	rjmp	.+4      	; 0x40a <__EEPROM_REGION_LENGTH__+0xa>
- 406:	88 0f       	add	r24, r24
- 408:	99 1f       	adc	r25, r25
- 40a:	6a 95       	dec	r22
- 40c:	e2 f7       	brpl	.-8      	; 0x406 <__EEPROM_REGION_LENGTH__+0x6>
- 40e:	82 2b       	or	r24, r18
- 410:	85 bf       	out	0x35, r24	; 53
+			MCUCR|=interruptSenseControl<<ISC10;
+ 400:	85 b7       	in	r24, 0x35	; 53
+ 402:	70 e0       	ldi	r23, 0x00	; 0
+ 404:	66 0f       	add	r22, r22
+ 406:	77 1f       	adc	r23, r23
+ 408:	66 0f       	add	r22, r22
+ 40a:	77 1f       	adc	r23, r23
+ 40c:	68 2b       	or	r22, r24
+ 40e:	65 bf       	out	0x35, r22	; 53
 			//set INT1 pin as input
 			clrBit(DDRD,INT1_PIN);
- 412:	81 b3       	in	r24, 0x11	; 17
- 414:	87 7f       	andi	r24, 0xF7	; 247
- 416:	81 bb       	out	0x11, r24	; 17
+ 410:	81 b3       	in	r24, 0x11	; 17
+ 412:	87 7f       	andi	r24, 0xF7	; 247
+ 414:	81 bb       	out	0x11, r24	; 17
 
 
 #include "Ext interrupt.h"
 EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
 {
 	EN_interruptError_t interruptError = INT_OK;
- 418:	80 e0       	ldi	r24, 0x00	; 0
- 41a:	23 c0       	rjmp	.+70     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 416:	80 e0       	ldi	r24, 0x00	; 0
+ 418:	23 c0       	rjmp	.+70     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 		else
 		{
 			interruptError = WRONG_SENSE_CONTROL;
 		}
 	}
 	else if (interruptNum == INT2)
- 41c:	85 30       	cpi	r24, 0x05	; 5
- 41e:	f1 f4       	brne	.+60     	; 0x45c <__EEPROM_REGION_LENGTH__+0x5c>
+ 41a:	85 30       	cpi	r24, 0x05	; 5
+ 41c:	f1 f4       	brne	.+60     	; 0x45a <__EEPROM_REGION_LENGTH__+0x5a>
 	{
 		
 		//check if the value of the interruptSenseControl is correct
 		if (interruptSenseControl ==  FALLING_EDGE )
- 420:	62 30       	cpi	r22, 0x02	; 2
- 422:	59 f4       	brne	.+22     	; 0x43a <__EEPROM_REGION_LENGTH__+0x3a>
+ 41e:	62 30       	cpi	r22, 0x02	; 2
+ 420:	59 f4       	brne	.+22     	; 0x438 <__EEPROM_REGION_LENGTH__+0x38>
 		{
 			//enable INT1
 			setBit(GICR,INT2);
- 424:	8b b7       	in	r24, 0x3b	; 59
- 426:	80 62       	ori	r24, 0x20	; 32
- 428:	8b bf       	out	0x3b, r24	; 59
+ 422:	8b b7       	in	r24, 0x3b	; 59
+ 424:	80 62       	ori	r24, 0x20	; 32
+ 426:	8b bf       	out	0x3b, r24	; 59
 			clrBit(MCUCSR,ISC2);
- 42a:	84 b7       	in	r24, 0x34	; 52
- 42c:	8f 7b       	andi	r24, 0xBF	; 191
- 42e:	84 bf       	out	0x34, r24	; 52
+ 428:	84 b7       	in	r24, 0x34	; 52
+ 42a:	8f 7b       	andi	r24, 0xBF	; 191
+ 42c:	84 bf       	out	0x34, r24	; 52
 			//set INT2 pin as input
 			clrBit(DDRB,INT2_PIN);
- 430:	87 b3       	in	r24, 0x17	; 23
- 432:	8b 7f       	andi	r24, 0xFB	; 251
- 434:	87 bb       	out	0x17, r24	; 23
+ 42e:	87 b3       	in	r24, 0x17	; 23
+ 430:	8b 7f       	andi	r24, 0xFB	; 251
+ 432:	87 bb       	out	0x17, r24	; 23
 
 
 #include "Ext interrupt.h"
 EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
 {
 	EN_interruptError_t interruptError = INT_OK;
- 436:	80 e0       	ldi	r24, 0x00	; 0
- 438:	14 c0       	rjmp	.+40     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 434:	80 e0       	ldi	r24, 0x00	; 0
+ 436:	14 c0       	rjmp	.+40     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 			setBit(GICR,INT2);
 			clrBit(MCUCSR,ISC2);
 			//set INT2 pin as input
 			clrBit(DDRB,INT2_PIN);
 		}
 		else if(interruptSenseControl == RISING_EDGE)
- 43a:	63 30       	cpi	r22, 0x03	; 3
- 43c:	89 f4       	brne	.+34     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
+ 438:	63 30       	cpi	r22, 0x03	; 3
+ 43a:	89 f4       	brne	.+34     	; 0x45e <__EEPROM_REGION_LENGTH__+0x5e>
 		{
 			//enable INT1
 			setBit(GICR,INT2);
- 43e:	8b b7       	in	r24, 0x3b	; 59
- 440:	80 62       	ori	r24, 0x20	; 32
- 442:	8b bf       	out	0x3b, r24	; 59
+ 43c:	8b b7       	in	r24, 0x3b	; 59
+ 43e:	80 62       	ori	r24, 0x20	; 32
+ 440:	8b bf       	out	0x3b, r24	; 59
 			setBit(MCUCSR,ISC2);
- 444:	84 b7       	in	r24, 0x34	; 52
- 446:	80 64       	ori	r24, 0x40	; 64
- 448:	84 bf       	out	0x34, r24	; 52
+ 442:	84 b7       	in	r24, 0x34	; 52
+ 444:	80 64       	ori	r24, 0x40	; 64
+ 446:	84 bf       	out	0x34, r24	; 52
 			//set INT2 pin as input
 			clrBit(DDRB,INT2_PIN);
- 44a:	87 b3       	in	r24, 0x17	; 23
- 44c:	8b 7f       	andi	r24, 0xFB	; 251
- 44e:	87 bb       	out	0x17, r24	; 23
+ 448:	87 b3       	in	r24, 0x17	; 23
+ 44a:	8b 7f       	andi	r24, 0xFB	; 251
+ 44c:	87 bb       	out	0x17, r24	; 23
 
 
 #include "Ext interrupt.h"
 EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
 {
 	EN_interruptError_t interruptError = INT_OK;
- 450:	80 e0       	ldi	r24, 0x00	; 0
- 452:	07 c0       	rjmp	.+14     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 44e:	80 e0       	ldi	r24, 0x00	; 0
+ 450:	07 c0       	rjmp	.+14     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 			//set INT0 pin as input
 			clrBit(DDRD,INT0_PIN);
 		}
 		else
 		{
 			interruptError = WRONG_SENSE_CONTROL;
- 454:	82 e0       	ldi	r24, 0x02	; 2
- 456:	05 c0       	rjmp	.+10     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 452:	82 e0       	ldi	r24, 0x02	; 2
+ 454:	05 c0       	rjmp	.+10     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 			//set INT1 pin as input
 			clrBit(DDRD,INT1_PIN);
 		}
 		else
 		{
 			interruptError = WRONG_SENSE_CONTROL;
- 458:	82 e0       	ldi	r24, 0x02	; 2
- 45a:	03 c0       	rjmp	.+6      	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 456:	82 e0       	ldi	r24, 0x02	; 2
+ 458:	03 c0       	rjmp	.+6      	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 			interruptError = WRONG_SENSE_CONTROL;
 		}
 	}
 	else
 	{
 		interruptError = WRONG_INT_NUM;
- 45c:	81 e0       	ldi	r24, 0x01	; 1
- 45e:	01 c0       	rjmp	.+2      	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 45a:	81 e0       	ldi	r24, 0x01	; 1
+ 45c:	01 c0       	rjmp	.+2      	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
 			//set INT2 pin as input
 			clrBit(DDRB,INT2_PIN);
 		}
 		else
 		{
 			interruptError = WRONG_SENSE_CONTROL;
- 460:	82 e0       	ldi	r24, 0x02	; 2
+ 45e:	82 e0       	ldi	r24, 0x02	; 2
 	}
 	else
 	{
 		interruptError = WRONG_INT_NUM;
 	}
 	if (interruptError == INT_OK)
- 462:	81 11       	cpse	r24, r1
- 464:	01 c0       	rjmp	.+2      	; 0x468 <__EEPROM_REGION_LENGTH__+0x68>
+ 460:	81 11       	cpse	r24, r1
+ 462:	01 c0       	rjmp	.+2      	; 0x466 <__EEPROM_REGION_LENGTH__+0x66>
 	{
 		//enable global interrupt
 		sei();
- 466:	78 94       	sei
+ 464:	78 94       	sei
 	}
 	return interruptError;
 }
- 468:	08 95       	ret
+ 466:	08 95       	ret
 
-0000046a <_exit>:
- 46a:	f8 94       	cli
+00000468 <_exit>:
+ 468:	f8 94       	cli
 
-0000046c <__stop_program>:
- 46c:	ff cf       	rjmp	.-2      	; 0x46c <__stop_program>
+0000046a <__stop_program>:
+ 46a:	ff cf       	rjmp	.-2      	; 0x46a <__stop_program>

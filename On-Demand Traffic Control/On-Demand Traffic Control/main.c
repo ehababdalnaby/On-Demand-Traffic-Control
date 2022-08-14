@@ -11,7 +11,7 @@ int main(void)
 {
 	ledInit(PA0);
 	ledInit(PB0);
-	Ext_interruptInit(INT0,FALLING_EDGE);
+	Ext_interruptInit(INT0,ANY_LOGICAL_CHANGE);
 	while (1)
 	{
 		ledOn(PB0);

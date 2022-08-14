@@ -19,7 +19,7 @@ EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interrup
 			//clearing interruptSenseControl old value
 			MCUCR&=(~(ISC00<<0x03));
 			//setting interruptSenseControl new value
-			MCUCR|=ISC00<<interruptSenseControl;
+			MCUCR|=interruptSenseControl<<ISC00;
 			//set INT0 pin as input
 			clrBit(DDRD,INT0_PIN);
 		}
@@ -37,9 +37,9 @@ EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interrup
 			//enable INT1
 			setBit(GICR,INT1);
 			//clearing interruptSenseControl old value
-			MCUCR&=(~(ISC10<<0x03));
+			MCUCR&=(~(0x03<<ISC10));
 			//setting interruptSenseControl new value
-			MCUCR|=ISC10<<interruptSenseControl;
+			MCUCR|=interruptSenseControl<<ISC10;
 			//set INT1 pin as input
 			clrBit(DDRD,INT1_PIN);
 		}
