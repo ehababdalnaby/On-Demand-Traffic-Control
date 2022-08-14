@@ -9,6 +9,9 @@
 
 #include "../../Service/ATmega32Port.h"
 #include "../../Service/RegisterFile.h"
+#include "../Interrupt/Interrupt.h"
+#include "../../Service/BitMath.h"
+
 /**
 *\defgroup EXT_interrupts ATMEGA32 external interrupts driver
 *\ingroup interrupts
@@ -23,9 +26,9 @@
  *	\arg It should be configured as #Input.
  */
 ///@{
-#define INT0_PIN PD2 /**<This Pin connected to INT0 interrupt*/
-#define INT1_PIN PD3 /**<This Pin connected to INT1 interrupt*/
-#define INT2_PIN PB2 /**<This Pin connected to INT2 interrupt*/
+#define INT0_PIN (PD2 - PORTD_OFFSET) /**<This Pin connected to INT0 interrupt*/
+#define INT1_PIN (PD3 - PORTD_OFFSET) /**<This Pin connected to INT1 interrupt*/
+#define INT2_PIN (PB2 - PORTB_OFFSET) /**<This Pin connected to INT2 interrupt*/
 ///@}
 
 /** @name INT0 sense control
@@ -134,4 +137,5 @@ typedef enum
 	*@retval WRONG_SENSE_CONTROL If interruptSenseControl is wrong. 
 */
 EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl);
+/**@}*/
 #endif /* EXT_INTERRUPT_H_ */

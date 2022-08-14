@@ -5,15 +5,17 @@
 /****************************************************************************************************************************************************/
 
 #include "./ECUAL/LED driver/LED.h"
-#include <util/delay.h>
+#include "MCAL/Ext interrupt driver/Ext interrupt.h"
 
 int main(void)
 {
 	ledInit(PA0);
+	ledInit(PB0);
+	Ext_interruptInit(INT0,FALLING_EDGE);
 	while (1)
 	{
-		ledToggle(PA0);
-		_delay_ms(200);
+		ledOn(PB0);
+		
 	}
 	return 0;
 }

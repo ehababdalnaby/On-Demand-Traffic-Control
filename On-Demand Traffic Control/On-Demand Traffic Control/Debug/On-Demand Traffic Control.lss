@@ -3,36 +3,36 @@ On-Demand Traffic Control.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000250  00000000  00000000  00000054  2**1
+  0 .text         0000046e  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000002a4  2**0
+  1 .data         00000000  00800060  00800060  000004c2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000002a4  2**0
+  2 .comment      00000030  00000000  00000000  000004c2  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002d4  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000004f4  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000090  00000000  00000000  00000310  2**0
+  4 .debug_aranges 000000b8  00000000  00000000  00000530  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000cd0  00000000  00000000  000003a0  2**0
+  5 .debug_info   00000eed  00000000  00000000  000005e8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000718  00000000  00000000  00001070  2**0
+  6 .debug_abbrev 0000074e  00000000  00000000  000014d5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000006a3  00000000  00000000  00001788  2**0
+  7 .debug_line   000007b9  00000000  00000000  00001c23  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000cc  00000000  00000000  00001e2c  2**2
+  8 .debug_frame  00000148  00000000  00000000  000023dc  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000491  00000000  00000000  00001ef8  2**0
+  9 .debug_str    0000056e  00000000  00000000  00002524  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000676  00000000  00000000  00002389  2**0
+ 10 .debug_loc    00000830  00000000  00000000  00002a92  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000060  00000000  00000000  000029ff  2**0
+ 11 .debug_ranges 00000078  00000000  00000000  000032c2  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
-   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   4:	0c 94 bf 01 	jmp	0x37e	; 0x37e <__vector_1>
    8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
    c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
   10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
@@ -60,357 +60,758 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 3d 00 	call	0x7a	; 0x7a <main>
-  64:	0c 94 26 01 	jmp	0x24c	; 0x24c <_exit>
+  60:	0e 94 3e 00 	call	0x7c	; 0x7c <main>
+  64:	0c 94 35 02 	jmp	0x46a	; 0x46a <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 0000006c <ledInit>:
-}
-/*********************************************************************************/
-EN_pinErro_t ledOff(EN_pinNum_t ledPin)
+
+
+
+EN_pinErro_t ledInit(EN_pinNum_t ledPin)
 {
-	return DIO_pinWrite(ledPin,Low);
-}
+	return DIO_pinInit(ledPin,Output);
   6c:	61 e0       	ldi	r22, 0x01	; 1
-  6e:	0e 94 4a 00 	call	0x94	; 0x94 <DIO_pinInit>
+  6e:	0e 94 4c 00 	call	0x98	; 0x98 <DIO_pinInit>
+}
   72:	08 95       	ret
 
-00000074 <ledToggle>:
+00000074 <ledOn>:
 /*********************************************************************************/
-EN_pinNum_t ledToggle(EN_pinNum_t ledPin)
+EN_pinErro_t ledOn(EN_pinNum_t ledPin)
 {
-	return DIO_pinToggle(ledPin);
-  74:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <DIO_pinToggle>
-  78:	08 95       	ret
+	return DIO_pinWrite(ledPin,High);
+  74:	61 e0       	ldi	r22, 0x01	; 1
+  76:	0e 94 e5 00 	call	0x1ca	; 0x1ca <DIO_pinWrite>
+}
+  7a:	08 95       	ret
 
-0000007a <main>:
+0000007c <main>:
 #include "./ECUAL/LED driver/LED.h"
-#include <util/delay.h>
+#include "MCAL/Ext interrupt driver/Ext interrupt.h"
 
 int main(void)
 {
 	ledInit(PA0);
-  7a:	80 e0       	ldi	r24, 0x00	; 0
-  7c:	0e 94 36 00 	call	0x6c	; 0x6c <ledInit>
+  7c:	80 e0       	ldi	r24, 0x00	; 0
+  7e:	0e 94 36 00 	call	0x6c	; 0x6c <ledInit>
+	ledInit(PB0);
+  82:	88 e0       	ldi	r24, 0x08	; 8
+  84:	0e 94 36 00 	call	0x6c	; 0x6c <ledInit>
+	Ext_interruptInit(INT0,FALLING_EDGE);
+  88:	62 e0       	ldi	r22, 0x02	; 2
+  8a:	86 e0       	ldi	r24, 0x06	; 6
+  8c:	0e 94 e4 01 	call	0x3c8	; 0x3c8 <Ext_interruptInit>
 	while (1)
 	{
-		ledToggle(PA0);
-  80:	80 e0       	ldi	r24, 0x00	; 0
-  82:	0e 94 3a 00 	call	0x74	; 0x74 <ledToggle>
-	#else
-		//round up by default
-		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
-	#endif
+		ledOn(PB0);
+  90:	88 e0       	ldi	r24, 0x08	; 8
+  92:	0e 94 3a 00 	call	0x74	; 0x74 <ledOn>
+  96:	fc cf       	rjmp	.-8      	; 0x90 <main+0x14>
 
-	__builtin_avr_delay_cycles(__ticks_dc);
-  86:	8f e4       	ldi	r24, 0x4F	; 79
-  88:	93 ec       	ldi	r25, 0xC3	; 195
-  8a:	01 97       	sbiw	r24, 0x01	; 1
-  8c:	f1 f7       	brne	.-4      	; 0x8a <main+0x10>
-  8e:	00 c0       	rjmp	.+0      	; 0x90 <main+0x16>
-  90:	00 00       	nop
-  92:	f6 cf       	rjmp	.-20     	; 0x80 <main+0x6>
-
-00000094 <DIO_pinInit>:
+00000098 <DIO_pinInit>:
 	else
 	{
 		error = WRONG_PIN_NUM;
 	}
 	return error;
 }
-  94:	88 30       	cpi	r24, 0x08	; 8
-  96:	08 f5       	brcc	.+66     	; 0xda <DIO_pinInit+0x46>
-  98:	61 30       	cpi	r22, 0x01	; 1
-  9a:	71 f4       	brne	.+28     	; 0xb8 <DIO_pinInit+0x24>
-  9c:	4a b3       	in	r20, 0x1a	; 26
-  9e:	21 e0       	ldi	r18, 0x01	; 1
-  a0:	30 e0       	ldi	r19, 0x00	; 0
-  a2:	b9 01       	movw	r22, r18
-  a4:	02 c0       	rjmp	.+4      	; 0xaa <DIO_pinInit+0x16>
-  a6:	66 0f       	add	r22, r22
-  a8:	77 1f       	adc	r23, r23
-  aa:	8a 95       	dec	r24
-  ac:	e2 f7       	brpl	.-8      	; 0xa6 <DIO_pinInit+0x12>
-  ae:	cb 01       	movw	r24, r22
-  b0:	84 2b       	or	r24, r20
-  b2:	8a bb       	out	0x1a, r24	; 26
-  b4:	80 e0       	ldi	r24, 0x00	; 0
-  b6:	08 95       	ret
-  b8:	61 11       	cpse	r22, r1
-  ba:	7b c0       	rjmp	.+246    	; 0x1b2 <DIO_pinInit+0x11e>
-  bc:	4a b3       	in	r20, 0x1a	; 26
-  be:	21 e0       	ldi	r18, 0x01	; 1
-  c0:	30 e0       	ldi	r19, 0x00	; 0
-  c2:	b9 01       	movw	r22, r18
-  c4:	02 c0       	rjmp	.+4      	; 0xca <DIO_pinInit+0x36>
-  c6:	66 0f       	add	r22, r22
-  c8:	77 1f       	adc	r23, r23
-  ca:	8a 95       	dec	r24
-  cc:	e2 f7       	brpl	.-8      	; 0xc6 <DIO_pinInit+0x32>
-  ce:	cb 01       	movw	r24, r22
-  d0:	80 95       	com	r24
-  d2:	84 23       	and	r24, r20
-  d4:	8a bb       	out	0x1a, r24	; 26
-  d6:	80 e0       	ldi	r24, 0x00	; 0
-  d8:	08 95       	ret
-  da:	80 31       	cpi	r24, 0x10	; 16
-  dc:	10 f5       	brcc	.+68     	; 0x122 <DIO_pinInit+0x8e>
-  de:	88 50       	subi	r24, 0x08	; 8
-  e0:	61 30       	cpi	r22, 0x01	; 1
-  e2:	71 f4       	brne	.+28     	; 0x100 <DIO_pinInit+0x6c>
-  e4:	47 b3       	in	r20, 0x17	; 23
-  e6:	21 e0       	ldi	r18, 0x01	; 1
-  e8:	30 e0       	ldi	r19, 0x00	; 0
-  ea:	b9 01       	movw	r22, r18
-  ec:	02 c0       	rjmp	.+4      	; 0xf2 <DIO_pinInit+0x5e>
-  ee:	66 0f       	add	r22, r22
-  f0:	77 1f       	adc	r23, r23
-  f2:	8a 95       	dec	r24
-  f4:	e2 f7       	brpl	.-8      	; 0xee <DIO_pinInit+0x5a>
-  f6:	cb 01       	movw	r24, r22
-  f8:	84 2b       	or	r24, r20
-  fa:	87 bb       	out	0x17, r24	; 23
-  fc:	80 e0       	ldi	r24, 0x00	; 0
-  fe:	08 95       	ret
- 100:	61 11       	cpse	r22, r1
- 102:	59 c0       	rjmp	.+178    	; 0x1b6 <DIO_pinInit+0x122>
- 104:	47 b3       	in	r20, 0x17	; 23
- 106:	21 e0       	ldi	r18, 0x01	; 1
- 108:	30 e0       	ldi	r19, 0x00	; 0
- 10a:	b9 01       	movw	r22, r18
- 10c:	02 c0       	rjmp	.+4      	; 0x112 <DIO_pinInit+0x7e>
- 10e:	66 0f       	add	r22, r22
- 110:	77 1f       	adc	r23, r23
- 112:	8a 95       	dec	r24
- 114:	e2 f7       	brpl	.-8      	; 0x10e <DIO_pinInit+0x7a>
- 116:	cb 01       	movw	r24, r22
- 118:	80 95       	com	r24
- 11a:	84 23       	and	r24, r20
- 11c:	87 bb       	out	0x17, r24	; 23
- 11e:	80 e0       	ldi	r24, 0x00	; 0
- 120:	08 95       	ret
- 122:	88 31       	cpi	r24, 0x18	; 24
- 124:	10 f5       	brcc	.+68     	; 0x16a <DIO_pinInit+0xd6>
- 126:	80 51       	subi	r24, 0x10	; 16
- 128:	61 30       	cpi	r22, 0x01	; 1
- 12a:	71 f4       	brne	.+28     	; 0x148 <DIO_pinInit+0xb4>
- 12c:	44 b3       	in	r20, 0x14	; 20
- 12e:	21 e0       	ldi	r18, 0x01	; 1
- 130:	30 e0       	ldi	r19, 0x00	; 0
- 132:	b9 01       	movw	r22, r18
- 134:	02 c0       	rjmp	.+4      	; 0x13a <DIO_pinInit+0xa6>
- 136:	66 0f       	add	r22, r22
- 138:	77 1f       	adc	r23, r23
- 13a:	8a 95       	dec	r24
- 13c:	e2 f7       	brpl	.-8      	; 0x136 <DIO_pinInit+0xa2>
- 13e:	cb 01       	movw	r24, r22
- 140:	84 2b       	or	r24, r20
- 142:	84 bb       	out	0x14, r24	; 20
- 144:	80 e0       	ldi	r24, 0x00	; 0
- 146:	08 95       	ret
- 148:	61 11       	cpse	r22, r1
- 14a:	37 c0       	rjmp	.+110    	; 0x1ba <DIO_pinInit+0x126>
- 14c:	44 b3       	in	r20, 0x14	; 20
- 14e:	21 e0       	ldi	r18, 0x01	; 1
- 150:	30 e0       	ldi	r19, 0x00	; 0
- 152:	b9 01       	movw	r22, r18
- 154:	02 c0       	rjmp	.+4      	; 0x15a <DIO_pinInit+0xc6>
- 156:	66 0f       	add	r22, r22
- 158:	77 1f       	adc	r23, r23
- 15a:	8a 95       	dec	r24
- 15c:	e2 f7       	brpl	.-8      	; 0x156 <DIO_pinInit+0xc2>
- 15e:	cb 01       	movw	r24, r22
- 160:	80 95       	com	r24
- 162:	84 23       	and	r24, r20
- 164:	84 bb       	out	0x14, r24	; 20
- 166:	80 e0       	ldi	r24, 0x00	; 0
- 168:	08 95       	ret
- 16a:	80 32       	cpi	r24, 0x20	; 32
- 16c:	40 f5       	brcc	.+80     	; 0x1be <DIO_pinInit+0x12a>
- 16e:	88 51       	subi	r24, 0x18	; 24
- 170:	61 30       	cpi	r22, 0x01	; 1
- 172:	71 f4       	brne	.+28     	; 0x190 <DIO_pinInit+0xfc>
- 174:	41 b3       	in	r20, 0x11	; 17
- 176:	21 e0       	ldi	r18, 0x01	; 1
- 178:	30 e0       	ldi	r19, 0x00	; 0
- 17a:	b9 01       	movw	r22, r18
- 17c:	02 c0       	rjmp	.+4      	; 0x182 <DIO_pinInit+0xee>
- 17e:	66 0f       	add	r22, r22
- 180:	77 1f       	adc	r23, r23
- 182:	8a 95       	dec	r24
- 184:	e2 f7       	brpl	.-8      	; 0x17e <DIO_pinInit+0xea>
- 186:	cb 01       	movw	r24, r22
- 188:	84 2b       	or	r24, r20
- 18a:	81 bb       	out	0x11, r24	; 17
- 18c:	80 e0       	ldi	r24, 0x00	; 0
- 18e:	08 95       	ret
- 190:	61 11       	cpse	r22, r1
- 192:	17 c0       	rjmp	.+46     	; 0x1c2 <DIO_pinInit+0x12e>
- 194:	41 b3       	in	r20, 0x11	; 17
- 196:	21 e0       	ldi	r18, 0x01	; 1
- 198:	30 e0       	ldi	r19, 0x00	; 0
- 19a:	b9 01       	movw	r22, r18
- 19c:	02 c0       	rjmp	.+4      	; 0x1a2 <DIO_pinInit+0x10e>
- 19e:	66 0f       	add	r22, r22
- 1a0:	77 1f       	adc	r23, r23
- 1a2:	8a 95       	dec	r24
- 1a4:	e2 f7       	brpl	.-8      	; 0x19e <DIO_pinInit+0x10a>
- 1a6:	cb 01       	movw	r24, r22
- 1a8:	80 95       	com	r24
- 1aa:	84 23       	and	r24, r20
- 1ac:	81 bb       	out	0x11, r24	; 17
- 1ae:	80 e0       	ldi	r24, 0x00	; 0
- 1b0:	08 95       	ret
- 1b2:	82 e0       	ldi	r24, 0x02	; 2
+  98:	88 30       	cpi	r24, 0x08	; 8
+  9a:	08 f5       	brcc	.+66     	; 0xde <DIO_pinInit+0x46>
+  9c:	61 30       	cpi	r22, 0x01	; 1
+  9e:	71 f4       	brne	.+28     	; 0xbc <DIO_pinInit+0x24>
+  a0:	4a b3       	in	r20, 0x1a	; 26
+  a2:	21 e0       	ldi	r18, 0x01	; 1
+  a4:	30 e0       	ldi	r19, 0x00	; 0
+  a6:	b9 01       	movw	r22, r18
+  a8:	02 c0       	rjmp	.+4      	; 0xae <DIO_pinInit+0x16>
+  aa:	66 0f       	add	r22, r22
+  ac:	77 1f       	adc	r23, r23
+  ae:	8a 95       	dec	r24
+  b0:	e2 f7       	brpl	.-8      	; 0xaa <DIO_pinInit+0x12>
+  b2:	cb 01       	movw	r24, r22
+  b4:	84 2b       	or	r24, r20
+  b6:	8a bb       	out	0x1a, r24	; 26
+  b8:	80 e0       	ldi	r24, 0x00	; 0
+  ba:	08 95       	ret
+  bc:	61 11       	cpse	r22, r1
+  be:	7b c0       	rjmp	.+246    	; 0x1b6 <DIO_pinInit+0x11e>
+  c0:	4a b3       	in	r20, 0x1a	; 26
+  c2:	21 e0       	ldi	r18, 0x01	; 1
+  c4:	30 e0       	ldi	r19, 0x00	; 0
+  c6:	b9 01       	movw	r22, r18
+  c8:	02 c0       	rjmp	.+4      	; 0xce <DIO_pinInit+0x36>
+  ca:	66 0f       	add	r22, r22
+  cc:	77 1f       	adc	r23, r23
+  ce:	8a 95       	dec	r24
+  d0:	e2 f7       	brpl	.-8      	; 0xca <DIO_pinInit+0x32>
+  d2:	cb 01       	movw	r24, r22
+  d4:	80 95       	com	r24
+  d6:	84 23       	and	r24, r20
+  d8:	8a bb       	out	0x1a, r24	; 26
+  da:	80 e0       	ldi	r24, 0x00	; 0
+  dc:	08 95       	ret
+  de:	80 31       	cpi	r24, 0x10	; 16
+  e0:	10 f5       	brcc	.+68     	; 0x126 <DIO_pinInit+0x8e>
+  e2:	88 50       	subi	r24, 0x08	; 8
+  e4:	61 30       	cpi	r22, 0x01	; 1
+  e6:	71 f4       	brne	.+28     	; 0x104 <DIO_pinInit+0x6c>
+  e8:	47 b3       	in	r20, 0x17	; 23
+  ea:	21 e0       	ldi	r18, 0x01	; 1
+  ec:	30 e0       	ldi	r19, 0x00	; 0
+  ee:	b9 01       	movw	r22, r18
+  f0:	02 c0       	rjmp	.+4      	; 0xf6 <DIO_pinInit+0x5e>
+  f2:	66 0f       	add	r22, r22
+  f4:	77 1f       	adc	r23, r23
+  f6:	8a 95       	dec	r24
+  f8:	e2 f7       	brpl	.-8      	; 0xf2 <DIO_pinInit+0x5a>
+  fa:	cb 01       	movw	r24, r22
+  fc:	84 2b       	or	r24, r20
+  fe:	87 bb       	out	0x17, r24	; 23
+ 100:	80 e0       	ldi	r24, 0x00	; 0
+ 102:	08 95       	ret
+ 104:	61 11       	cpse	r22, r1
+ 106:	59 c0       	rjmp	.+178    	; 0x1ba <DIO_pinInit+0x122>
+ 108:	47 b3       	in	r20, 0x17	; 23
+ 10a:	21 e0       	ldi	r18, 0x01	; 1
+ 10c:	30 e0       	ldi	r19, 0x00	; 0
+ 10e:	b9 01       	movw	r22, r18
+ 110:	02 c0       	rjmp	.+4      	; 0x116 <DIO_pinInit+0x7e>
+ 112:	66 0f       	add	r22, r22
+ 114:	77 1f       	adc	r23, r23
+ 116:	8a 95       	dec	r24
+ 118:	e2 f7       	brpl	.-8      	; 0x112 <DIO_pinInit+0x7a>
+ 11a:	cb 01       	movw	r24, r22
+ 11c:	80 95       	com	r24
+ 11e:	84 23       	and	r24, r20
+ 120:	87 bb       	out	0x17, r24	; 23
+ 122:	80 e0       	ldi	r24, 0x00	; 0
+ 124:	08 95       	ret
+ 126:	88 31       	cpi	r24, 0x18	; 24
+ 128:	10 f5       	brcc	.+68     	; 0x16e <DIO_pinInit+0xd6>
+ 12a:	80 51       	subi	r24, 0x10	; 16
+ 12c:	61 30       	cpi	r22, 0x01	; 1
+ 12e:	71 f4       	brne	.+28     	; 0x14c <DIO_pinInit+0xb4>
+ 130:	44 b3       	in	r20, 0x14	; 20
+ 132:	21 e0       	ldi	r18, 0x01	; 1
+ 134:	30 e0       	ldi	r19, 0x00	; 0
+ 136:	b9 01       	movw	r22, r18
+ 138:	02 c0       	rjmp	.+4      	; 0x13e <DIO_pinInit+0xa6>
+ 13a:	66 0f       	add	r22, r22
+ 13c:	77 1f       	adc	r23, r23
+ 13e:	8a 95       	dec	r24
+ 140:	e2 f7       	brpl	.-8      	; 0x13a <DIO_pinInit+0xa2>
+ 142:	cb 01       	movw	r24, r22
+ 144:	84 2b       	or	r24, r20
+ 146:	84 bb       	out	0x14, r24	; 20
+ 148:	80 e0       	ldi	r24, 0x00	; 0
+ 14a:	08 95       	ret
+ 14c:	61 11       	cpse	r22, r1
+ 14e:	37 c0       	rjmp	.+110    	; 0x1be <DIO_pinInit+0x126>
+ 150:	44 b3       	in	r20, 0x14	; 20
+ 152:	21 e0       	ldi	r18, 0x01	; 1
+ 154:	30 e0       	ldi	r19, 0x00	; 0
+ 156:	b9 01       	movw	r22, r18
+ 158:	02 c0       	rjmp	.+4      	; 0x15e <DIO_pinInit+0xc6>
+ 15a:	66 0f       	add	r22, r22
+ 15c:	77 1f       	adc	r23, r23
+ 15e:	8a 95       	dec	r24
+ 160:	e2 f7       	brpl	.-8      	; 0x15a <DIO_pinInit+0xc2>
+ 162:	cb 01       	movw	r24, r22
+ 164:	80 95       	com	r24
+ 166:	84 23       	and	r24, r20
+ 168:	84 bb       	out	0x14, r24	; 20
+ 16a:	80 e0       	ldi	r24, 0x00	; 0
+ 16c:	08 95       	ret
+ 16e:	80 32       	cpi	r24, 0x20	; 32
+ 170:	40 f5       	brcc	.+80     	; 0x1c2 <DIO_pinInit+0x12a>
+ 172:	88 51       	subi	r24, 0x18	; 24
+ 174:	61 30       	cpi	r22, 0x01	; 1
+ 176:	71 f4       	brne	.+28     	; 0x194 <DIO_pinInit+0xfc>
+ 178:	41 b3       	in	r20, 0x11	; 17
+ 17a:	21 e0       	ldi	r18, 0x01	; 1
+ 17c:	30 e0       	ldi	r19, 0x00	; 0
+ 17e:	b9 01       	movw	r22, r18
+ 180:	02 c0       	rjmp	.+4      	; 0x186 <DIO_pinInit+0xee>
+ 182:	66 0f       	add	r22, r22
+ 184:	77 1f       	adc	r23, r23
+ 186:	8a 95       	dec	r24
+ 188:	e2 f7       	brpl	.-8      	; 0x182 <DIO_pinInit+0xea>
+ 18a:	cb 01       	movw	r24, r22
+ 18c:	84 2b       	or	r24, r20
+ 18e:	81 bb       	out	0x11, r24	; 17
+ 190:	80 e0       	ldi	r24, 0x00	; 0
+ 192:	08 95       	ret
+ 194:	61 11       	cpse	r22, r1
+ 196:	17 c0       	rjmp	.+46     	; 0x1c6 <DIO_pinInit+0x12e>
+ 198:	41 b3       	in	r20, 0x11	; 17
+ 19a:	21 e0       	ldi	r18, 0x01	; 1
+ 19c:	30 e0       	ldi	r19, 0x00	; 0
+ 19e:	b9 01       	movw	r22, r18
+ 1a0:	02 c0       	rjmp	.+4      	; 0x1a6 <DIO_pinInit+0x10e>
+ 1a2:	66 0f       	add	r22, r22
+ 1a4:	77 1f       	adc	r23, r23
+ 1a6:	8a 95       	dec	r24
+ 1a8:	e2 f7       	brpl	.-8      	; 0x1a2 <DIO_pinInit+0x10a>
+ 1aa:	cb 01       	movw	r24, r22
+ 1ac:	80 95       	com	r24
+ 1ae:	84 23       	and	r24, r20
+ 1b0:	81 bb       	out	0x11, r24	; 17
+ 1b2:	80 e0       	ldi	r24, 0x00	; 0
  1b4:	08 95       	ret
  1b6:	82 e0       	ldi	r24, 0x02	; 2
  1b8:	08 95       	ret
  1ba:	82 e0       	ldi	r24, 0x02	; 2
  1bc:	08 95       	ret
- 1be:	81 e0       	ldi	r24, 0x01	; 1
+ 1be:	82 e0       	ldi	r24, 0x02	; 2
  1c0:	08 95       	ret
- 1c2:	82 e0       	ldi	r24, 0x02	; 2
+ 1c2:	81 e0       	ldi	r24, 0x01	; 1
  1c4:	08 95       	ret
+ 1c6:	82 e0       	ldi	r24, 0x02	; 2
+ 1c8:	08 95       	ret
 
-000001c6 <DIO_pinToggle>:
+000001ca <DIO_pinWrite>:
+ 1ca:	88 30       	cpi	r24, 0x08	; 8
+ 1cc:	08 f5       	brcc	.+66     	; 0x210 <DIO_pinWrite+0x46>
+ 1ce:	61 30       	cpi	r22, 0x01	; 1
+ 1d0:	71 f4       	brne	.+28     	; 0x1ee <DIO_pinWrite+0x24>
+ 1d2:	4b b3       	in	r20, 0x1b	; 27
+ 1d4:	21 e0       	ldi	r18, 0x01	; 1
+ 1d6:	30 e0       	ldi	r19, 0x00	; 0
+ 1d8:	b9 01       	movw	r22, r18
+ 1da:	02 c0       	rjmp	.+4      	; 0x1e0 <DIO_pinWrite+0x16>
+ 1dc:	66 0f       	add	r22, r22
+ 1de:	77 1f       	adc	r23, r23
+ 1e0:	8a 95       	dec	r24
+ 1e2:	e2 f7       	brpl	.-8      	; 0x1dc <DIO_pinWrite+0x12>
+ 1e4:	cb 01       	movw	r24, r22
+ 1e6:	84 2b       	or	r24, r20
+ 1e8:	8b bb       	out	0x1b, r24	; 27
+ 1ea:	80 e0       	ldi	r24, 0x00	; 0
+ 1ec:	08 95       	ret
+ 1ee:	61 11       	cpse	r22, r1
+ 1f0:	79 c0       	rjmp	.+242    	; 0x2e4 <DIO_pinWrite+0x11a>
+ 1f2:	4b b3       	in	r20, 0x1b	; 27
+ 1f4:	21 e0       	ldi	r18, 0x01	; 1
+ 1f6:	30 e0       	ldi	r19, 0x00	; 0
+ 1f8:	b9 01       	movw	r22, r18
+ 1fa:	02 c0       	rjmp	.+4      	; 0x200 <DIO_pinWrite+0x36>
+ 1fc:	66 0f       	add	r22, r22
+ 1fe:	77 1f       	adc	r23, r23
+ 200:	8a 95       	dec	r24
+ 202:	e2 f7       	brpl	.-8      	; 0x1fc <DIO_pinWrite+0x32>
+ 204:	cb 01       	movw	r24, r22
+ 206:	80 95       	com	r24
+ 208:	84 23       	and	r24, r20
+ 20a:	8b bb       	out	0x1b, r24	; 27
+ 20c:	80 e0       	ldi	r24, 0x00	; 0
+ 20e:	08 95       	ret
+ 210:	80 31       	cpi	r24, 0x10	; 16
+ 212:	10 f5       	brcc	.+68     	; 0x258 <DIO_pinWrite+0x8e>
+ 214:	88 50       	subi	r24, 0x08	; 8
+ 216:	61 30       	cpi	r22, 0x01	; 1
+ 218:	71 f4       	brne	.+28     	; 0x236 <DIO_pinWrite+0x6c>
+ 21a:	48 b3       	in	r20, 0x18	; 24
+ 21c:	21 e0       	ldi	r18, 0x01	; 1
+ 21e:	30 e0       	ldi	r19, 0x00	; 0
+ 220:	b9 01       	movw	r22, r18
+ 222:	02 c0       	rjmp	.+4      	; 0x228 <DIO_pinWrite+0x5e>
+ 224:	66 0f       	add	r22, r22
+ 226:	77 1f       	adc	r23, r23
+ 228:	8a 95       	dec	r24
+ 22a:	e2 f7       	brpl	.-8      	; 0x224 <DIO_pinWrite+0x5a>
+ 22c:	cb 01       	movw	r24, r22
+ 22e:	84 2b       	or	r24, r20
+ 230:	88 bb       	out	0x18, r24	; 24
+ 232:	80 e0       	ldi	r24, 0x00	; 0
+ 234:	08 95       	ret
+ 236:	61 11       	cpse	r22, r1
+ 238:	57 c0       	rjmp	.+174    	; 0x2e8 <DIO_pinWrite+0x11e>
+ 23a:	48 b3       	in	r20, 0x18	; 24
+ 23c:	21 e0       	ldi	r18, 0x01	; 1
+ 23e:	30 e0       	ldi	r19, 0x00	; 0
+ 240:	b9 01       	movw	r22, r18
+ 242:	02 c0       	rjmp	.+4      	; 0x248 <DIO_pinWrite+0x7e>
+ 244:	66 0f       	add	r22, r22
+ 246:	77 1f       	adc	r23, r23
+ 248:	8a 95       	dec	r24
+ 24a:	e2 f7       	brpl	.-8      	; 0x244 <DIO_pinWrite+0x7a>
+ 24c:	cb 01       	movw	r24, r22
+ 24e:	80 95       	com	r24
+ 250:	84 23       	and	r24, r20
+ 252:	88 bb       	out	0x18, r24	; 24
+ 254:	80 e0       	ldi	r24, 0x00	; 0
+ 256:	08 95       	ret
+ 258:	88 31       	cpi	r24, 0x18	; 24
+ 25a:	08 f5       	brcc	.+66     	; 0x29e <DIO_pinWrite+0xd4>
+ 25c:	61 30       	cpi	r22, 0x01	; 1
+ 25e:	71 f4       	brne	.+28     	; 0x27c <DIO_pinWrite+0xb2>
+ 260:	45 b3       	in	r20, 0x15	; 21
+ 262:	21 e0       	ldi	r18, 0x01	; 1
+ 264:	30 e0       	ldi	r19, 0x00	; 0
+ 266:	b9 01       	movw	r22, r18
+ 268:	02 c0       	rjmp	.+4      	; 0x26e <DIO_pinWrite+0xa4>
+ 26a:	66 0f       	add	r22, r22
+ 26c:	77 1f       	adc	r23, r23
+ 26e:	8a 95       	dec	r24
+ 270:	e2 f7       	brpl	.-8      	; 0x26a <DIO_pinWrite+0xa0>
+ 272:	cb 01       	movw	r24, r22
+ 274:	84 2b       	or	r24, r20
+ 276:	85 bb       	out	0x15, r24	; 21
+ 278:	80 e0       	ldi	r24, 0x00	; 0
+ 27a:	08 95       	ret
+ 27c:	61 11       	cpse	r22, r1
+ 27e:	36 c0       	rjmp	.+108    	; 0x2ec <DIO_pinWrite+0x122>
+ 280:	45 b3       	in	r20, 0x15	; 21
+ 282:	21 e0       	ldi	r18, 0x01	; 1
+ 284:	30 e0       	ldi	r19, 0x00	; 0
+ 286:	b9 01       	movw	r22, r18
+ 288:	02 c0       	rjmp	.+4      	; 0x28e <DIO_pinWrite+0xc4>
+ 28a:	66 0f       	add	r22, r22
+ 28c:	77 1f       	adc	r23, r23
+ 28e:	8a 95       	dec	r24
+ 290:	e2 f7       	brpl	.-8      	; 0x28a <DIO_pinWrite+0xc0>
+ 292:	cb 01       	movw	r24, r22
+ 294:	80 95       	com	r24
+ 296:	84 23       	and	r24, r20
+ 298:	85 bb       	out	0x15, r24	; 21
+ 29a:	80 e0       	ldi	r24, 0x00	; 0
+ 29c:	08 95       	ret
+ 29e:	80 32       	cpi	r24, 0x20	; 32
+ 2a0:	38 f5       	brcc	.+78     	; 0x2f0 <DIO_pinWrite+0x126>
+ 2a2:	61 30       	cpi	r22, 0x01	; 1
+ 2a4:	71 f4       	brne	.+28     	; 0x2c2 <DIO_pinWrite+0xf8>
+ 2a6:	42 b3       	in	r20, 0x12	; 18
+ 2a8:	21 e0       	ldi	r18, 0x01	; 1
+ 2aa:	30 e0       	ldi	r19, 0x00	; 0
+ 2ac:	b9 01       	movw	r22, r18
+ 2ae:	02 c0       	rjmp	.+4      	; 0x2b4 <DIO_pinWrite+0xea>
+ 2b0:	66 0f       	add	r22, r22
+ 2b2:	77 1f       	adc	r23, r23
+ 2b4:	8a 95       	dec	r24
+ 2b6:	e2 f7       	brpl	.-8      	; 0x2b0 <DIO_pinWrite+0xe6>
+ 2b8:	cb 01       	movw	r24, r22
+ 2ba:	84 2b       	or	r24, r20
+ 2bc:	82 bb       	out	0x12, r24	; 18
+ 2be:	80 e0       	ldi	r24, 0x00	; 0
+ 2c0:	08 95       	ret
+ 2c2:	61 11       	cpse	r22, r1
+ 2c4:	17 c0       	rjmp	.+46     	; 0x2f4 <DIO_pinWrite+0x12a>
+ 2c6:	42 b3       	in	r20, 0x12	; 18
+ 2c8:	21 e0       	ldi	r18, 0x01	; 1
+ 2ca:	30 e0       	ldi	r19, 0x00	; 0
+ 2cc:	b9 01       	movw	r22, r18
+ 2ce:	02 c0       	rjmp	.+4      	; 0x2d4 <DIO_pinWrite+0x10a>
+ 2d0:	66 0f       	add	r22, r22
+ 2d2:	77 1f       	adc	r23, r23
+ 2d4:	8a 95       	dec	r24
+ 2d6:	e2 f7       	brpl	.-8      	; 0x2d0 <DIO_pinWrite+0x106>
+ 2d8:	cb 01       	movw	r24, r22
+ 2da:	80 95       	com	r24
+ 2dc:	84 23       	and	r24, r20
+ 2de:	82 bb       	out	0x12, r24	; 18
+ 2e0:	80 e0       	ldi	r24, 0x00	; 0
+ 2e2:	08 95       	ret
+ 2e4:	83 e0       	ldi	r24, 0x03	; 3
+ 2e6:	08 95       	ret
+ 2e8:	83 e0       	ldi	r24, 0x03	; 3
+ 2ea:	08 95       	ret
+ 2ec:	83 e0       	ldi	r24, 0x03	; 3
+ 2ee:	08 95       	ret
+ 2f0:	81 e0       	ldi	r24, 0x01	; 1
+ 2f2:	08 95       	ret
+ 2f4:	83 e0       	ldi	r24, 0x03	; 3
+ 2f6:	08 95       	ret
+
+000002f8 <DIO_pinToggle>:
 /********************************************************************************************************************************************************/
 EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
 	//check if the pin is located in port A
 	if (pinNum <= PA7)
- 1c6:	88 30       	cpi	r24, 0x08	; 8
- 1c8:	70 f4       	brcc	.+28     	; 0x1e6 <DIO_pinToggle+0x20>
+ 2f8:	88 30       	cpi	r24, 0x08	; 8
+ 2fa:	70 f4       	brcc	.+28     	; 0x318 <DIO_pinToggle+0x20>
 	{
 		toggleBit(PORTA,pinNum);
- 1ca:	4b b3       	in	r20, 0x1b	; 27
- 1cc:	21 e0       	ldi	r18, 0x01	; 1
- 1ce:	30 e0       	ldi	r19, 0x00	; 0
- 1d0:	b9 01       	movw	r22, r18
- 1d2:	02 c0       	rjmp	.+4      	; 0x1d8 <DIO_pinToggle+0x12>
- 1d4:	66 0f       	add	r22, r22
- 1d6:	77 1f       	adc	r23, r23
- 1d8:	8a 95       	dec	r24
- 1da:	e2 f7       	brpl	.-8      	; 0x1d4 <DIO_pinToggle+0xe>
- 1dc:	cb 01       	movw	r24, r22
- 1de:	84 27       	eor	r24, r20
- 1e0:	8b bb       	out	0x1b, r24	; 27
+ 2fc:	4b b3       	in	r20, 0x1b	; 27
+ 2fe:	21 e0       	ldi	r18, 0x01	; 1
+ 300:	30 e0       	ldi	r19, 0x00	; 0
+ 302:	b9 01       	movw	r22, r18
+ 304:	02 c0       	rjmp	.+4      	; 0x30a <DIO_pinToggle+0x12>
+ 306:	66 0f       	add	r22, r22
+ 308:	77 1f       	adc	r23, r23
+ 30a:	8a 95       	dec	r24
+ 30c:	e2 f7       	brpl	.-8      	; 0x306 <DIO_pinToggle+0xe>
+ 30e:	cb 01       	movw	r24, r22
+ 310:	84 27       	eor	r24, r20
+ 312:	8b bb       	out	0x1b, r24	; 27
 	return error;
 }
 /********************************************************************************************************************************************************/
 EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
- 1e2:	80 e0       	ldi	r24, 0x00	; 0
- 1e4:	08 95       	ret
+ 314:	80 e0       	ldi	r24, 0x00	; 0
+ 316:	08 95       	ret
 	if (pinNum <= PA7)
 	{
 		toggleBit(PORTA,pinNum);
 	}
 	//check if the pin is located in port B
 	else if (pinNum <= PB7)
- 1e6:	80 31       	cpi	r24, 0x10	; 16
- 1e8:	78 f4       	brcc	.+30     	; 0x208 <DIO_pinToggle+0x42>
+ 318:	80 31       	cpi	r24, 0x10	; 16
+ 31a:	78 f4       	brcc	.+30     	; 0x33a <DIO_pinToggle+0x42>
 	{
 		pinNum-=PORTB_OFFSET;
- 1ea:	88 50       	subi	r24, 0x08	; 8
+ 31c:	88 50       	subi	r24, 0x08	; 8
 		toggleBit(PORTB,pinNum);
- 1ec:	48 b3       	in	r20, 0x18	; 24
- 1ee:	21 e0       	ldi	r18, 0x01	; 1
- 1f0:	30 e0       	ldi	r19, 0x00	; 0
- 1f2:	b9 01       	movw	r22, r18
- 1f4:	02 c0       	rjmp	.+4      	; 0x1fa <DIO_pinToggle+0x34>
- 1f6:	66 0f       	add	r22, r22
- 1f8:	77 1f       	adc	r23, r23
- 1fa:	8a 95       	dec	r24
- 1fc:	e2 f7       	brpl	.-8      	; 0x1f6 <DIO_pinToggle+0x30>
- 1fe:	cb 01       	movw	r24, r22
- 200:	84 27       	eor	r24, r20
- 202:	88 bb       	out	0x18, r24	; 24
+ 31e:	48 b3       	in	r20, 0x18	; 24
+ 320:	21 e0       	ldi	r18, 0x01	; 1
+ 322:	30 e0       	ldi	r19, 0x00	; 0
+ 324:	b9 01       	movw	r22, r18
+ 326:	02 c0       	rjmp	.+4      	; 0x32c <DIO_pinToggle+0x34>
+ 328:	66 0f       	add	r22, r22
+ 32a:	77 1f       	adc	r23, r23
+ 32c:	8a 95       	dec	r24
+ 32e:	e2 f7       	brpl	.-8      	; 0x328 <DIO_pinToggle+0x30>
+ 330:	cb 01       	movw	r24, r22
+ 332:	84 27       	eor	r24, r20
+ 334:	88 bb       	out	0x18, r24	; 24
 	return error;
 }
 /********************************************************************************************************************************************************/
 EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
- 204:	80 e0       	ldi	r24, 0x00	; 0
- 206:	08 95       	ret
+ 336:	80 e0       	ldi	r24, 0x00	; 0
+ 338:	08 95       	ret
 	{
 		pinNum-=PORTB_OFFSET;
 		toggleBit(PORTB,pinNum);
 	}
 	//check if the pin is located in port C
 	else if (pinNum <= PC7)
- 208:	88 31       	cpi	r24, 0x18	; 24
- 20a:	70 f4       	brcc	.+28     	; 0x228 <DIO_pinToggle+0x62>
+ 33a:	88 31       	cpi	r24, 0x18	; 24
+ 33c:	70 f4       	brcc	.+28     	; 0x35a <DIO_pinToggle+0x62>
 	{
 		toggleBit(PORTC,pinNum);
- 20c:	45 b3       	in	r20, 0x15	; 21
- 20e:	21 e0       	ldi	r18, 0x01	; 1
- 210:	30 e0       	ldi	r19, 0x00	; 0
- 212:	b9 01       	movw	r22, r18
- 214:	02 c0       	rjmp	.+4      	; 0x21a <DIO_pinToggle+0x54>
- 216:	66 0f       	add	r22, r22
- 218:	77 1f       	adc	r23, r23
- 21a:	8a 95       	dec	r24
- 21c:	e2 f7       	brpl	.-8      	; 0x216 <DIO_pinToggle+0x50>
- 21e:	cb 01       	movw	r24, r22
- 220:	84 27       	eor	r24, r20
- 222:	85 bb       	out	0x15, r24	; 21
+ 33e:	45 b3       	in	r20, 0x15	; 21
+ 340:	21 e0       	ldi	r18, 0x01	; 1
+ 342:	30 e0       	ldi	r19, 0x00	; 0
+ 344:	b9 01       	movw	r22, r18
+ 346:	02 c0       	rjmp	.+4      	; 0x34c <DIO_pinToggle+0x54>
+ 348:	66 0f       	add	r22, r22
+ 34a:	77 1f       	adc	r23, r23
+ 34c:	8a 95       	dec	r24
+ 34e:	e2 f7       	brpl	.-8      	; 0x348 <DIO_pinToggle+0x50>
+ 350:	cb 01       	movw	r24, r22
+ 352:	84 27       	eor	r24, r20
+ 354:	85 bb       	out	0x15, r24	; 21
 	return error;
 }
 /********************************************************************************************************************************************************/
 EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
- 224:	80 e0       	ldi	r24, 0x00	; 0
- 226:	08 95       	ret
+ 356:	80 e0       	ldi	r24, 0x00	; 0
+ 358:	08 95       	ret
 	else if (pinNum <= PC7)
 	{
 		toggleBit(PORTC,pinNum);
 	}
 	//check if the pin is located in port D
 	else if (pinNum <= PD7)
- 228:	80 32       	cpi	r24, 0x20	; 32
- 22a:	70 f4       	brcc	.+28     	; 0x248 <DIO_pinToggle+0x82>
+ 35a:	80 32       	cpi	r24, 0x20	; 32
+ 35c:	70 f4       	brcc	.+28     	; 0x37a <DIO_pinToggle+0x82>
 	{
 		toggleBit(PORTD,pinNum);
- 22c:	42 b3       	in	r20, 0x12	; 18
- 22e:	21 e0       	ldi	r18, 0x01	; 1
- 230:	30 e0       	ldi	r19, 0x00	; 0
- 232:	b9 01       	movw	r22, r18
- 234:	02 c0       	rjmp	.+4      	; 0x23a <DIO_pinToggle+0x74>
- 236:	66 0f       	add	r22, r22
- 238:	77 1f       	adc	r23, r23
- 23a:	8a 95       	dec	r24
- 23c:	e2 f7       	brpl	.-8      	; 0x236 <DIO_pinToggle+0x70>
- 23e:	cb 01       	movw	r24, r22
- 240:	84 27       	eor	r24, r20
- 242:	82 bb       	out	0x12, r24	; 18
+ 35e:	42 b3       	in	r20, 0x12	; 18
+ 360:	21 e0       	ldi	r18, 0x01	; 1
+ 362:	30 e0       	ldi	r19, 0x00	; 0
+ 364:	b9 01       	movw	r22, r18
+ 366:	02 c0       	rjmp	.+4      	; 0x36c <DIO_pinToggle+0x74>
+ 368:	66 0f       	add	r22, r22
+ 36a:	77 1f       	adc	r23, r23
+ 36c:	8a 95       	dec	r24
+ 36e:	e2 f7       	brpl	.-8      	; 0x368 <DIO_pinToggle+0x70>
+ 370:	cb 01       	movw	r24, r22
+ 372:	84 27       	eor	r24, r20
+ 374:	82 bb       	out	0x12, r24	; 18
 	return error;
 }
 /********************************************************************************************************************************************************/
 EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 {
 	EN_pinErro_t error = OK;
- 244:	80 e0       	ldi	r24, 0x00	; 0
- 246:	08 95       	ret
+ 376:	80 e0       	ldi	r24, 0x00	; 0
+ 378:	08 95       	ret
 		toggleBit(PORTD,pinNum);
 	}
 	//if the pinNum is wrong
 	else
 	{
 		error = WRONG_PIN_NUM;
- 248:	81 e0       	ldi	r24, 0x01	; 1
+ 37a:	81 e0       	ldi	r24, 0x01	; 1
 	}
 	return error;
 }
- 24a:	08 95       	ret
+ 37c:	08 95       	ret
 
-0000024c <_exit>:
- 24c:	f8 94       	cli
+0000037e <__vector_1>:
+/********************************************************************************************************************************************************/
+ISR(EXT_INT0)
+{
+ 37e:	1f 92       	push	r1
+ 380:	0f 92       	push	r0
+ 382:	0f b6       	in	r0, 0x3f	; 63
+ 384:	0f 92       	push	r0
+ 386:	11 24       	eor	r1, r1
+ 388:	2f 93       	push	r18
+ 38a:	3f 93       	push	r19
+ 38c:	4f 93       	push	r20
+ 38e:	5f 93       	push	r21
+ 390:	6f 93       	push	r22
+ 392:	7f 93       	push	r23
+ 394:	8f 93       	push	r24
+ 396:	9f 93       	push	r25
+ 398:	af 93       	push	r26
+ 39a:	bf 93       	push	r27
+ 39c:	ef 93       	push	r30
+ 39e:	ff 93       	push	r31
+	DIO_pinToggle(PA0);
+ 3a0:	80 e0       	ldi	r24, 0x00	; 0
+ 3a2:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <DIO_pinToggle>
+ 3a6:	ff 91       	pop	r31
+ 3a8:	ef 91       	pop	r30
+ 3aa:	bf 91       	pop	r27
+ 3ac:	af 91       	pop	r26
+ 3ae:	9f 91       	pop	r25
+ 3b0:	8f 91       	pop	r24
+ 3b2:	7f 91       	pop	r23
+ 3b4:	6f 91       	pop	r22
+ 3b6:	5f 91       	pop	r21
+ 3b8:	4f 91       	pop	r20
+ 3ba:	3f 91       	pop	r19
+ 3bc:	2f 91       	pop	r18
+ 3be:	0f 90       	pop	r0
+ 3c0:	0f be       	out	0x3f, r0	; 63
+ 3c2:	0f 90       	pop	r0
+ 3c4:	1f 90       	pop	r1
+ 3c6:	18 95       	reti
 
-0000024e <__stop_program>:
- 24e:	ff cf       	rjmp	.-2      	; 0x24e <__stop_program>
+000003c8 <Ext_interruptInit>:
+
+#include "Ext interrupt.h"
+EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
+{
+	EN_interruptError_t interruptError = INT_OK;
+	if (interruptNum == INT0)
+ 3c8:	86 30       	cpi	r24, 0x06	; 6
+ 3ca:	79 f4       	brne	.+30     	; 0x3ea <Ext_interruptInit+0x22>
+	{
+		//check if the value of the interruptSenseControl is correct
+		if (interruptSenseControl >=  LOW_LEVEL &&interruptSenseControl <= RISING_EDGE)
+ 3cc:	64 30       	cpi	r22, 0x04	; 4
+ 3ce:	08 f0       	brcs	.+2      	; 0x3d2 <Ext_interruptInit+0xa>
+ 3d0:	41 c0       	rjmp	.+130    	; 0x454 <__EEPROM_REGION_LENGTH__+0x54>
+		{
+			//enable INT0
+			setBit(GICR,INT0);
+ 3d2:	8b b7       	in	r24, 0x3b	; 59
+ 3d4:	80 64       	ori	r24, 0x40	; 64
+ 3d6:	8b bf       	out	0x3b, r24	; 59
+			//clearing interruptSenseControl old value
+			MCUCR&=(~(ISC00<<0x03));
+ 3d8:	85 b7       	in	r24, 0x35	; 53
+ 3da:	85 bf       	out	0x35, r24	; 53
+			//setting interruptSenseControl new value
+			MCUCR|=ISC00<<interruptSenseControl;
+ 3dc:	85 b7       	in	r24, 0x35	; 53
+ 3de:	85 bf       	out	0x35, r24	; 53
+			//set INT0 pin as input
+			clrBit(DDRD,INT0_PIN);
+ 3e0:	81 b3       	in	r24, 0x11	; 17
+ 3e2:	8b 7f       	andi	r24, 0xFB	; 251
+ 3e4:	81 bb       	out	0x11, r24	; 17
+
+
+#include "Ext interrupt.h"
+EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
+{
+	EN_interruptError_t interruptError = INT_OK;
+ 3e6:	80 e0       	ldi	r24, 0x00	; 0
+ 3e8:	3c c0       	rjmp	.+120    	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+		else
+		{
+			interruptError = WRONG_SENSE_CONTROL;
+		}
+	}
+	else if (interruptNum == INT1)
+ 3ea:	87 30       	cpi	r24, 0x07	; 7
+ 3ec:	b9 f4       	brne	.+46     	; 0x41c <__EEPROM_REGION_LENGTH__+0x1c>
+	{
+		
+		//check if the value of the interruptSenseControl is correct
+		if (interruptSenseControl >=  LOW_LEVEL &&interruptSenseControl <= RISING_EDGE)
+ 3ee:	64 30       	cpi	r22, 0x04	; 4
+ 3f0:	98 f5       	brcc	.+102    	; 0x458 <__EEPROM_REGION_LENGTH__+0x58>
+		{
+			//enable INT1
+			setBit(GICR,INT1);
+ 3f2:	8b b7       	in	r24, 0x3b	; 59
+ 3f4:	80 68       	ori	r24, 0x80	; 128
+ 3f6:	8b bf       	out	0x3b, r24	; 59
+			//clearing interruptSenseControl old value
+			MCUCR&=(~(ISC10<<0x03));
+ 3f8:	85 b7       	in	r24, 0x35	; 53
+ 3fa:	8f 7e       	andi	r24, 0xEF	; 239
+ 3fc:	85 bf       	out	0x35, r24	; 53
+			//setting interruptSenseControl new value
+			MCUCR|=ISC10<<interruptSenseControl;
+ 3fe:	25 b7       	in	r18, 0x35	; 53
+ 400:	82 e0       	ldi	r24, 0x02	; 2
+ 402:	90 e0       	ldi	r25, 0x00	; 0
+ 404:	02 c0       	rjmp	.+4      	; 0x40a <__EEPROM_REGION_LENGTH__+0xa>
+ 406:	88 0f       	add	r24, r24
+ 408:	99 1f       	adc	r25, r25
+ 40a:	6a 95       	dec	r22
+ 40c:	e2 f7       	brpl	.-8      	; 0x406 <__EEPROM_REGION_LENGTH__+0x6>
+ 40e:	82 2b       	or	r24, r18
+ 410:	85 bf       	out	0x35, r24	; 53
+			//set INT1 pin as input
+			clrBit(DDRD,INT1_PIN);
+ 412:	81 b3       	in	r24, 0x11	; 17
+ 414:	87 7f       	andi	r24, 0xF7	; 247
+ 416:	81 bb       	out	0x11, r24	; 17
+
+
+#include "Ext interrupt.h"
+EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
+{
+	EN_interruptError_t interruptError = INT_OK;
+ 418:	80 e0       	ldi	r24, 0x00	; 0
+ 41a:	23 c0       	rjmp	.+70     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+		else
+		{
+			interruptError = WRONG_SENSE_CONTROL;
+		}
+	}
+	else if (interruptNum == INT2)
+ 41c:	85 30       	cpi	r24, 0x05	; 5
+ 41e:	f1 f4       	brne	.+60     	; 0x45c <__EEPROM_REGION_LENGTH__+0x5c>
+	{
+		
+		//check if the value of the interruptSenseControl is correct
+		if (interruptSenseControl ==  FALLING_EDGE )
+ 420:	62 30       	cpi	r22, 0x02	; 2
+ 422:	59 f4       	brne	.+22     	; 0x43a <__EEPROM_REGION_LENGTH__+0x3a>
+		{
+			//enable INT1
+			setBit(GICR,INT2);
+ 424:	8b b7       	in	r24, 0x3b	; 59
+ 426:	80 62       	ori	r24, 0x20	; 32
+ 428:	8b bf       	out	0x3b, r24	; 59
+			clrBit(MCUCSR,ISC2);
+ 42a:	84 b7       	in	r24, 0x34	; 52
+ 42c:	8f 7b       	andi	r24, 0xBF	; 191
+ 42e:	84 bf       	out	0x34, r24	; 52
+			//set INT2 pin as input
+			clrBit(DDRB,INT2_PIN);
+ 430:	87 b3       	in	r24, 0x17	; 23
+ 432:	8b 7f       	andi	r24, 0xFB	; 251
+ 434:	87 bb       	out	0x17, r24	; 23
+
+
+#include "Ext interrupt.h"
+EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
+{
+	EN_interruptError_t interruptError = INT_OK;
+ 436:	80 e0       	ldi	r24, 0x00	; 0
+ 438:	14 c0       	rjmp	.+40     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+			setBit(GICR,INT2);
+			clrBit(MCUCSR,ISC2);
+			//set INT2 pin as input
+			clrBit(DDRB,INT2_PIN);
+		}
+		else if(interruptSenseControl == RISING_EDGE)
+ 43a:	63 30       	cpi	r22, 0x03	; 3
+ 43c:	89 f4       	brne	.+34     	; 0x460 <__EEPROM_REGION_LENGTH__+0x60>
+		{
+			//enable INT1
+			setBit(GICR,INT2);
+ 43e:	8b b7       	in	r24, 0x3b	; 59
+ 440:	80 62       	ori	r24, 0x20	; 32
+ 442:	8b bf       	out	0x3b, r24	; 59
+			setBit(MCUCSR,ISC2);
+ 444:	84 b7       	in	r24, 0x34	; 52
+ 446:	80 64       	ori	r24, 0x40	; 64
+ 448:	84 bf       	out	0x34, r24	; 52
+			//set INT2 pin as input
+			clrBit(DDRB,INT2_PIN);
+ 44a:	87 b3       	in	r24, 0x17	; 23
+ 44c:	8b 7f       	andi	r24, 0xFB	; 251
+ 44e:	87 bb       	out	0x17, r24	; 23
+
+
+#include "Ext interrupt.h"
+EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interruptSenseControl_t interruptSenseControl)
+{
+	EN_interruptError_t interruptError = INT_OK;
+ 450:	80 e0       	ldi	r24, 0x00	; 0
+ 452:	07 c0       	rjmp	.+14     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+			//set INT0 pin as input
+			clrBit(DDRD,INT0_PIN);
+		}
+		else
+		{
+			interruptError = WRONG_SENSE_CONTROL;
+ 454:	82 e0       	ldi	r24, 0x02	; 2
+ 456:	05 c0       	rjmp	.+10     	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+			//set INT1 pin as input
+			clrBit(DDRD,INT1_PIN);
+		}
+		else
+		{
+			interruptError = WRONG_SENSE_CONTROL;
+ 458:	82 e0       	ldi	r24, 0x02	; 2
+ 45a:	03 c0       	rjmp	.+6      	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+			interruptError = WRONG_SENSE_CONTROL;
+		}
+	}
+	else
+	{
+		interruptError = WRONG_INT_NUM;
+ 45c:	81 e0       	ldi	r24, 0x01	; 1
+ 45e:	01 c0       	rjmp	.+2      	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+			//set INT2 pin as input
+			clrBit(DDRB,INT2_PIN);
+		}
+		else
+		{
+			interruptError = WRONG_SENSE_CONTROL;
+ 460:	82 e0       	ldi	r24, 0x02	; 2
+	}
+	else
+	{
+		interruptError = WRONG_INT_NUM;
+	}
+	if (interruptError == INT_OK)
+ 462:	81 11       	cpse	r24, r1
+ 464:	01 c0       	rjmp	.+2      	; 0x468 <__EEPROM_REGION_LENGTH__+0x68>
+	{
+		//enable global interrupt
+		sei();
+ 466:	78 94       	sei
+	}
+	return interruptError;
+}
+ 468:	08 95       	ret
+
+0000046a <_exit>:
+ 46a:	f8 94       	cli
+
+0000046c <__stop_program>:
+ 46c:	ff cf       	rjmp	.-2      	; 0x46c <__stop_program>
