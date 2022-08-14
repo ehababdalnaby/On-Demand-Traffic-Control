@@ -1,0 +1,21 @@
+ *.ps 
+*.dvi 
+*.aux 
+*.toc 
+*.idx 
+*.ind 
+*.ilg 
+*.log 
+*.out 
+*.brf 
+*.blg 
+*.bbl
+*.dot
+*.tex
+*.tmp
+*.bat
+docbook/
+man/
+rtf/
+resources/
+
