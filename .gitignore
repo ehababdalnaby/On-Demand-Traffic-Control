@@ -14,6 +14,7 @@
 *.tex
 *.tmp
 *.bat
+*.sty
 docbook/
 man/
 rtf/
