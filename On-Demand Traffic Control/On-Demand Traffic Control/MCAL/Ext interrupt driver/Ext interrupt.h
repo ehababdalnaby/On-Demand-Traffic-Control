@@ -34,7 +34,6 @@
 /** @name INT0 sense control
  *  @details
  *	\arg These two bits #ISC00 and #ISC01 which located in #MCUCR register control the #INT0 sense control.
- *	\arg
  *	ISC01  |ISC00  | Description											   |
  *	:----: |:----: | :--------------------------------------------------------:|
  *	0	   |0	   | The low level of INT0 generates an interrupt request.	   |
@@ -52,7 +51,6 @@
 /** @name INT1 sense control
  *  @details
  *	\arg These two bits #ISC10 and #ISC11 which located in #MCUCR register control the #INT1 sense control.
- *	\arg
  *	ISC11  |ISC10  | Description											   |
  *	:----: |:----: | :--------------------------------------------------------:|
  *	0	   |0	   | The low level of INT1 generates an interrupt request.	   |
@@ -71,7 +69,6 @@
 /** @name INT2 sense control
  *  @details
  *	\arg This bit #ISC2 which located in #MCUCSR register control the #INT2 sense control.
- *	\arg
  *	ISC2   | Description
  *	:----: | :-------------:
  *	0	   | The falling edge on INT2 activates the interrupt request.

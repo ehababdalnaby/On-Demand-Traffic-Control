@@ -14,3 +14,5 @@ MCAL\Dio driver\DIO.c
 
 MCAL\Ext interrupt driver\Ext interrupt.c
 
+MCAL\Timer driver\Timer_0.c
+

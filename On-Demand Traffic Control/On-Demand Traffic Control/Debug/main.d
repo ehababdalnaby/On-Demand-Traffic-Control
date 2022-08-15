@@ -10,7 +10,12 @@ main.d main.o: .././main.c ../././ECUAL/LED\ driver/LED.h \
  .././MCAL/Ext\ interrupt\ driver/../../Service/ATmega32Port.h \
  .././MCAL/Ext\ interrupt\ driver/../../Service/RegisterFile.h \
  .././MCAL/Ext\ interrupt\ driver/../Interrupt/Interrupt.h \
- .././MCAL/Ext\ interrupt\ driver/../../Service/BitMath.h
+ .././MCAL/Ext\ interrupt\ driver/../../Service/BitMath.h \
+ .././MCAL/Timer\ driver/Timer_0.h \
+ .././MCAL/Timer\ driver/../../Service/BitMath.h \
+ .././MCAL/Timer\ driver/../../Service/ATmega32Port.h \
+ .././MCAL/Timer\ driver/../../Service/dataTypes.h \
+ .././MCAL/Timer\ driver/../../Service/RegisterFile.h
 
 ../././ECUAL/LED\ driver/LED.h:
 
@@ -37,3 +42,13 @@ main.d main.o: .././main.c ../././ECUAL/LED\ driver/LED.h \
 .././MCAL/Ext\ interrupt\ driver/../Interrupt/Interrupt.h:
 
 .././MCAL/Ext\ interrupt\ driver/../../Service/BitMath.h:
+
+.././MCAL/Timer\ driver/Timer_0.h:
+
+.././MCAL/Timer\ driver/../../Service/BitMath.h:
+
+.././MCAL/Timer\ driver/../../Service/ATmega32Port.h:
+
+.././MCAL/Timer\ driver/../../Service/dataTypes.h:
+
+.././MCAL/Timer\ driver/../../Service/RegisterFile.h:

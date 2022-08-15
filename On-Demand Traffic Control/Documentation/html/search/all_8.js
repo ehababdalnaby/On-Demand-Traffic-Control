@@ -17,5 +17,5 @@ var searchData=
   ['isc10_14',['ISC10',['../group___e_x_t__interrupts.html#ga6446f3ff2592c34eab76e6eb549a856f',1,'Ext interrupt.h']]],
   ['isc11_15',['ISC11',['../group___e_x_t__interrupts.html#gae6d2265aa4f914793d2dfa3095ba0993',1,'Ext interrupt.h']]],
   ['isc2_16',['ISC2',['../group___e_x_t__interrupts.html#ga55fb1f41ee9f0aeb248ae8682d29cfbb',1,'Ext interrupt.h']]],
-  ['isr_17',['ISR',['../group__avr__interrupts.html#gaef9ee27676f002a54355685968b07da5',1,'ISR():&#160;Interrupt.h'],['../_d_i_o_8c.html#ada3e4270317c8cb84159cbeb3adbbb3f',1,'ISR(EXT_INT0):&#160;DIO.c']]]
+  ['isr_17',['ISR',['../group__avr__interrupts.html#gaef9ee27676f002a54355685968b07da5',1,'ISR():&#160;Interrupt.h'],['../_d_i_o_8c.html#ada3e4270317c8cb84159cbeb3adbbb3f',1,'ISR(EXT_INT0):&#160;DIO.c'],['../_timer__0_8c.html#af38fc4a00c6bea99c6acfadf2ac98daa',1,'ISR(TIM0_OVF):&#160;Timer_0.c']]]
 ];
