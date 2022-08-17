@@ -114,6 +114,7 @@ En_Timer0_Error_t Timer0_interruptEnable(TIMER0_interrupt_t Timer0_interrupt)
 	En_Timer0_Error_t Timer0_error = TIMER0_OK;
 	if (Timer0_interrupt == TIMER0_OVER_FLOW_INT || Timer0_interrupt == TIMER0_OUT_CMP_MATCH_INT)
 	{
+		sei();
 		setBit(TIMSK,Timer0_interrupt);
 	}
 	else

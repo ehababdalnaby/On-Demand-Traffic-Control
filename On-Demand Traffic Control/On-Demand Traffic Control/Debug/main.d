@@ -15,7 +15,8 @@ main.d main.o: .././main.c ../././ECUAL/LED\ driver/LED.h \
  .././MCAL/Timer\ driver/../../Service/BitMath.h \
  .././MCAL/Timer\ driver/../../Service/ATmega32Port.h \
  .././MCAL/Timer\ driver/../../Service/dataTypes.h \
- .././MCAL/Timer\ driver/../../Service/RegisterFile.h
+ .././MCAL/Timer\ driver/../../Service/RegisterFile.h .././App/app.h \
+ .././App/../Service/ATmega32Port.h .././App/../Service/dataTypes.h
 
 ../././ECUAL/LED\ driver/LED.h:
 
@@ -52,3 +53,9 @@ main.d main.o: .././main.c ../././ECUAL/LED\ driver/LED.h \
 .././MCAL/Timer\ driver/../../Service/dataTypes.h:
 
 .././MCAL/Timer\ driver/../../Service/RegisterFile.h:
+
+.././App/app.h:
+
+.././App/../Service/ATmega32Port.h:
+
+.././App/../Service/dataTypes.h:

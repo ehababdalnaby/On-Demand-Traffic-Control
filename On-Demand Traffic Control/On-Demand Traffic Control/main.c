@@ -7,18 +7,14 @@
 #include "./ECUAL/LED driver/LED.h"
 #include "MCAL/Ext interrupt driver/Ext interrupt.h"
 #include "MCAL/Timer driver/Timer_0.h"
+#include "App/app.h"
 int main(void)
 {
-	ledInit(PA0);
 	ledInit(PB0);
-	Ext_interruptInit(INT0,ANY_LOGICAL_CHANGE);
-	Timer0_init(NORMAL,clkI_DIVISION_BY_1024);
+	app_start();
 	while (1)
 	{
-		ledOff(PB0);
-		Timer0_delay_ms(1000);
-		ledOn(PB0);
-		Timer0_delay_ms(1000);
+		trafficLightOperation();
 	}
 	return 0;
 }
