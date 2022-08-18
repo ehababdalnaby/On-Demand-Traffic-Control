@@ -126,6 +126,7 @@ EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
 	//check if the pin is located in port C
 	else if (pinNum <= PC7)
 	{
+		pinNum-=PORTC_OFFSET;
 		if (pinState == High)
 		{
 			setBit(PORTC,pinNum);
@@ -142,6 +143,7 @@ EN_pinErro_t DIO_pinWrite(EN_pinNum_t pinNum,EN_pinState_t pinState)
 	//check if the pin is located in port D
 	else if (pinNum <= PD7)
 	{
+		pinNum-=PORTD_OFFSET;
 		if (pinState == High)
 		{
 			setBit(PORTD,pinNum);
@@ -180,11 +182,13 @@ EN_pinErro_t DIO_pinRead(EN_pinNum_t pinNum,EN_pinState_t *pinState)
 	//check if the pin is located in port C
 	else if (pinNum <= PC7)
 	{
+		pinNum-=PORTC_OFFSET;
 		*pinState = getBit(PINC,pinNum);
 	}
 	//check if the pin is located in port D
 	else if (pinNum <= PD7)
 	{
+		pinNum-=PORTD_OFFSET;
 		*pinState = getBit(PIND,pinNum);
 	}
 	//if the pinNum is wrong
@@ -212,11 +216,13 @@ EN_pinErro_t DIO_pinToggle(EN_pinNum_t pinNum)
 	//check if the pin is located in port C
 	else if (pinNum <= PC7)
 	{
+		pinNum-=PORTC_OFFSET;
 		toggleBit(PORTC,pinNum);
 	}
 	//check if the pin is located in port D
 	else if (pinNum <= PD7)
 	{
+		pinNum-=PORTD_OFFSET;
 		toggleBit(PORTD,pinNum);
 	}
 	//if the pinNum is wrong

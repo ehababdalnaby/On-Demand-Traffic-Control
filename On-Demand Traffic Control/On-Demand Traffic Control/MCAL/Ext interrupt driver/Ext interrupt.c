@@ -17,7 +17,7 @@ EN_interruptError_t Ext_interruptInit(EN_interruptNum_t interruptNum,EN_interrup
 			//enable INT0
 			setBit(GICR,INT0);
 			//clearing interruptSenseControl old value
-			MCUCR&=(~(ISC00<<0x03));
+			MCUCR&=(~(0x03<<ISC00));
 			//setting interruptSenseControl new value
 			MCUCR|=interruptSenseControl<<ISC00;
 			//set INT0 pin as input

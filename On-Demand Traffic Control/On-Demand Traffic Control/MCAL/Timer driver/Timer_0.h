@@ -51,7 +51,7 @@
 *\arg The three Clock Select bits select the clock source to be used by the Timer/Counter and located in #TCCR0.
 |CS02  |CS01  |CS00  | Description												|
 |:---: |:---: |:---: | :--------------------------------------------------------|
-|0	   |0	  |0	 |No clock source\n (Timer/Counter stopped).					|
+|0	   |0	  |0	 |No clock source\n (Timer/Counter stopped).				|
 |0	   |0	  |1	 |clkI/O/(No prescaling).									|
 |0	   |1	  |0	 |clkI/O/8 (From prescaler).								|
 |0	   |1	  |1	 |clkI/O/64 (From prescaler).								|
